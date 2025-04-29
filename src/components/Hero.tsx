@@ -13,7 +13,7 @@ const Hero = () => {
               Hi, I'm <span className="text-neutral-600">Rodwan Baghdadi</span>
             </h1>
             <p className="text-lg md:text-xl text-neutral-700 mb-6">
-              Software Engineer & AI Specialist
+              Mechatronics Engineer and AI Specialist
             </p>
             <p className="text-neutral-600 mb-8 max-w-lg">
               I build intelligent systems and develop software solutions with a focus on AI, 
@@ -29,7 +29,7 @@ const Hero = () => {
             </div>
             <div className="flex space-x-4 mt-8">
               <a 
-                href="https://github.com/" 
+                href="https://github.com/Rodwanbagdadi" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-neutral-600 hover:text-neutral-800 transition-colors"
@@ -37,7 +37,7 @@ const Hero = () => {
                 <Github size={24} />
               </a>
               <a 
-                href="https://linkedin.com/in/rodwanbagdadi" 
+                href="https://www.linkedin.com/in/rodwanbaghdadi/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-neutral-600 hover:text-neutral-800 transition-colors"
