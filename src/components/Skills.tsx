@@ -12,27 +12,22 @@ const Skills = () => {
   ];
 
   const skills = [
-    { name: 'Python', category: 'languages', level: 95 },
-    { name: 'MATLAB', category: 'languages', level: 85 },
-    { name: 'HTML/CSS', category: 'languages', level: 80 },
-    { name: 'C++', category: 'languages', level: 75 },
-    { name: 'JavaScript', category: 'languages', level: 70 },
+    { name: 'Python', category: 'languages', level: 80 },
+    { name: 'MATLAB', category: 'languages', level: 75 },
+    { name: 'HTML/CSS', category: 'languages', level: 40 },
     
-    { name: 'PyTorch', category: 'ai-ml', level: 90 },
-    { name: 'TensorFlow', category: 'ai-ml', level: 85 },
-    { name: 'Scikit-learn', category: 'ai-ml', level: 90 },
-    { name: 'Pandas', category: 'ai-ml', level: 95 },
-    { name: 'NumPy', category: 'ai-ml', level: 95 },
-    { name: 'Matplotlib', category: 'ai-ml', level: 90 },
-    { name: 'OpenCV', category: 'ai-ml', level: 85 },
-    { name: 'NLP', category: 'ai-ml', level: 80 },
+    { name: 'pandas', category: 'ai-ml', level: 85 },
+    { name: 'PyTorch', category: 'ai-ml', level: 85 },
+    { name: 'TensorFlow', category: 'ai-ml', level: 70 },
+    { name: 'Scikit-learn', category: 'ai-ml', level: 85 },
+    { name: 'NumPy', category: 'ai-ml', level: 85 },
+    { name: 'Matplotlib', category: 'ai-ml', level: 85 },
+    { name: 'seaborn', category: 'ai-ml', level: 85 },
     
-    { name: 'Git', category: 'tools', level: 90 },
-    { name: 'VS Code', category: 'tools', level: 95 },
-    { name: 'PyCharm', category: 'tools', level: 90 },
-    { name: 'Jupyter', category: 'tools', level: 95 },
-    { name: 'Docker', category: 'tools', level: 80 },
-    { name: 'Linux', category: 'tools', level: 85 },
+    { name: 'Git', category: 'tools', level: 85 },
+    { name: 'VS Code', category: 'tools', level: 80 },
+    { name: 'PyCharm', category: 'tools', level: 75 },
+    { name: 'Jupyter', category: 'tools', level: 90 },
   ];
 
   const [activeCategory, setActiveCategory] = useState('all');
