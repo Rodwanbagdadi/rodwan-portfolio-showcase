@@ -33,12 +33,12 @@ const Navbar = () => {
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white shadow-md py-2' 
+          ? 'bg-neutral-900/95 backdrop-blur-sm shadow-md py-2' 
           : 'bg-transparent py-4'
       }`}
     >
       <div className="container mx-auto flex justify-between items-center px-4">
-        <a href="#home" className="text-xl font-bold text-navy">
+        <a href="#home" className={`text-xl font-bold ${isScrolled ? 'text-neutral-100' : 'text-neutral-100'}`}>
           Rodwan Bagdadi
         </a>
         
@@ -48,7 +48,11 @@ const Navbar = () => {
             <a 
               key={item.name} 
               href={item.href}
-              className="font-medium text-gray-700 hover:text-highlight transition-colors"
+              className={`font-medium transition-colors ${
+                isScrolled 
+                  ? 'text-neutral-300 hover:text-neutral-100' 
+                  : 'text-neutral-400 hover:text-neutral-200'
+              }`}
             >
               {item.name}
             </a>
@@ -59,7 +63,7 @@ const Navbar = () => {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden"
+          className="md:hidden text-neutral-200"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           <Menu />
@@ -67,13 +71,13 @@ const Navbar = () => {
 
         {/* Mobile Navigation Menu */}
         {mobileMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden">
+          <div className="absolute top-full left-0 w-full bg-neutral-900 shadow-lg md:hidden">
             <div className="flex flex-col py-2">
               {navItems.map((item) => (
                 <a 
                   key={item.name} 
                   href={item.href}
-                  className="px-4 py-2 hover:bg-gray-100 font-medium"
+                  className="px-4 py-2 hover:bg-neutral-800 font-medium text-neutral-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}

@@ -36,48 +36,48 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="bg-white py-16 md:py-24">
+    <section id="experience" className="bg-neutral-900 py-16 md:py-24">
       <div className="section-container">
         <h2 className="section-title">Work Experience</h2>
-        <p className="text-gray-600 mb-12 max-w-2xl">
+        <p className="text-neutral-400 mb-12 max-w-2xl">
           My professional journey in AI, machine learning, and software development.
         </p>
 
         <div className="space-y-12">
           {experiences.map((exp) => (
-            <Card key={exp.id} className="border-l-4 border-l-navy card-hover">
+            <Card key={exp.id} className="border-l-4 border-l-neutral-700 gradient-bg card-hover">
               <CardContent className="p-0">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                  <div className="p-6 md:border-r border-gray-200">
-                    <h3 className="text-xl font-semibold text-navy">{exp.role}</h3>
-                    <p className="text-lg text-gray-700 font-medium">{exp.company}</p>
+                  <div className="p-6 md:border-r border-neutral-800">
+                    <h3 className="text-xl font-semibold text-neutral-200">{exp.role}</h3>
+                    <p className="text-lg text-neutral-300 font-medium">{exp.company}</p>
                     
-                    <div className="flex items-center gap-1 text-gray-500 mt-2">
+                    <div className="flex items-center gap-1 text-neutral-400 mt-2">
                       <Calendar size={14} />
                       <span className="text-sm">{exp.period}</span>
                     </div>
                     
-                    <div className="flex items-center gap-1 text-gray-500 mt-1">
+                    <div className="flex items-center gap-1 text-neutral-400 mt-1">
                       <MapPin size={14} />
                       <span className="text-sm">{exp.location}</span>
                     </div>
                   </div>
                   
                   <div className="p-6 md:col-span-3">
-                    <p className="text-gray-600 mb-4">{exp.description}</p>
+                    <p className="text-neutral-300 mb-4">{exp.description}</p>
                     
-                    <h4 className="font-medium text-navy mb-2">Key Achievements:</h4>
+                    <h4 className="font-medium text-neutral-200 mb-2">Key Achievements:</h4>
                     <ul className="list-disc list-outside ml-5 space-y-1 mb-4">
                       {exp.achievements.map((achievement, index) => (
-                        <li key={index} className="text-gray-600">{achievement}</li>
+                        <li key={index} className="text-neutral-300">{achievement}</li>
                       ))}
                     </ul>
                     
                     <div className="mt-4">
-                      <h4 className="font-medium text-navy mb-2">Technologies Used:</h4>
+                      <h4 className="font-medium text-neutral-200 mb-2">Technologies Used:</h4>
                       <div className="flex flex-wrap gap-2">
                         {exp.technologies.map((tech, index) => (
-                          <Badge key={index} variant="outline">{tech}</Badge>
+                          <Badge key={index} variant="outline" className="border-neutral-700 bg-neutral-800 text-neutral-300">{tech}</Badge>
                         ))}
                       </div>
                     </div>
