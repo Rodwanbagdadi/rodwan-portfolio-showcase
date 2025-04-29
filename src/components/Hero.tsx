@@ -10,7 +10,7 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-12">
           <div className="md:w-1/2 animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-800 mb-4">
-              Hi, I'm <span className="text-neutral-600">Rodwan Baghdadi</span>
+              Hi, I'm <span className="text-neutral-600">Rodwan Bagdadi</span>
             </h1>
             <p className="text-lg md:text-xl text-neutral-700 mb-6">
               Mechatronics Engineer and AI Specialist
@@ -63,7 +63,7 @@ const Hero = () => {
               </div>
               <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-full shadow-lg">
                 <div className="w-14 h-14 bg-neutral-700 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">AI</span>
+                  <span className="text-white font-bold">RB</span>
                 </div>
               </div>
             </div>

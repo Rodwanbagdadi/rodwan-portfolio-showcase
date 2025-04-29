@@ -39,7 +39,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex justify-between items-center px-4">
         <a href="#home" className="text-xl font-bold text-navy">
-          Rodwan Baghdadi
+          Rodwan Bagdadi
         </a>
         
         {/* Desktop Navigation */}

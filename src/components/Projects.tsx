@@ -12,8 +12,8 @@ const Projects = () => {
       title: 'Fake News Detection',
       description: 'Developed a fake news detection system using XGBoost and TF-IDF vectorization, achieving 99.79% accuracy.',
       image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1170&auto=format&fit=crop',
-      technologies: ['Python', 'Flask', 'HTML', 'Gradient Boosting', 'XGBoost'],
-      github: 'https://github.com/',
+      technologies: ['Flask', 'HTML', 'Gradient Boosting', 'XGBoost'],
+      github: 'https://github.com/Rodwanbagdadi/Flask_Grad_Project',
       live: 'https://demo-link.com',
       problem: 'Misinformation spreading through digital platforms causing potential harm.',
       solution: 'Developed and fine-tuned an XGBoost-based fake news detection model using TF-IDF vectorization and key metadata features from a labeled dataset.',
@@ -24,23 +24,11 @@ const Projects = () => {
       title: 'Diabetes Classifier',
       description: 'Created a diabetes prediction model using SVM on a dataset of 70,692 cases derived from 253,680 survey responses.',
       image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1170&auto=format&fit=crop',
-      technologies: ['Python', 'SVM', 'KNN', 'Random Forests', 'Decision Trees'],
-      github: 'https://github.com/',
+      technologies: ['SVM', 'KNN', 'Random Forests', 'Decision Trees'],
+      github: 'https://github.com/Rodwanbagdadi/Diabetes-Classifier',
       problem: 'Early detection of diabetes risk factors to improve preventative healthcare.',
       solution: 'Developed a diabetes prediction model using Support Vector Machine on a cleaned dataset, selecting 21 relevant features out of 330.',
       outcome: 'Achieved 74.92% accuracy, demonstrating SVM superior performance while highlighting overfitting issues in tree-based models.'
-    },
-    {
-      id: 3,
-      title: 'Reinforcement Learning from Human Feedback',
-      description: 'Enhanced AI model accuracy by implementing RLHF techniques, reducing incorrect predictions by 20% across a dataset of 100+ entries.',
-      image: 'https://images.unsplash.com/photo-1677442135198-fea920fdecee?q=80&w=1632&auto=format&fit=crop',
-      technologies: ['Python', 'Reinforcement Learning', 'AI Models'],
-      github: 'https://github.com/',
-      live: 'https://demo-link.com',
-      problem: 'AI models producing incorrect or inconsistent predictions in complex scenarios.',
-      solution: 'Implemented Reinforcement Learning from Human Feedback (RLHF) techniques to improve model outputs and identified factual inconsistencies.',
-      outcome: 'Reduced incorrect predictions by 20% across a dataset of 100+ entries and improved response alignment with instructions.'
     },
     {
       id: 4,
@@ -48,7 +36,6 @@ const Projects = () => {
       description: 'Built a predictive model using Ensemble Learning and Random Forests to forecast survival outcomes, achieving top 20% leaderboard placement.',
       image: 'https://images.unsplash.com/photo-1553484771-11998c592b9c?q=80&w=1170&auto=format&fit=crop',
       technologies: ['Python', 'Ensemble Learning', 'Random Forests', 'Feature Selection'],
-      github: 'https://github.com/',
       problem: 'Predicting survival outcomes with complex, multi-dimensional data.',
       solution: 'Built a predictive model using Ensemble Learning and Random Forests, experimenting with feature selection and data preprocessing.',
       outcome: 'Achieved top 20% leaderboard placement while highlighting the tradeoff between model complexity and generalization.'
@@ -140,7 +127,7 @@ const Projects = () => {
         <div className="text-center mt-12">
           <Button asChild variant="outline" className="border-neutral-400 hover:bg-neutral-200">
             <a 
-              href="https://github.com/" 
+              href="https://github.com/Rodwanbagdadi?tab=repositories" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2"
