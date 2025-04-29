@@ -50,10 +50,6 @@ const Contact = () => {
                   <div className="bg-neutral-100 p-2 rounded-full">
                     <Phone className="h-5 w-5 text-neutral-700" />
                   </div>
-                  <div>
-                    <p className="font-medium">Phone</p>
-                    <p className="text-neutral-600">+962 777 106 247</p>
-                  </div>
                 </div>
                 
                 <div className="flex items-start gap-3">
@@ -75,7 +71,7 @@ const Contact = () => {
               </p>
               <div className="flex space-x-4">
                 <a 
-                  href="https://github.com/" 
+                  href="https://github.com/Rodwanbagdadi" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-neutral-100 hover:bg-neutral-200 p-3 rounded-full transition-colors"
@@ -85,7 +81,7 @@ const Contact = () => {
                   </svg>
                 </a>
                 <a 
-                  href="https://linkedin.com/in/rodwanbagdadi" 
+                  href="https://www.linkedin.com/in/rodwanbaghdadi/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-neutral-100 hover:bg-neutral-200 p-3 rounded-full transition-colors"
