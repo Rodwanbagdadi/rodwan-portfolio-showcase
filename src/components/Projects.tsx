@@ -87,7 +87,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="text-neutral-500 hover:text-neutral-800"
                   >
-                    <Github size={18} />
+                    
                   </a>
                   {project.live && (
                     <a 
