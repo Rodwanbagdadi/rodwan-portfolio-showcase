@@ -81,7 +81,7 @@ const Contact = () => {
                   </svg>
                 </a>
                 <a 
-                  href="https://www.linkedin.com/in/rodwanbaghdadi/" 
+                  href="https://linkedin.com/in/rodwanbagdadi/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-neutral-100 hover:bg-neutral-200 p-3 rounded-full transition-colors"
