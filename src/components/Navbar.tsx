@@ -34,11 +34,11 @@ const Navbar = () => {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-neutral-900/95 backdrop-blur-sm shadow-md py-2' 
-          : 'bg-transparent py-4'
+          : 'bg-neutral-900/70 backdrop-blur-sm py-4'
       }`}
     >
       <div className="container mx-auto flex justify-between items-center px-4">
-        <a href="#home" className={`text-xl font-bold ${isScrolled ? 'text-neutral-100' : 'text-neutral-100'}`}>
+        <a href="#home" className="text-xl font-bold text-neutral-100">
           Rodwan Bagdadi
         </a>
         
@@ -48,11 +48,7 @@ const Navbar = () => {
             <a 
               key={item.name} 
               href={item.href}
-              className={`font-medium transition-colors ${
-                isScrolled 
-                  ? 'text-neutral-300 hover:text-neutral-100' 
-                  : 'text-neutral-400 hover:text-neutral-200'
-              }`}
+              className="font-medium transition-colors text-neutral-300 hover:text-neutral-100"
             >
               {item.name}
             </a>

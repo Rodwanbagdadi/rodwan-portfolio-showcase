@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ExternalLink, Code } from 'lucide-react';
+import { ExternalLink, Code, Github } from 'lucide-react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -42,7 +42,15 @@ const Projects = () => {
     },
   ];
 
-  const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  // Track each project's expanded state independently
+  const [expandedProjects, setExpandedProjects] = useState<Record<number, boolean>>({});
+
+  const toggleProjectDetails = (projectId: number) => {
+    setExpandedProjects(prev => ({
+      ...prev,
+      [projectId]: !prev[projectId]
+    }));
+  };
 
   return (
     <section id="projects" className="py-16 md:py-24">
@@ -76,23 +84,35 @@ const Projects = () => {
                   variant="ghost" 
                   size="sm" 
                   className="text-neutral-400 hover:text-foreground"
-                  onClick={() => setSelectedProject(selectedProject === project.id ? null : project.id)}
+                  onClick={() => toggleProjectDetails(project.id)}
                 >
                   <Code size={16} className="mr-1" /> Details
                 </Button>
-                {project.live && (
-                  <a 
-                    href={project.live} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-neutral-400 hover:text-foreground"
-                  >
-                    <ExternalLink size={18} />
-                  </a>
-                )}
+                <div className="flex gap-2">
+                  {project.github && (
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-neutral-400 hover:text-foreground"
+                    >
+                      <Github size={18} />
+                    </a>
+                  )}
+                  {project.live && (
+                    <a 
+                      href={project.live} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-neutral-400 hover:text-foreground"
+                    >
+                      <ExternalLink size={18} />
+                    </a>
+                  )}
+                </div>
               </CardFooter>
               
-              {selectedProject === project.id && (
+              {expandedProjects[project.id] && (
                 <div className="p-6 bg-card border-t border-neutral-700">
                   <div className="space-y-4">
                     <div>
@@ -122,6 +142,7 @@ const Projects = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-2"
             >
+              <Github size={18} className="mr-1" />
               View More Projects
             </a>
           </Button>
