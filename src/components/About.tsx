@@ -64,41 +64,18 @@ const About = () => {
                 </div>
                 <div className="space-y-3">
                   <div>
-                    <p className="font-medium">Bachelor's in Mechatronics</p>
+                    <p className="font-medium">Bachelor's in Mechatronics Engineering</p>
                     <p className="text-sm text-gray-500">German Jordanian University (GJU), 2018-2025</p>
                   </div>
                   <div>
-                    <p className="font-medium">Bachelor's in Mechatronics</p>
+                    <p className="font-medium">Exchange Semester</p>
                     <p className="text-sm text-gray-500">Bochum University of Applied Sciences, 2023-2024</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
             
-            <Card className="card-hover">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="bg-blue-100 p-3 rounded-full">
-                    <Award className="h-6 w-6 text-navy" />
-                  </div>
-                  <h3 className="font-semibold text-navy text-lg">Certifications</h3>
-                </div>
-                <div className="space-y-3">
-                  <div>
-                    <p className="font-medium">Deep Learning Specialization</p>
-                    <p className="text-sm text-gray-500">Coursera, 2021</p>
-                  </div>
-                  <div>
-                    <p className="font-medium">TensorFlow Developer</p>
-                    <p className="text-sm text-gray-500">Google, 2020</p>
-                  </div>
-                  <div>
-                    <p className="font-medium">Machine Learning Engineer</p>
-                    <p className="text-sm text-gray-500">DataCamp, 2019</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            
           </div>
         </div>
       </div>
