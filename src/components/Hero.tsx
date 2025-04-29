@@ -5,25 +5,25 @@ import { Button } from '@/components/ui/button';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-blue-50 pt-16">
+    <section id="home" className="min-h-screen flex items-center bg-gradient-to-br from-neutral-100 to-neutral-200 pt-16">
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-12">
           <div className="md:w-1/2 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-4">
-              Hi, I'm <span className="text-highlight">Rodwan Baghdadi</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-800 mb-4">
+              Hi, I'm <span className="text-neutral-600">Rodwan Baghdadi</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-700 mb-6">
+            <p className="text-lg md:text-xl text-neutral-700 mb-6">
               Software Engineer & AI Specialist
             </p>
-            <p className="text-gray-600 mb-8 max-w-lg">
+            <p className="text-neutral-600 mb-8 max-w-lg">
               I build intelligent systems and develop software solutions with a focus on AI, 
               machine learning, and engineering excellence.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button asChild>
+              <Button asChild className="bg-neutral-800 hover:bg-neutral-700">
                 <a href="#contact">Get in Touch</a>
               </Button>
-              <Button variant="outline" asChild>
+              <Button variant="outline" asChild className="border-neutral-400 hover:bg-neutral-200">
                 <a href="#projects">View Projects</a>
               </Button>
             </div>
@@ -32,21 +32,21 @@ const Hero = () => {
                 href="https://github.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-navy transition-colors"
+                className="text-neutral-600 hover:text-neutral-800 transition-colors"
               >
                 <Github size={24} />
               </a>
               <a 
-                href="https://linkedin.com/" 
+                href="https://linkedin.com/in/rodwanbagdadi" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-navy transition-colors"
+                className="text-neutral-600 hover:text-neutral-800 transition-colors"
               >
                 <Linkedin size={24} />
               </a>
               <a 
-                href="mailto:contact@example.com"
-                className="text-gray-600 hover:text-navy transition-colors"
+                href="mailto:rodwanbagdadi@gmail.com"
+                className="text-neutral-600 hover:text-neutral-800 transition-colors"
               >
                 <Mail size={24} />
               </a>
@@ -62,7 +62,7 @@ const Hero = () => {
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-full shadow-lg">
-                <div className="w-14 h-14 bg-highlight rounded-full flex items-center justify-center">
+                <div className="w-14 h-14 bg-neutral-700 rounded-full flex items-center justify-center">
                   <span className="text-white font-bold">AI</span>
                 </div>
               </div>

@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 210 33% 99%;
-    --foreground: 222 47% 11%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 221 83% 24%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 0% 15%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222 47% 11.2%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221 83% 53%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 15%;
 
     --radius: 0.5rem;
   }
@@ -54,12 +54,12 @@
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-8 text-navy relative inline-block;
+    @apply text-3xl md:text-4xl font-bold mb-8 text-neutral-800 relative inline-block;
   }
   
   .section-title::after {
     content: '';
-    @apply absolute left-0 -bottom-2 w-2/3 h-1 bg-highlight;
+    @apply absolute left-0 -bottom-2 w-2/3 h-1 bg-neutral-400;
   }
   
   .card-hover {
@@ -67,6 +67,6 @@
   }
   
   .gradient-bg {
-    background: linear-gradient(135deg, rgba(66, 153, 225, 0.1) 0%, rgba(26, 54, 93, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(180, 180, 180, 0.1) 0%, rgba(60, 60, 60, 0.1) 100%);
   }
 }
