@@ -31,7 +31,7 @@ const Projects = () => {
       outcome: 'Achieved 74.92% accuracy, demonstrating SVM superior performance while highlighting overfitting issues in tree-based models.'
     },
     {
-      id: 4,
+      id: 3,
       title: 'Ensemble Learning for Survival Prediction',
       description: 'Built a predictive model using Ensemble Learning and Random Forests to forecast survival outcomes, achieving top 20% leaderboard placement.',
       image: 'https://images.unsplash.com/photo-1553484771-11998c592b9c?q=80&w=1170&auto=format&fit=crop',
@@ -87,7 +87,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="text-neutral-500 hover:text-neutral-800"
                   >
-                    
+                    <Github size={18} />
                   </a>
                   {project.live && (
                     <a 
