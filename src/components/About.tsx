@@ -72,10 +72,6 @@ const About = () => {
                     <p className="text-sm text-gray-500">Bochum University of Applied Sciences, 2023-2024</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-            
-            
           </div>
         </div>
       </div>
