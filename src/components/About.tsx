@@ -64,12 +64,12 @@ const About = () => {
                 </div>
                 <div className="space-y-3">
                   <div>
-                    <p className="font-medium">Master's in Computer Science</p>
-                    <p className="text-sm text-gray-500">University of Technology, 2018-2020</p>
+                    <p className="font-medium">Bachelor's in Mechatronics</p>
+                    <p className="text-sm text-gray-500">German Jordanian University (GJU), 2018-2025</p>
                   </div>
                   <div>
                     <p className="font-medium">Bachelor's in Mechatronics</p>
-                    <p className="text-sm text-gray-500">Engineering Institute, 2014-2018</p>
+                    <p className="text-sm text-gray-500">Bochum University of Applied Sciences, 2023-2024</p>
                   </div>
                 </div>
               </CardContent>
