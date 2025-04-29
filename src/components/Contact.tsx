@@ -48,12 +48,6 @@ const Contact = () => {
                 
                 <div className="flex items-start gap-3">
                   <div className="bg-neutral-100 p-2 rounded-full">
-                    <Phone className="h-5 w-5 text-neutral-700" />
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-3">
-                  <div className="bg-neutral-100 p-2 rounded-full">
                     <MapPin className="h-5 w-5 text-neutral-700" />
                   </div>
                   <div>
