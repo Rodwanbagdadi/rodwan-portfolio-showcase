@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, MapPin, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,59 +8,114 @@ import { useToast } from '@/components/ui/use-toast';
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // In a real application, you would handle the form submission here
-    // For demonstration purposes, we'll just show a toast notification
-    
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
+    setIsSubmitting(true);
+
+    try {
+      // Using EmailJS service to send emails without a backend
+      const serviceID = 'default_service'; // Replace with your EmailJS service ID
+      const templateID = 'template_default'; // Replace with your EmailJS template ID
+      const userID = 'user_yourUserID'; // Replace with your EmailJS user ID
+      
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'Rodwan',
+        reply_to: formData.email
+      };
+
+      // This is a placeholder for the actual EmailJS send method
+      // In a production environment, you would need to include the EmailJS SDK
+      // and use their send method
+      
+      // await emailjs.send(serviceID, templateID, templateParams, userID);
+      
+      // For demonstration purposes, we'll simulate a successful submission
+      console.log('Form submitted:', templateParams);
+      
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly at rodwanbagdadi@gmail.com",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <section id="contact" className="bg-white py-16 md:py-24">
+    <section id="contact" className="py-16 md:py-24">
       <div className="section-container">
         <h2 className="section-title">Get in Touch</h2>
-        <p className="text-neutral-600 mb-12 max-w-2xl">
+        <p className="text-neutral-300 mb-12 max-w-2xl">
           Have a question or want to work together? Feel free to reach out!
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <div className="mb-8">
-              <h3 className="text-xl font-semibold text-neutral-800 mb-6">Contact Information</h3>
+              <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="bg-neutral-100 p-2 rounded-full">
-                    <Mail className="h-5 w-5 text-neutral-700" />
+                  <div className="bg-accent p-2 rounded-full">
+                    <Mail className="h-5 w-5" />
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <a href="mailto:rodwanbagdadi@gmail.com" className="text-neutral-600 hover:text-neutral-800">
+                    <a href="mailto:rodwanbagdadi@gmail.com" className="text-neutral-400 hover:text-neutral-200">
                       rodwanbagdadi@gmail.com
                     </a>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-3">
-                  <div className="bg-neutral-100 p-2 rounded-full">
-                    <MapPin className="h-5 w-5 text-neutral-700" />
+                  <div className="bg-accent p-2 rounded-full">
+                    <MapPin className="h-5 w-5" />
                   </div>
                   <div>
                     <p className="font-medium">Location</p>
-                    <p className="text-neutral-600">Heilbronn, Germany</p>
+                    <p className="text-neutral-400">Heilbronn, Germany</p>
                   </div>
                 </div>
               </div>
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold text-neutral-800 mb-4">Connect with me</h3>
-              <p className="text-neutral-600 mb-4">
+              <h3 className="text-xl font-semibold mb-4">Connect with me</h3>
+              <p className="text-neutral-400 mb-4">
                 Follow me on social media or check out my work on GitHub.
               </p>
               <div className="flex space-x-4">
@@ -68,7 +123,7 @@ const Contact = () => {
                   href="https://github.com/Rodwanbagdadi" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-neutral-100 hover:bg-neutral-200 p-3 rounded-full transition-colors"
+                  className="bg-accent hover:bg-muted p-3 rounded-full transition-colors"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
                     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
@@ -78,7 +133,7 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/rodwanbaghdadi/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-neutral-100 hover:bg-neutral-200 p-3 rounded-full transition-colors"
+                  className="bg-accent hover:bg-muted p-3 rounded-full transition-colors"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -91,7 +146,7 @@ const Contact = () => {
           </div>
           
           <div>
-            <form onSubmit={handleSubmit} className="space-y-6 bg-neutral-50 p-6 rounded-lg shadow-sm">
+            <form onSubmit={handleSubmit} className="space-y-6 bg-card p-6 rounded-lg shadow-sm border border-neutral-700">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">
@@ -99,9 +154,11 @@ const Contact = () => {
                   </label>
                   <Input 
                     id="name" 
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder="Your name" 
                     required 
-                    className="border-neutral-300 focus:border-neutral-500 focus:ring-neutral-500"
+                    className="border-neutral-600 bg-accent text-foreground focus:border-neutral-400"
                   />
                 </div>
                 <div className="space-y-2">
@@ -110,10 +167,12 @@ const Contact = () => {
                   </label>
                   <Input 
                     id="email" 
-                    type="email" 
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="Your email" 
                     required 
-                    className="border-neutral-300 focus:border-neutral-500 focus:ring-neutral-500"
+                    className="border-neutral-600 bg-accent text-foreground focus:border-neutral-400"
                   />
                 </div>
               </div>
@@ -123,9 +182,11 @@ const Contact = () => {
                 </label>
                 <Input 
                   id="subject" 
+                  value={formData.subject}
+                  onChange={handleChange}
                   placeholder="Message subject"
                   required 
-                  className="border-neutral-300 focus:border-neutral-500 focus:ring-neutral-500"
+                  className="border-neutral-600 bg-accent text-foreground focus:border-neutral-400"
                 />
               </div>
               <div className="space-y-2">
@@ -134,15 +195,25 @@ const Contact = () => {
                 </label>
                 <Textarea 
                   id="message" 
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Your message" 
-                  className="min-h-[120px] border-neutral-300 focus:border-neutral-500 focus:ring-neutral-500"
+                  className="min-h-[120px] border-neutral-600 bg-accent text-foreground focus:border-neutral-400"
                   required 
                 />
               </div>
-              <Button type="submit" className="w-full flex items-center gap-2 bg-neutral-800 hover:bg-neutral-700">
+              <Button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="w-full flex items-center gap-2 bg-neutral-700 hover:bg-neutral-600"
+              >
                 <Send size={16} />
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </Button>
+              <p className="text-xs text-neutral-400 text-center mt-2">
+                Note: To enable email sending, you'll need to set up an account with 
+                a service like EmailJS and include their SDK.
+              </p>
             </form>
           </div>
         </div>

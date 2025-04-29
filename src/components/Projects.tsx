@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ExternalLink, Github, Code } from 'lucide-react';
+import { ExternalLink, Code } from 'lucide-react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -45,16 +45,16 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
   return (
-    <section id="projects" className="bg-neutral-50 py-16 md:py-24">
+    <section id="projects" className="py-16 md:py-24">
       <div className="section-container">
         <h2 className="section-title">Projects</h2>
-        <p className="text-neutral-600 mb-12 max-w-2xl">
+        <p className="text-neutral-400 mb-12 max-w-2xl">
           Here are some of my most significant projects showcasing my technical skills and problem-solving abilities.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <Card key={project.id} className="overflow-hidden card-hover border border-neutral-200">
+            <Card key={project.id} className="overflow-hidden card-hover border border-neutral-700 bg-card">
               <div className="h-48 overflow-hidden">
                 <img 
                   src={project.image} 
@@ -63,59 +63,49 @@ const Projects = () => {
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-neutral-800 mb-2">{project.title}</h3>
-                <p className="text-neutral-600 text-sm mb-4">{project.description}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-2">{project.title}</h3>
+                <p className="text-neutral-400 text-sm mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, index) => (
-                    <Badge key={index} variant="secondary" className="bg-neutral-200 text-neutral-700">{tech}</Badge>
+                    <Badge key={index} variant="secondary" className="bg-secondary text-secondary-foreground">{tech}</Badge>
                   ))}
                 </div>
               </CardContent>
-              <CardFooter className="flex justify-between bg-neutral-50 p-4 border-t">
+              <CardFooter className="flex justify-between bg-card p-4 border-t border-neutral-700">
                 <Button 
                   variant="ghost" 
                   size="sm" 
-                  className="text-neutral-700 hover:text-neutral-900"
+                  className="text-neutral-400 hover:text-foreground"
                   onClick={() => setSelectedProject(selectedProject === project.id ? null : project.id)}
                 >
                   <Code size={16} className="mr-1" /> Details
                 </Button>
-                <div className="flex space-x-2">
+                {project.live && (
                   <a 
-                    href={project.github} 
+                    href={project.live} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-neutral-500 hover:text-neutral-800"
+                    className="text-neutral-400 hover:text-foreground"
                   >
-                    <Github size={18} />
+                    <ExternalLink size={18} />
                   </a>
-                  {project.live && (
-                    <a 
-                      href={project.live} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-neutral-500 hover:text-neutral-800"
-                    >
-                      <ExternalLink size={18} />
-                    </a>
-                  )}
-                </div>
+                )}
               </CardFooter>
               
               {selectedProject === project.id && (
-                <div className="p-6 bg-neutral-50 border-t">
+                <div className="p-6 bg-card border-t border-neutral-700">
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-medium text-neutral-800">Problem:</h4>
-                      <p className="text-sm text-neutral-600">{project.problem}</p>
+                      <h4 className="font-medium text-foreground">Problem:</h4>
+                      <p className="text-sm text-neutral-400">{project.problem}</p>
                     </div>
                     <div>
-                      <h4 className="font-medium text-neutral-800">Solution:</h4>
-                      <p className="text-sm text-neutral-600">{project.solution}</p>
+                      <h4 className="font-medium text-foreground">Solution:</h4>
+                      <p className="text-sm text-neutral-400">{project.solution}</p>
                     </div>
                     <div>
-                      <h4 className="font-medium text-neutral-800">Outcome:</h4>
-                      <p className="text-sm text-neutral-600">{project.outcome}</p>
+                      <h4 className="font-medium text-foreground">Outcome:</h4>
+                      <p className="text-sm text-neutral-400">{project.outcome}</p>
                     </div>
                   </div>
                 </div>
@@ -125,15 +115,14 @@ const Projects = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button asChild variant="outline" className="border-neutral-400 hover:bg-neutral-200">
+          <Button asChild variant="outline" className="border-neutral-600 hover:bg-neutral-800">
             <a 
               href="https://github.com/Rodwanbagdadi?tab=repositories" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2"
             >
-              <Github size={18} />
-              View More on GitHub
+              View More Projects
             </a>
           </Button>
         </div>
