@@ -45,13 +45,13 @@ const About = () => {
             
             <div className="mt-6">
               <Button asChild variant="outline" className="flex items-center gap-2 border-neutral-600 hover:bg-accent">
-                <a href="/Rodwan_Bagdadi_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/Rodwan_Bagdadi_E.pdf" target="_blank" rel="noopener noreferrer">
                   <FileText size={18} />
                   Download Resume
                 </a>
               </Button>
               <p className="text-sm text-neutral-400 mt-2">
-                Note: Upload your resume named "Rodwan_Bagdadi_Resume.pdf" to the public folder.
+                Click to view or download my resume.
               </p>
             </div>
           </div>
