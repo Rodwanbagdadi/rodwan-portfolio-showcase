@@ -13,7 +13,7 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2 space-y-6">
             <p className="text-gray-700">
-              I am a passionate Software Engineer and AI Specialist with expertise in building intelligent systems
+              I am a passionate Mechatronics Engineer and AI Specialist with expertise in building intelligent systems
               and developing innovative software solutions. With a strong background in machine learning, 
               artificial intelligence, and software development, I strive to create impactful technologies
               that solve real-world problems.
