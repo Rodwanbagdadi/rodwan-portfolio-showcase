@@ -6,6 +6,12 @@ import emailjs from '@emailjs/browser';
  * 
  * This utility provides functionality to send emails from the contact form.
  * It's integrated with EmailJS (https://www.emailjs.com/)
+ * 
+ * Configuration requires:
+ * Setting environment variables in your deployment platform as:
+ * - VITE_EMAILJS_SERVICE_ID
+ * - VITE_EMAILJS_TEMPLATE_ID
+ * - VITE_EMAILJS_USER_ID
  */
 
 interface EmailParams {
@@ -22,7 +28,7 @@ interface EmailParams {
  * @returns Promise that resolves when email is sent
  */
 export const sendContactEmail = async (params: EmailParams): Promise<void> => {
-  const serviceID = 'service_fjah6sr';
+  const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_fjah6sr';
   const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
   const userID = import.meta.env.VITE_EMAILJS_USER_ID || 'YOUR_USER_ID';
   
