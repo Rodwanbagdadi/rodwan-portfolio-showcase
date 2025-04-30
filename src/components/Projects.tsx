@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import { ExternalLink, Code, Github } from 'lucide-react';
+import { ExternalLink, Code, Github, ChevronDown, ChevronUp } from 'lucide-react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger
+} from "@/components/ui/collapsible";
 
 const Projects = () => {
   const projects = [
@@ -78,56 +83,68 @@ const Projects = () => {
                 </div>
               </CardContent>
               <CardFooter className="flex justify-between bg-card p-4 border-t border-neutral-700">
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
-                  className="text-neutral-400 hover:text-foreground"
-                  onClick={() => toggleProjectDetails(project.id)}
+                <Collapsible 
+                  open={expandedProjectId === project.id}
+                  onOpenChange={() => toggleProjectDetails(project.id)}
+                  className="w-full"
                 >
-                  <Code size={16} className="mr-1" /> Details
-                </Button>
-                <div className="flex gap-2">
-                  {project.github && (
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-neutral-400 hover:text-foreground"
-                    >
-                      <Github size={18} />
-                    </a>
-                  )}
-                  {project.live && (
-                    <a 
-                      href={project.live} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-neutral-400 hover:text-foreground"
-                    >
-                      <ExternalLink size={18} />
-                    </a>
-                  )}
-                </div>
-              </CardFooter>
-              
-              {expandedProjectId === project.id && (
-                <div className="p-6 bg-card border-t border-neutral-700">
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-medium text-foreground">Problem:</h4>
-                      <p className="text-sm text-neutral-400">{project.problem}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-foreground">Solution:</h4>
-                      <p className="text-sm text-neutral-400">{project.solution}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-foreground">Outcome:</h4>
-                      <p className="text-sm text-neutral-400">{project.outcome}</p>
+                  <div className="flex justify-between items-center w-full">
+                    <CollapsibleTrigger asChild>
+                      <Button 
+                        variant="ghost" 
+                        size="sm" 
+                        className="text-neutral-400 hover:text-foreground flex items-center gap-1"
+                      >
+                        <Code size={16} />
+                        Details
+                        {expandedProjectId === project.id ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                      </Button>
+                    </CollapsibleTrigger>
+
+                    <div className="flex gap-2">
+                      {project.github && (
+                        <a 
+                          href={project.github} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-neutral-400 hover:text-foreground"
+                        >
+                          <Github size={18} />
+                        </a>
+                      )}
+                      {project.live && (
+                        <a 
+                          href={project.live} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-neutral-400 hover:text-foreground"
+                        >
+                          <ExternalLink size={18} />
+                        </a>
+                      )}
                     </div>
                   </div>
-                </div>
-              )}
+
+                  <CollapsibleContent className="mt-4">
+                    <div className="p-4 bg-card border-t border-neutral-700">
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-medium text-foreground">Problem:</h4>
+                          <p className="text-sm text-neutral-400">{project.problem}</p>
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-foreground">Solution:</h4>
+                          <p className="text-sm text-neutral-400">{project.solution}</p>
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-foreground">Outcome:</h4>
+                          <p className="text-sm text-neutral-400">{project.outcome}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </CardFooter>
             </Card>
           ))}
         </div>
@@ -140,7 +157,7 @@ const Projects = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-2"
             >
-              <Github size={18} className="mr-1" />
+              <Github size={18} />
               View More Projects
             </a>
           </Button>
