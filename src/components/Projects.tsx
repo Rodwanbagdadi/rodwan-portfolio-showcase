@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ExternalLink, Code, Github } from 'lucide-react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
@@ -42,14 +41,13 @@ const Projects = () => {
     },
   ];
 
-  // Track each project's expanded state independently
-  const [expandedProjects, setExpandedProjects] = useState<Record<number, boolean>>({});
+  // This state will only track the ID of the currently expanded project (if any)
+  const [expandedProjectId, setExpandedProjectId] = useState<number | null>(null);
 
   const toggleProjectDetails = (projectId: number) => {
-    setExpandedProjects(prev => ({
-      ...prev,
-      [projectId]: !prev[projectId]
-    }));
+    // If the clicked project is already expanded, collapse it
+    // Otherwise, expand the clicked project and collapse any others
+    setExpandedProjectId(expandedProjectId === projectId ? null : projectId);
   };
 
   return (
@@ -112,7 +110,7 @@ const Projects = () => {
                 </div>
               </CardFooter>
               
-              {expandedProjects[project.id] && (
+              {expandedProjectId === project.id && (
                 <div className="p-6 bg-card border-t border-neutral-700">
                   <div className="space-y-4">
                     <div>
