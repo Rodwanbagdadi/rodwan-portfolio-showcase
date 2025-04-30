@@ -1,14 +1,11 @@
 
+import emailjs from '@emailjs/browser';
+
 /**
  * Email Service Utility
  * 
  * This utility provides functionality to send emails from the contact form.
- * To fully implement email sending, you'll need to:
- * 
- * 1. Sign up for a service like EmailJS (https://www.emailjs.com/)
- * 2. Install the EmailJS SDK: npm install @emailjs/browser
- * 3. Configure your service, template, and user IDs
- * 4. Use the included sendContactEmail function
+ * It's integrated with EmailJS (https://www.emailjs.com/)
  */
 
 interface EmailParams {
@@ -21,18 +18,13 @@ interface EmailParams {
 /**
  * Send contact form email using EmailJS
  * 
- * To implement with EmailJS:
- * 1. Uncomment the EmailJS import at the top
- * 2. Replace the placeholder IDs with your actual EmailJS IDs
- * 3. Uncomment the emailjs.send line
+ * @param params The email parameters from the contact form
+ * @returns Promise that resolves when email is sent
  */
 export const sendContactEmail = async (params: EmailParams): Promise<void> => {
-  // In a real implementation, you would uncomment and use this:
-  // import emailjs from '@emailjs/browser';
-  
-  const serviceID = 'YOUR_SERVICE_ID';
-  const templateID = 'YOUR_TEMPLATE_ID';
-  const userID = 'YOUR_USER_ID';
+  const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
+  const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+  const userID = import.meta.env.VITE_EMAILJS_USER_ID || 'YOUR_USER_ID';
   
   const templateParams = {
     from_name: params.name,
@@ -46,10 +38,8 @@ export const sendContactEmail = async (params: EmailParams): Promise<void> => {
   console.log('Sending email with params:', templateParams);
   
   try {
-    // For actual implementation, uncomment this and install the emailjs package
-    // return await emailjs.send(serviceID, templateID, templateParams, userID);
-    
-    // For now we'll just return a resolved promise
+    const result = await emailjs.send(serviceID, templateID, templateParams, userID);
+    console.log('Email sent successfully:', result.text);
     return Promise.resolve();
   } catch (error) {
     console.error('Error sending email:', error);

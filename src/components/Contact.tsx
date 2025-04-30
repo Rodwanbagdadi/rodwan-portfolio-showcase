@@ -1,10 +1,10 @@
-
 import React, { useState } from 'react';
 import { Mail, MapPin, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
+import { sendContactEmail } from '@/utils/emailService';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -29,28 +29,12 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Using EmailJS service to send emails without a backend
-      const serviceID = 'default_service'; // Replace with your EmailJS service ID
-      const templateID = 'template_default'; // Replace with your EmailJS template ID
-      const userID = 'user_yourUserID'; // Replace with your EmailJS user ID
-      
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
+      await sendContactEmail({
+        name: formData.name,
+        email: formData.email,
         subject: formData.subject,
-        message: formData.message,
-        to_name: 'Rodwan',
-        reply_to: formData.email
-      };
-
-      // This is a placeholder for the actual EmailJS send method
-      // In a production environment, you would need to include the EmailJS SDK
-      // and use their send method
-      
-      // await emailjs.send(serviceID, templateID, templateParams, userID);
-      
-      // For demonstration purposes, we'll simulate a successful submission
-      console.log('Form submitted:', templateParams);
+        message: formData.message
+      });
       
       toast({
         title: "Message sent!",
@@ -211,8 +195,7 @@ const Contact = () => {
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </Button>
               <p className="text-xs text-neutral-400 text-center mt-2">
-                Note: To enable email sending, you'll need to set up an account with 
-                a service like EmailJS and include their SDK.
+                Emails are processed through EmailJS. Your information is used only to respond to your inquiry.
               </p>
             </form>
           </div>
