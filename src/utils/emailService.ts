@@ -29,8 +29,8 @@ interface EmailParams {
  */
 export const sendContactEmail = async (params: EmailParams): Promise<void> => {
   const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_fjah6sr';
-  const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
-  const userID = import.meta.env.VITE_EMAILJS_USER_ID || 'YOUR_USER_ID';
+  const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_g8ieeaf';
+  const userID = import.meta.env.VITE_EMAILJS_USER_ID || 'Mytn6kd6ouqaGim-A';
   
   const templateParams = {
     from_name: params.name,
