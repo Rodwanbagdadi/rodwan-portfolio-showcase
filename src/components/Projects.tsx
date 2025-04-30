@@ -47,9 +47,9 @@ const Projects = () => {
   ];
 
   // This state will only track the ID of the currently expanded project (if any)
-  const [expandedProjectId, setExpandedProjectId] = useState<number | null>(null);
+  const [expandedProjectId, setExpandedProjectId] = useState(null);
 
-  const toggleProjectDetails = (projectId: number) => {
+  const toggleProjectDetails = (projectId) => {
     // If the clicked project is already expanded, collapse it
     // Otherwise, expand the clicked project and collapse any others
     setExpandedProjectId(expandedProjectId === projectId ? null : projectId);
@@ -85,21 +85,19 @@ const Projects = () => {
               <CardFooter className="flex justify-between bg-card p-4 border-t border-neutral-700">
                 <Collapsible 
                   open={expandedProjectId === project.id}
-                  onOpenChange={() => toggleProjectDetails(project.id)}
                   className="w-full"
                 >
                   <div className="flex justify-between items-center w-full">
-                    <CollapsibleTrigger asChild>
-                      <Button 
-                        variant="ghost" 
-                        size="sm" 
-                        className="text-neutral-400 hover:text-foreground flex items-center gap-1"
-                      >
-                        <Code size={16} />
-                        Details
-                        {expandedProjectId === project.id ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                      </Button>
-                    </CollapsibleTrigger>
+                    <Button 
+                      variant="ghost" 
+                      size="sm" 
+                      className="text-neutral-400 hover:text-foreground flex items-center gap-1"
+                      onClick={() => toggleProjectDetails(project.id)}
+                    >
+                      <Code size={16} />
+                      Details
+                      {expandedProjectId === project.id ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                    </Button>
 
                     <div className="flex gap-2">
                       {project.github && (
