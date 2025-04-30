@@ -22,7 +22,7 @@ interface EmailParams {
  * @returns Promise that resolves when email is sent
  */
 export const sendContactEmail = async (params: EmailParams): Promise<void> => {
-  const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
+  const serviceID = 'service_fjah6sr';
   const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
   const userID = import.meta.env.VITE_EMAILJS_USER_ID || 'YOUR_USER_ID';
   
