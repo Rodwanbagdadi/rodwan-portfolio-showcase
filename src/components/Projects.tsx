@@ -123,24 +123,26 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  <CollapsibleContent className="mt-4">
-                    <div className="p-4 bg-card border-t border-neutral-700">
-                      <div className="space-y-4">
-                        <div>
-                          <h4 className="font-medium text-foreground">Problem:</h4>
-                          <p className="text-sm text-neutral-400">{project.problem}</p>
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-foreground">Solution:</h4>
-                          <p className="text-sm text-neutral-400">{project.solution}</p>
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-foreground">Outcome:</h4>
-                          <p className="text-sm text-neutral-400">{project.outcome}</p>
+                  {expandedProjectId === project.id && (
+                    <CollapsibleContent className="mt-4">
+                      <div className="p-4 bg-card border-t border-neutral-700">
+                        <div className="space-y-4">
+                          <div>
+                            <h4 className="font-medium text-foreground">Problem:</h4>
+                            <p className="text-sm text-neutral-400">{project.problem}</p>
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-foreground">Solution:</h4>
+                            <p className="text-sm text-neutral-400">{project.solution}</p>
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-foreground">Outcome:</h4>
+                            <p className="text-sm text-neutral-400">{project.outcome}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </CollapsibleContent>
+                    </CollapsibleContent>
+                  )}
                 </Collapsible>
               </CardFooter>
             </Card>
