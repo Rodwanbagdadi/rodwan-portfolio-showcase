@@ -20,8 +20,8 @@ const Projects = () => {
       github: 'https://github.com/Rodwanbagdadi/Flask_Grad_Project',
       live: 'https://demo-link.com',
       problem: 'Misinformation spreading through digital platforms causing potential harm.',
-      solution: 'Developed and fine-tuned an XGBoost-based fake news detection model using TF-IDF vectorization and key metadata features from a labeled dataset.',
-      outcome: 'Achieved an accuracy of 99.79% with precision and recall both exceeding 99%. Deployed as a web-based platform using Flask as backend.'
+      solution: 'Developed and fine-tuned an XGBoost-based fake news detection model using TF-IDF vectorization and key metadata features. Enhanced model robustness through iterative evaluation of SVM, LightGBM, Random Forest, and Logistic Regression models. Integrated DistilBERT transformer for capturing nuanced linguistic patterns.',
+      outcome: 'Achieved over 92% accuracy with precision and recall consistently above 90%. Successfully deployed an ensemble of models using Flask backend with an interactive HTML frontend for real-time fake news detection and user feedback.'
     },
     {
       id: 2,
