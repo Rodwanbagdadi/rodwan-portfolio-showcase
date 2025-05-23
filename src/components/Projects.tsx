@@ -18,7 +18,7 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1170&auto=format&fit=crop',
       technologies: ['Flask', 'HTML', 'Gradient Boosting', 'XGBoost'],
       github: 'https://github.com/Rodwanbagdadi/Flask_Grad_Project',
-      live: 'https://demo-link.com',
+      live: 'https://flask-grad-project.onrender.com/',
       problem: 'Misinformation spreading through digital platforms causing potential harm.',
       solution: 'Developed and fine-tuned an XGBoost-based fake news detection model using TF-IDF vectorization and key metadata features. Enhanced model robustness through iterative evaluation of SVM, LightGBM, Random Forest, and Logistic Regression models. Integrated DistilBERT transformer for capturing nuanced linguistic patterns.',
       outcome: 'Achieved over 92% accuracy with precision and recall consistently above 90%. Successfully deployed an ensemble of models using Flask backend with an interactive HTML frontend for real-time fake news detection and user feedback.'
