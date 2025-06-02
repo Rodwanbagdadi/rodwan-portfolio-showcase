@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, MapPin } from 'lucide-react';
 
@@ -25,7 +24,7 @@ const ContactInfo = () => {
           </div>
           <div>
             <p className="font-medium">Location</p>
-            <p className="text-neutral-400">Heilbronn, Germany</p>
+            <p className="text-neutral-400">Amman, Jordan</p>
           </div>
         </div>
       </div>
