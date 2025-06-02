@@ -110,16 +110,6 @@ const Projects = () => {
                           <Github size={18} />
                         </a>
                       )}
-                      {project.live && (
-                        <a 
-                          href={project.live} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-neutral-400 hover:text-foreground"
-                        >
-                          <ExternalLink size={18} />
-                        </a>
-                      )}
                     </div>
                   </div>
 
