@@ -13,11 +13,10 @@ const Hero = () => {
               Hi, I'm <span className="text-neutral-300">Rodwan Bagdadi</span>
             </h1>
             <p className="text-lg md:text-xl text-neutral-300 mb-6">
-              Mechatronics Engineer and AI Specialist
+              AI/ML Engineer & Data Scientist
             </p>
             <p className="text-neutral-400 mb-8 max-w-lg">
-              I build intelligent systems and develop software solutions with a focus on AI, 
-              machine learning, and engineering excellence.
+              Specialized in Python, SQL & NLP | Turning Data into Actionable Insights
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild className="bg-neutral-700 hover:bg-neutral-600 text-neutral-100">
