@@ -12,7 +12,7 @@ const Contact = () => {
           Have a question or want to work together? Feel free to reach out!
         </p>
         
-        <div className="max-w-lg mx-auto">
+        <div className="max-w-lg">
           <ContactInfo />
           <SocialLinks />
         </div>
