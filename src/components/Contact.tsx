@@ -1,6 +1,5 @@
 
 import React from 'react';
-import ContactForm from './ContactForm';
 import ContactInfo from './ContactInfo';
 import SocialLinks from './SocialLinks';
 
@@ -13,15 +12,9 @@ const Contact = () => {
           Have a question or want to work together? Feel free to reach out!
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
-            <ContactInfo />
-            <SocialLinks />
-          </div>
-          
-          <div>
-            <ContactForm />
-          </div>
+        <div className="max-w-lg mx-auto">
+          <ContactInfo />
+          <SocialLinks />
         </div>
       </div>
     </section>
