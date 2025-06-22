@@ -133,9 +133,6 @@ const ContactForm = () => {
         <Send size={16} />
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </Button>
-      <p className="text-xs text-neutral-400 text-center mt-2">
-        Emails are processed through EmailJS. Your information is used only to respond to your inquiry.
-      </p>
     </form>
   );
 };
