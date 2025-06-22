@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -15,9 +14,13 @@ const Hero = () => {
             <p className="text-lg md:text-xl text-neutral-300 mb-6">
               AI/ML Engineer & Data Scientist
             </p>
-            <p className="text-neutral-400 mb-8 max-w-lg">
+            <p className="text-neutral-400 mb-4 max-w-lg">
               Specialized in Python, SQL & NLP | Turning Data into Actionable Insights
             </p>
+            <div className="flex items-center text-neutral-400 mb-8">
+              <MapPin size={20} className="mr-2" />
+              <span>Amman, Jordan</span>
+            </div>
             <div className="flex flex-wrap gap-4">
               <Button asChild className="bg-neutral-700 hover:bg-neutral-600 text-neutral-100">
                 <a href="#contact">Get in Touch</a>
