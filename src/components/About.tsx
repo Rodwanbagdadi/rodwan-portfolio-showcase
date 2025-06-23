@@ -13,16 +13,9 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2 space-y-6">
             <p className="text-neutral-300">
-              I am a passionate Mechatronics Engineer and AI Specialist with expertise in building intelligent systems
-              and developing innovative software solutions. With a strong background in machine learning, 
-              artificial intelligence, and software development, I strive to create impactful technologies
-              that solve real-world problems.
-            </p>
-            
-            <p className="text-neutral-300">
-              My journey in technology began with a fascination for how computers can learn and adapt.
-              This led me to pursue studies in AI and machine learning, which I've applied in various roles
-              at companies like Outlier AI and Bosch Engineering GmbH.
+              I'm a Mechatronics graduate who builds machine learning tools with Python and SQL, 
+              including fake news detection and predictive models. I've worked on real projects
+              at Bosch and enjoy turning data into useful, working solutions.
             </p>
             
             <div className="mt-8">
@@ -68,7 +61,7 @@ const About = () => {
                     <p className="text-sm text-neutral-400">German Jordanian University (GJU), 2018-2025</p>
                   </div>
                   <div>
-                    <p className="font-medium">Exchange Semester</p>
+                    <p className="font-medium">Exchange Semester in Mechatronics</p>
                     <p className="text-sm text-neutral-400">Bochum University of Applied Sciences, 2023-2024</p>
                   </div>
                 </div>
