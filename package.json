@@ -5,8 +5,9 @@
   "type": "module",  "scripts": {
     "dev": "vite",
     "validate-assets": "node scripts/validate-assets.js",
-    "build": "npm run validate-assets && vite build",
-    "build:dev": "npm run validate-assets && vite build --mode development",
+    "copy-icons": "node scripts/copy-icons.js",
+    "build": "npm run validate-assets && npm run copy-icons && vite build",
+    "build:dev": "npm run validate-assets && npm run copy-icons && vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"
   },
