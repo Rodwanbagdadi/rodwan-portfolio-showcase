@@ -13,11 +13,11 @@ interface IconProps {
  */
 const ResilientIcon = ({ src, alt, fallbackName, className = "w-6 h-6" }: IconProps) => {
   const [errorState, setErrorState] = useState(0); // 0: original, 1: public path, 2: fallback icon
-  
-  // Try to load from public directory if the direct import fails
+    // Try to load from public directory if the direct import fails
   const getPublicPath = () => {
     if (!fallbackName) return '';
-    return `/assets/icons/${fallbackName.toLowerCase().replace(/[\s-]/g, '')}.svg`;
+    const basePath = import.meta.env.VITE_PUBLIC_ICONS || '/assets/icons';
+    return `${basePath}/${fallbackName.toLowerCase().replace(/[\s-]/g, '')}.svg`;
   };
   
   if (errorState === 0) {

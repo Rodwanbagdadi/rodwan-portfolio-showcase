@@ -1,10 +1,15 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+// ESM doesn't have __dirname, so we need to create it
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // This script validates SVG assets before build
 console.log('Validating SVG assets...');
 
-const iconsDir = path.resolve('./src/assets/icons');
+const iconsDir = path.join(__dirname, '..', 'src', 'assets', 'icons');
 
 try {
   // Check if icons directory exists

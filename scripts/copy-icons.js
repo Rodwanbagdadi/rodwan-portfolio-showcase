@@ -1,31 +1,49 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// This script copies SVG icons to the public directory for fallback access
-const sourceDir = path.resolve(__dirname, '../src/assets/icons');
-const targetDir = path.resolve(__dirname, '../public/assets/icons');
+// ESM doesn't have __dirname, so we need to create it
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// Create target directory if it doesn't exist
-if (!fs.existsSync(targetDir)) {
-  console.log(`Creating directory: ${targetDir}`);
+// Define source and target directories using relative paths
+// This avoids potential issues with path resolution
+const sourceDir = path.join(__dirname, '..', 'src', 'assets', 'icons');
+const targetDir = path.join(__dirname, '..', 'public', 'assets', 'icons');
+
+console.log(`Source directory: ${sourceDir}`);
+console.log(`Target directory: ${targetDir}`);
+
+// Create target directory recursively
+try {
   fs.mkdirSync(targetDir, { recursive: true });
+  console.log(`Created directory: ${targetDir}`);
+} catch (err) {
+  // Directory might already exist, which is fine
+  if (err.code !== 'EEXIST') {
+    console.error(`Error creating directory: ${err.message}`);
+  }
 }
 
+// Copy files
 try {
-  // Read all SVG files
-  const svgFiles = fs.readdirSync(sourceDir).filter(file => file.endsWith('.svg'));
+  // Get list of SVG files
+  const files = fs.readdirSync(sourceDir);
+  const svgFiles = files.filter(file => file.endsWith('.svg'));
   
-  // Copy each SVG file to the public directory
-  svgFiles.forEach(file => {
+  console.log(`Found ${svgFiles.length} SVG files`);
+  
+  // Copy each file
+  for (const file of svgFiles) {
     const sourcePath = path.join(sourceDir, file);
     const targetPath = path.join(targetDir, file);
     
     fs.copyFileSync(sourcePath, targetPath);
-    console.log(`Copied ${file} to public directory`);
-  });
+    console.log(`Copied ${file}`);
+  }
   
-  console.log('✅ All SVG icons copied to public directory');
-} catch (err) {
-  console.error('❌ Error copying SVG icons:', err);
+  console.log('✅ All SVG icons copied successfully');
+} catch (error) {
+  console.error(`❌ Error copying icons: ${error.message}`);
   process.exit(1);
 }
