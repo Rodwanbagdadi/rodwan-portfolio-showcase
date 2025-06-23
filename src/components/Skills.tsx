@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Cpu } from 'lucide-react';
+import { getAssetPath } from '@/utils/assetPath';
 
-// Import SVG icons
+// Import SVG icons directly
 import pythonIcon from '../assets/icons/python.svg';
 import pandasIcon from '../assets/icons/pandas.svg';
 import scikitLearnIcon from '../assets/icons/scikit-learn.svg';
@@ -24,36 +25,37 @@ const Skills = () => {
     { id: 'languages', name: 'Languages' },
     { id: 'ai-ml', name: 'AI & ML' },
     { id: 'tools', name: 'Development Tools' },
-  ];  const getSkillIcon = (skillName: string) => {
+  ];  
+  const getSkillIcon = (skillName: string) => {
     switch(skillName.toLowerCase()) {
       case 'python':
-        return <img src={pythonIcon} alt="Python" className="w-6 h-6" />;
+        return <img src={getAssetPath(pythonIcon)} alt="Python" className="w-6 h-6" />;
       case 'pandas':
-        return <img src={pandasIcon} alt="Pandas" className="w-6 h-6" />;
+        return <img src={getAssetPath(pandasIcon)} alt="Pandas" className="w-6 h-6" />;
       case 'scikit-learn':
-        return <img src={scikitLearnIcon} alt="Scikit-learn" className="w-6 h-6" />;
+        return <img src={getAssetPath(scikitLearnIcon)} alt="Scikit-learn" className="w-6 h-6" />;
       case 'numpy':
-        return <img src={numpyIcon} alt="NumPy" className="w-6 h-6" />;
+        return <img src={getAssetPath(numpyIcon)} alt="NumPy" className="w-6 h-6" />;
       case 'pytorch':
-        return <img src={pytorchIcon} alt="PyTorch" className="w-6 h-6" />;
+        return <img src={getAssetPath(pytorchIcon)} alt="PyTorch" className="w-6 h-6" />;
       case 'tensorflow':
-        return <img src={tensorflowIcon} alt="TensorFlow" className="w-6 h-6" />;
+        return <img src={getAssetPath(tensorflowIcon)} alt="TensorFlow" className="w-6 h-6" />;
       case 'matplotlib':
-        return <img src={matplotlibIcon} alt="Matplotlib" className="w-6 h-6" />;
+        return <img src={getAssetPath(matplotlibIcon)} alt="Matplotlib" className="w-6 h-6" />;
       case 'seaborn':
-        return <img src={seabornIcon} alt="Seaborn" className="w-6 h-6" />;
+        return <img src={getAssetPath(seabornIcon)} alt="Seaborn" className="w-6 h-6" />;
       case 'sql':
-        return <img src={sqlIcon} alt="SQL" className="w-6 h-6" />;
+        return <img src={getAssetPath(sqlIcon)} alt="SQL" className="w-6 h-6" />;
       case 'flask':
-        return <img src={flaskIcon} alt="Flask" className="w-6 h-6" />;
+        return <img src={getAssetPath(flaskIcon)} alt="Flask" className="w-6 h-6" />;
       case 'vs code':
-        return <img src={vscodeIcon} alt="VS Code" className="w-6 h-6" />;
+        return <img src={getAssetPath(vscodeIcon)} alt="VS Code" className="w-6 h-6" />;
       case 'jupyter notebook':
-        return <img src={jupyterIcon} alt="Jupyter Notebook" className="w-6 h-6" />;
+        return <img src={getAssetPath(jupyterIcon)} alt="Jupyter Notebook" className="w-6 h-6" />;
       case 'git':
-        return <img src={gitIcon} alt="Git" className="w-6 h-6" />;
+        return <img src={getAssetPath(gitIcon)} alt="Git" className="w-6 h-6" />;
       default:
-        return <Cpu size={22} />;
+        return <Cpu className="w-6 h-6" />; // Fallback to Lucide icon
     }
   };
   const skills = [
