@@ -1,3 +1,4 @@
+
 /**
  * Simple fallback copy script to ensure SVG icons are copied to the public directory
  * This script is a simplified version of copy-icons.js and doesn't rely on complex path resolution
@@ -9,7 +10,8 @@ import { fileURLToPath } from 'url';
 
 // Immediately invoked async function
 (async () => {
-  try {    // Get current directory
+  try {
+    // Get current directory
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
 
@@ -19,7 +21,9 @@ import { fileURLToPath } from 'url';
 
     console.log('Simple SVG copy script');
     console.log(`Source: ${sourceDir}`);
-    console.log(`Target: ${targetDir}`);    // Create target directory
+    console.log(`Target: ${targetDir}`);
+
+    // Create target directory
     await fs.mkdir(targetDir, { recursive: true })
       .catch(error => {
         if (error.code !== 'EEXIST') {
@@ -27,12 +31,28 @@ import { fileURLToPath } from 'url';
         }
       });
 
+    // Check if source directory exists
+    try {
+      await fs.access(sourceDir);
+    } catch (error) {
+      console.log('ℹ️ Source icons directory not found, skipping copy operation.');
+      console.log('ℹ️ Using existing icons in public directory.');
+      process.exit(0);
+    }
+
     // Read source directory
     const files = await fs.readdir(sourceDir);
     const svgFiles = files.filter(file => file.toLowerCase().endsWith('.svg'));
     
     console.log(`Found ${svgFiles.length} SVG files to copy`);
-      // Copy each SVG file
+    
+    if (svgFiles.length === 0) {
+      console.log('ℹ️ No SVG files to copy from source directory.');
+      console.log('ℹ️ Using existing icons in public directory.');
+      process.exit(0);
+    }
+
+    // Copy each SVG file
     for (const file of svgFiles) {
       try {
         const src = path.join(sourceDir, file);
@@ -49,5 +69,6 @@ import { fileURLToPath } from 'url';
   } catch (error) {
     console.error(`Error in simple copy script: ${error.message}`);
     // Don't exit with error to avoid breaking the build
+    console.log('ℹ️ Continuing with existing public icons...');
   }
 })();
