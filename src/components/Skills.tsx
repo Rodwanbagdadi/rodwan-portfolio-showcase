@@ -1,24 +1,9 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Cpu } from 'lucide-react';
-import { getFallbackIcon } from '@/utils/fallbackIcons';
 import ResilientIcon from '@/components/ui/resilient-icon';
-
-// Import SVG icons directly
-import pythonIcon from '../assets/icons/python.svg';
-import pandasIcon from '../assets/icons/pandas.svg';
-import scikitLearnIcon from '../assets/icons/scikit-learn.svg';
-import numpyIcon from '../assets/icons/numpy.svg';
-import pytorchIcon from '../assets/icons/pytorch.svg';
-import tensorflowIcon from '../assets/icons/tensorflow.svg';
-import matplotlibIcon from '../assets/icons/matplotlib.svg';
-import seabornIcon from '../assets/icons/seaborn.svg';
-import sqlIcon from '../assets/icons/sql.svg';
-import flaskIcon from '../assets/icons/flask.svg';
-import vscodeIcon from '../assets/icons/vscode.svg';
-import jupyterIcon from '../assets/icons/jupyter.svg';
-import gitIcon from '../assets/icons/git.svg';
 
 const Skills = () => {
   const categories = [
@@ -26,42 +11,44 @@ const Skills = () => {
     { id: 'languages', name: 'Languages' },
     { id: 'ai-ml', name: 'AI & ML' },
     { id: 'tools', name: 'Development Tools' },
-  ];  const getSkillIcon = (skillName: string) => {
-      switch(skillName.toLowerCase()) {
+  ];
+
+  const getSkillIcon = (skillName: string) => {
+    switch(skillName.toLowerCase()) {
       case 'python':
-        return <ResilientIcon src={pythonIcon} fallbackName="python" alt="Python" />;
+        return <ResilientIcon src="" fallbackName="python" alt="Python" />;
       case 'pandas':
-        return <ResilientIcon src={pandasIcon} fallbackName="pandas" alt="Pandas" />;
+        return <ResilientIcon src="" fallbackName="pandas" alt="Pandas" />;
       case 'scikit-learn':
-        return <ResilientIcon src={scikitLearnIcon} fallbackName="scikit-learn" alt="Scikit-learn" />;
-      case 'numpy':        return <ResilientIcon src={numpyIcon} fallbackName="numpy" alt="NumPy" />;
+        return <ResilientIcon src="" fallbackName="scikit-learn" alt="Scikit-learn" />;
+      case 'numpy':
+        return <ResilientIcon src="" fallbackName="numpy" alt="NumPy" />;
       case 'pytorch':
-        return <ResilientIcon src={pytorchIcon} fallbackName="pytorch" alt="PyTorch" />;
+        return <ResilientIcon src="" fallbackName="pytorch" alt="PyTorch" />;
       case 'tensorflow':
-        return <ResilientIcon src={tensorflowIcon} fallbackName="tensorflow" alt="TensorFlow" />;
+        return <ResilientIcon src="" fallbackName="tensorflow" alt="TensorFlow" />;
       case 'matplotlib':
-        return <ResilientIcon src={matplotlibIcon} fallbackName="matplotlib" alt="Matplotlib" />;
+        return <ResilientIcon src="" fallbackName="matplotlib" alt="Matplotlib" />;
       case 'seaborn':
-        return <ResilientIcon src={seabornIcon} fallbackName="seaborn" alt="Seaborn" />;
+        return <ResilientIcon src="" fallbackName="seaborn" alt="Seaborn" />;
       case 'sql':
-        return <ResilientIcon src={sqlIcon} fallbackName="sql" alt="SQL" />;
+        return <ResilientIcon src="" fallbackName="sql" alt="SQL" />;
       case 'flask':
-        return <ResilientIcon src={flaskIcon} fallbackName="flask" alt="Flask" />;
+        return <ResilientIcon src="" fallbackName="flask" alt="Flask" />;
       case 'vs code':
-        return <ResilientIcon src={vscodeIcon} fallbackName="vscode" alt="VS Code" />;
+        return <ResilientIcon src="" fallbackName="vscode" alt="VS Code" />;
       case 'jupyter notebook':
-        return <ResilientIcon src={jupyterIcon} fallbackName="jupyter" alt="Jupyter Notebook" />;
+        return <ResilientIcon src="" fallbackName="jupyter" alt="Jupyter Notebook" />;
       case 'git':
-        return <ResilientIcon src={gitIcon} fallbackName="git" alt="Git" />;
+        return <ResilientIcon src="" fallbackName="git" alt="Git" />;
       default:
-        return <Cpu className="w-6 h-6" />; // Default fallback
+        return <Cpu className="w-6 h-6" />;
     }
   };
+
   const skills = [
     { name: 'Python', category: 'languages' },
     { name: 'SQL', category: 'languages' },
-
-
     { name: 'pandas', category: 'ai-ml' },
     { name: 'Scikit-learn', category: 'ai-ml' },
     { name: 'NumPy', category: 'ai-ml' },
@@ -69,13 +56,10 @@ const Skills = () => {
     { name: 'TensorFlow', category: 'ai-ml' },
     { name: 'Matplotlib', category: 'ai-ml' },
     { name: 'seaborn', category: 'ai-ml' },
-
     { name: 'VS Code', category: 'tools' },
     { name: 'Jupyter Notebook', category: 'tools' },
     { name: 'Flask', category: 'tools' },
     { name: 'Git', category: 'tools' }
-
-
   ];
 
   const [activeCategory, setActiveCategory] = useState('all');
@@ -106,7 +90,9 @@ const Skills = () => {
               {category.name}
             </Button>
           ))}
-        </div>        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredSkills.map((skill) => (
             <Card key={skill.name} className="card-hover border-neutral-700 bg-card transition-all duration-300 hover:shadow-md hover:bg-neutral-800/50">
               <CardContent className="p-6 flex items-center gap-4">

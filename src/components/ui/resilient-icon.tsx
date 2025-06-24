@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Cpu } from 'lucide-react';
 
@@ -13,17 +14,18 @@ interface IconProps {
  */
 const ResilientIcon = ({ src, alt, fallbackName, className = "w-6 h-6" }: IconProps) => {
   const [errorState, setErrorState] = useState(0); // 0: original, 1: public path, 2: fallback icon
-    // Try to load from public directory if the direct import fails
+  
+  // Try to load from public directory if the direct import fails
   const getPublicPath = () => {
     if (!fallbackName) return '';
-    const basePath = import.meta.env.VITE_PUBLIC_ICONS || '/assets/icons';
+    const basePath = '/assets/icons';
     return `${basePath}/${fallbackName.toLowerCase().replace(/[\s-]/g, '')}.svg`;
   };
   
   if (errorState === 0) {
     return (
       <img 
-        src={src} 
+        src={src || getPublicPath()} 
         alt={alt} 
         className={className}
         onError={() => fallbackName ? setErrorState(1) : setErrorState(2)}
