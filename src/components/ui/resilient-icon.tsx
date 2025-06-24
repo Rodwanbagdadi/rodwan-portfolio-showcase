@@ -20,32 +20,32 @@ const ResilientIcon = ({ src, alt, fallbackName, className = "w-6 h-6" }: IconPr
     return `/assets/icons/${iconName.toLowerCase().replace(/[\s-]/g, '')}.svg`;
   };
   
-  // If there's an error or no src provided, try the public path
-  if (hasError || !src) {
-    if (fallbackName) {
-      return (
-        <img 
-          src={getPublicIconPath(fallbackName)} 
-          alt={alt} 
-          className={className}
-          onError={() => setHasError(true)}
-        />
-      );
-    }
-    
-    // Final fallback - a generic icon
-    return <Cpu className={className} />;
+  // If we have a src, try it first
+  if (src && !hasError) {
+    return (
+      <img 
+        src={src} 
+        alt={alt} 
+        className={className}
+        onError={() => setHasError(true)}
+      />
+    );
   }
   
-  // Try the provided src first
-  return (
-    <img 
-      src={src || getPublicIconPath(fallbackName || '')} 
-      alt={alt} 
-      className={className}
-      onError={() => setHasError(true)}
-    />
-  );
+  // If src failed or no src provided, try fallback name
+  if (fallbackName && !hasError) {
+    return (
+      <img 
+        src={getPublicIconPath(fallbackName)} 
+        alt={alt} 
+        className={className}
+        onError={() => setHasError(true)}
+      />
+    );
+  }
+  
+  // Final fallback - a generic icon
+  return <Cpu className={className} />;
 };
 
 export default ResilientIcon;
