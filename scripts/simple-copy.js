@@ -3,28 +3,24 @@
  * This script is a simplified version of copy-icons.js and doesn't rely on complex path resolution
  */
 
+import * as fs from 'fs/promises';
+import * as path from 'path';
+import { fileURLToPath } from 'url';
+
 // Immediately invoked async function
 (async () => {
-  try {
-    // Import modules dynamically to avoid require
-    const fs = await import('fs/promises');
-    const path = await import('path');
-    const { fileURLToPath } = await import('url');
-
-    // Get current directory
+  try {    // Get current directory
     const __filename = fileURLToPath(import.meta.url);
-    const __dirname = path.default.dirname(__filename);
+    const __dirname = path.dirname(__filename);
 
     // Define paths relative to this script
-    const sourceDir = path.default.join(__dirname, '..', 'src', 'assets', 'icons');
-    const targetDir = path.default.join(__dirname, '..', 'public', 'assets', 'icons');
+    const sourceDir = path.join(__dirname, '..', 'src', 'assets', 'icons');
+    const targetDir = path.join(__dirname, '..', 'public', 'assets', 'icons');
 
     console.log('Simple SVG copy script');
     console.log(`Source: ${sourceDir}`);
-    console.log(`Target: ${targetDir}`);
-
-    // Create target directory
-    await fs.default.mkdir(targetDir, { recursive: true })
+    console.log(`Target: ${targetDir}`);    // Create target directory
+    await fs.mkdir(targetDir, { recursive: true })
       .catch(error => {
         if (error.code !== 'EEXIST') {
           console.warn(`Warning creating directory: ${error.message}`);
@@ -32,18 +28,17 @@
       });
 
     // Read source directory
-    const files = await fs.default.readdir(sourceDir);
+    const files = await fs.readdir(sourceDir);
     const svgFiles = files.filter(file => file.toLowerCase().endsWith('.svg'));
     
     console.log(`Found ${svgFiles.length} SVG files to copy`);
-    
-    // Copy each SVG file
+      // Copy each SVG file
     for (const file of svgFiles) {
       try {
-        const src = path.default.join(sourceDir, file);
-        const dest = path.default.join(targetDir, file);
+        const src = path.join(sourceDir, file);
+        const dest = path.join(targetDir, file);
         
-        await fs.default.copyFile(src, dest);
+        await fs.copyFile(src, dest);
         console.log(`→ Copied: ${file}`);
       } catch (err) {
         console.warn(`Warning copying ${file}: ${err.message}`);
