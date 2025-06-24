@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Cpu } from 'lucide-react';
+import { getFallbackIcon } from '@/utils/fallbackIcons';
+import ResilientIcon from '@/components/ui/resilient-icon';
 
-// Import SVG icons
+// Import SVG icons directly
 import pythonIcon from '../assets/icons/python.svg';
 import pandasIcon from '../assets/icons/pandas.svg';
 import scikitLearnIcon from '../assets/icons/scikit-learn.svg';
@@ -25,35 +27,34 @@ const Skills = () => {
     { id: 'ai-ml', name: 'AI & ML' },
     { id: 'tools', name: 'Development Tools' },
   ];  const getSkillIcon = (skillName: string) => {
-    switch(skillName.toLowerCase()) {
+      switch(skillName.toLowerCase()) {
       case 'python':
-        return <img src={pythonIcon} alt="Python" className="w-6 h-6" />;
+        return <ResilientIcon src={pythonIcon} fallbackName="python" alt="Python" />;
       case 'pandas':
-        return <img src={pandasIcon} alt="Pandas" className="w-6 h-6" />;
+        return <ResilientIcon src={pandasIcon} fallbackName="pandas" alt="Pandas" />;
       case 'scikit-learn':
-        return <img src={scikitLearnIcon} alt="Scikit-learn" className="w-6 h-6" />;
-      case 'numpy':
-        return <img src={numpyIcon} alt="NumPy" className="w-6 h-6" />;
+        return <ResilientIcon src={scikitLearnIcon} fallbackName="scikit-learn" alt="Scikit-learn" />;
+      case 'numpy':        return <ResilientIcon src={numpyIcon} fallbackName="numpy" alt="NumPy" />;
       case 'pytorch':
-        return <img src={pytorchIcon} alt="PyTorch" className="w-6 h-6" />;
+        return <ResilientIcon src={pytorchIcon} fallbackName="pytorch" alt="PyTorch" />;
       case 'tensorflow':
-        return <img src={tensorflowIcon} alt="TensorFlow" className="w-6 h-6" />;
+        return <ResilientIcon src={tensorflowIcon} fallbackName="tensorflow" alt="TensorFlow" />;
       case 'matplotlib':
-        return <img src={matplotlibIcon} alt="Matplotlib" className="w-6 h-6" />;
+        return <ResilientIcon src={matplotlibIcon} fallbackName="matplotlib" alt="Matplotlib" />;
       case 'seaborn':
-        return <img src={seabornIcon} alt="Seaborn" className="w-6 h-6" />;
+        return <ResilientIcon src={seabornIcon} fallbackName="seaborn" alt="Seaborn" />;
       case 'sql':
-        return <img src={sqlIcon} alt="SQL" className="w-6 h-6" />;
+        return <ResilientIcon src={sqlIcon} fallbackName="sql" alt="SQL" />;
       case 'flask':
-        return <img src={flaskIcon} alt="Flask" className="w-6 h-6" />;
+        return <ResilientIcon src={flaskIcon} fallbackName="flask" alt="Flask" />;
       case 'vs code':
-        return <img src={vscodeIcon} alt="VS Code" className="w-6 h-6" />;
+        return <ResilientIcon src={vscodeIcon} fallbackName="vscode" alt="VS Code" />;
       case 'jupyter notebook':
-        return <img src={jupyterIcon} alt="Jupyter Notebook" className="w-6 h-6" />;
+        return <ResilientIcon src={jupyterIcon} fallbackName="jupyter" alt="Jupyter Notebook" />;
       case 'git':
-        return <img src={gitIcon} alt="Git" className="w-6 h-6" />;
+        return <ResilientIcon src={gitIcon} fallbackName="git" alt="Git" />;
       default:
-        return <Cpu size={22} />;
+        return <Cpu className="w-6 h-6" />; // Default fallback
     }
   };
   const skills = [
