@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Cpu } from 'lucide-react';
 
 interface IconProps {
-  src: string;
+  src?: string;
   alt: string;
   fallbackName?: string;
   className?: string;
@@ -13,37 +13,39 @@ interface IconProps {
  * A resilient icon component that handles SVG loading failures with multiple fallback strategies
  */
 const ResilientIcon = ({ src, alt, fallbackName, className = "w-6 h-6" }: IconProps) => {
-  const [errorState, setErrorState] = useState(0); // 0: original, 1: public path, 2: fallback icon
+  const [hasError, setHasError] = useState(false);
   
-  // Try to load from public directory if the direct import fails
-  const getPublicPath = () => {
-    if (!fallbackName) return '';
-    const basePath = '/assets/icons';
-    return `${basePath}/${fallbackName.toLowerCase().replace(/[\s-]/g, '')}.svg`;
+  // Construct the public path for the icon
+  const getPublicIconPath = (iconName: string) => {
+    return `/assets/icons/${iconName.toLowerCase().replace(/[\s-]/g, '')}.svg`;
   };
   
-  if (errorState === 0) {
-    return (
-      <img 
-        src={src || getPublicPath()} 
-        alt={alt} 
-        className={className}
-        onError={() => fallbackName ? setErrorState(1) : setErrorState(2)}
-      />
-    );
-  } else if (errorState === 1) {
-    return (
-      <img 
-        src={getPublicPath()} 
-        alt={alt} 
-        className={className}
-        onError={() => setErrorState(2)}
-      />
-    );
-  } else {
+  // If there's an error or no src provided, try the public path
+  if (hasError || !src) {
+    if (fallbackName) {
+      return (
+        <img 
+          src={getPublicIconPath(fallbackName)} 
+          alt={alt} 
+          className={className}
+          onError={() => setHasError(true)}
+        />
+      );
+    }
+    
     // Final fallback - a generic icon
     return <Cpu className={className} />;
   }
+  
+  // Try the provided src first
+  return (
+    <img 
+      src={src || getPublicIconPath(fallbackName || '')} 
+      alt={alt} 
+      className={className}
+      onError={() => setHasError(true)}
+    />
+  );
 };
 
 export default ResilientIcon;

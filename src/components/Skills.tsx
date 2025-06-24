@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -16,31 +15,31 @@ const Skills = () => {
   const getSkillIcon = (skillName: string) => {
     switch(skillName.toLowerCase()) {
       case 'python':
-        return <ResilientIcon src="" fallbackName="python" alt="Python" />;
+        return <ResilientIcon fallbackName="python" alt="Python" />;
       case 'pandas':
-        return <ResilientIcon src="" fallbackName="pandas" alt="Pandas" />;
+        return <ResilientIcon fallbackName="pandas" alt="Pandas" />;
       case 'scikit-learn':
-        return <ResilientIcon src="" fallbackName="scikit-learn" alt="Scikit-learn" />;
+        return <ResilientIcon fallbackName="scikit-learn" alt="Scikit-learn" />;
       case 'numpy':
-        return <ResilientIcon src="" fallbackName="numpy" alt="NumPy" />;
+        return <ResilientIcon fallbackName="numpy" alt="NumPy" />;
       case 'pytorch':
-        return <ResilientIcon src="" fallbackName="pytorch" alt="PyTorch" />;
+        return <ResilientIcon fallbackName="pytorch" alt="PyTorch" />;
       case 'tensorflow':
-        return <ResilientIcon src="" fallbackName="tensorflow" alt="TensorFlow" />;
+        return <ResilientIcon fallbackName="tensorflow" alt="TensorFlow" />;
       case 'matplotlib':
-        return <ResilientIcon src="" fallbackName="matplotlib" alt="Matplotlib" />;
+        return <ResilientIcon fallbackName="matplotlib" alt="Matplotlib" />;
       case 'seaborn':
-        return <ResilientIcon src="" fallbackName="seaborn" alt="Seaborn" />;
+        return <ResilientIcon fallbackName="seaborn" alt="Seaborn" />;
       case 'sql':
-        return <ResilientIcon src="" fallbackName="sql" alt="SQL" />;
+        return <ResilientIcon fallbackName="sql" alt="SQL" />;
       case 'flask':
-        return <ResilientIcon src="" fallbackName="flask" alt="Flask" />;
+        return <ResilientIcon fallbackName="flask" alt="Flask" />;
       case 'vs code':
-        return <ResilientIcon src="" fallbackName="vscode" alt="VS Code" />;
+        return <ResilientIcon fallbackName="vscode" alt="VS Code" />;
       case 'jupyter notebook':
-        return <ResilientIcon src="" fallbackName="jupyter" alt="Jupyter Notebook" />;
+        return <ResilientIcon fallbackName="jupyter" alt="Jupyter Notebook" />;
       case 'git':
-        return <ResilientIcon src="" fallbackName="git" alt="Git" />;
+        return <ResilientIcon fallbackName="git" alt="Git" />;
       default:
         return <Cpu className="w-6 h-6" />;
     }
