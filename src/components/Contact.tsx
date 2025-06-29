@@ -107,12 +107,6 @@ const Contact = () => {
                   </div>
                   
                   <SocialLinks />
-                  
-                  <div className="mt-8 pt-6 border-t border-border">
-                    <p className="text-sm text-muted-foreground">
-                      Currently open for internships and full-time opportunities
-                    </p>
-                  </div>
                 </CardContent>
               </Card>
             </div>

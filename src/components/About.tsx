@@ -1,5 +1,5 @@
 
-import { FileText, BookOpen, Award, Users, MapPin } from 'lucide-react';
+import { FileText, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { AnimatedCard } from './AnimatedCard';
@@ -9,15 +9,9 @@ const About = () => {
   const [elementRef, isVisible] = useIntersectionObserver();
 
   const languages = [
-    { name: 'Arabic', level: 'Native', flag: '🇸🇦' },
-    { name: 'English', level: 'Fluent', flag: '🇺🇸' },
-    { name: 'German', level: 'Intermediate', flag: '🇩🇪' }
-  ];
-
-  const highlights = [
-    { icon: Award, title: 'Experience', description: 'Bosch Engineering Intern' },
-    { icon: Users, title: 'Collaboration', description: 'International Team Player' },
-    { icon: MapPin, title: 'Location', description: 'Jordan / Germany' }
+    { name: 'Arabic', level: 'Native' },
+    { name: 'English', level: 'Fluent' },
+    { name: 'German', level: 'Intermediate' }
   ];
 
   return (
@@ -36,7 +30,7 @@ const About = () => {
               }`}
             >
               <p className="text-muted-foreground text-lg leading-relaxed">
-                I'm a <span className="text-primary font-semibold">Mechatronics graduate</span> who builds 
+                I'm a <span className="text-primary font-semibold">Mechatronics Engineering graduate</span> who builds 
                 machine learning tools with Python and SQL, including fake news detection and predictive models. 
                 I've worked on real projects at <span className="text-primary font-semibold">Bosch</span> and 
                 enjoy turning data into useful, working solutions.
@@ -61,7 +55,6 @@ const About = () => {
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-2xl">{lang.flag}</span>
                       <div>
                         <span className="font-medium text-foreground">{lang.name}</span>
                         <span className="text-sm text-muted-foreground block">{lang.level}</span>
@@ -70,33 +63,6 @@ const About = () => {
                   </div>
                 ))}
               </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
-              {highlights.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <Card 
-                    key={item.title}
-                    className={`interactive-scale border-border hover:border-primary/50 transition-all duration-300 ${
-                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                    }`}
-                    style={{ transitionDelay: `${(index + 3) * 100}ms` }}
-                  >
-                    <CardContent className="p-4">
-                      <div className="flex items-center gap-3">
-                        <div className="bg-primary/10 p-2 rounded-full">
-                          <Icon className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-foreground">{item.title}</h4>
-                          <p className="text-sm text-muted-foreground">{item.description}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
             </div>
             
             <div className="mt-8">

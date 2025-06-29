@@ -1,164 +1,196 @@
-import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, MapPin, Download, ChevronDown } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Download, ChevronDown, ExternalLink, Code2, Brain, Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 const Hero = () => {
-  const [currentText, setCurrentText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  
-  const titles = [
-    'AI/ML Engineer',
-    'Data Scientist', 
-    'Python Developer',
-    'NLP Specialist'
+  const quickStats = [
+    { icon: Code2, label: 'Python Projects', value: '10+' },
+    { icon: Brain, label: 'ML Models', value: '5+' },
+    { icon: Database, label: 'Experience', value: '6M+' }
   ];
 
-  useEffect(() => {
-    const type = () => {
-      const current = currentIndex % titles.length;
-      const fullText = titles[current];
-
-      setCurrentText(isDeleting 
-        ? fullText.substring(0, currentText.length - 1)
-        : fullText.substring(0, currentText.length + 1)
-      );
-
-      if (!isDeleting && currentText === fullText) {
-        setTimeout(() => setIsDeleting(true), 1500);
-      } else if (isDeleting && currentText === '') {
-        setIsDeleting(false);
-        setCurrentIndex(currentIndex + 1);
-      }
-    };
-
-    const timer = setTimeout(type, isDeleting ? 100 : 150);
-    return () => clearTimeout(timer);
-  }, [currentText, isDeleting, currentIndex, titles]);
+  const keySkills = ['Python', 'Machine Learning', 'SQL', 'NLP', 'Data Science', 'TensorFlow'];
 
   return (
-    <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-accent/5"></div>
-      
-      {/* Floating particles */}
+    <section id="home" className="min-h-screen flex items-center relative overflow-hidden bg-background">
+      {/* Moving geometric background */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-primary/20 rounded-full floating-animation"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 6}s`,
-              animationDuration: `${6 + Math.random() * 4}s`
-            }}
-          />
-        ))}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
+        
+        {/* Animated geometric shapes */}
+        <div className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float-reverse"></div>
+        <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-primary/10 rotate-45 blur-2xl animate-slow-spin"></div>
+        
+        {/* Moving dots pattern */}
+        <div className="absolute inset-0">
+          {Array.from({ length: 30 }).map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-primary/20 rounded-full animate-float"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${8 + Math.random() * 4}s`
+              }}
+            />
+          ))}
+        </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12 md:py-20 relative z-10">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-12">
-          <div className="md:w-1/2 fade-in-up">
-            <div className="mb-4">
-              <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20 glow-effect">
-                Welcome to my portfolio
-              </span>
+      <div className="container mx-auto px-4 py-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+          {/* Left Column - Main Content */}
+          <div className="space-y-8">
+            {/* Main Heading */}
+            <div className="space-y-4">
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight">
+                Hi, I'm{' '}
+                <span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
+                  Rodwan
+                </span>
+              </h1>
+              
+              <div className="text-2xl lg:text-3xl text-muted-foreground">
+                <span className="font-medium">Data Scientist & Machine Learning Engineer</span>
+              </div>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-              Hi, I'm <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Rodwan Bagdadi</span>
-            </h1>
-            
-            <div className="text-lg md:text-xl text-muted-foreground mb-6 h-8">
-              <span className="typewriter-text">{currentText}</span>
-              <span className="animate-pulse text-primary">|</span>
-            </div>
-            
-            <p className="text-muted-foreground mb-4 max-w-lg leading-relaxed">
-              Specialized in Python, SQL & NLP | Turning Data into Actionable Insights with cutting-edge machine learning solutions.
+            {/* Description */}
+            <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
+              Mechatronics Engineer specializing in <span className="text-primary font-semibold">AI/ML</span> and 
+              <span className="text-primary font-semibold"> Data Science</span>. 
+              I turn complex data into actionable insights using cutting-edge machine learning solutions.
             </p>
             
-            <div className="flex items-center text-muted-foreground mb-8 group">
-              <MapPin size={20} className="mr-2 text-primary group-hover:animate-bounce" />
-              <span>Amman, Jordan</span>
+            {/* Location */}
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <MapPin className="w-5 h-5 text-primary" />
+              <span className="font-medium">Amman, Jordan</span>
             </div>
             
-            <div className="flex flex-wrap gap-4 mb-8">
-              <Button className="interactive-button btn-primary group" asChild>
-                <a href="#contact">
-                  <span>Get in Touch</span>
-                  <Mail className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            {/* Action Buttons */}
+            <div className="flex flex-wrap gap-4">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <a href="#contact" className="flex items-center gap-2">
+                  Get in Touch
+                  <Mail className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
               
-              <Button variant="outline" className="interactive-button glow-effect" asChild>
-                <a href="#projects">
-                  <span>View Projects</span>
-                  <ChevronDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+              <Button variant="outline" size="lg" className="border-primary/50 hover:bg-primary/10 group">
+                <a href="#projects" className="flex items-center gap-2">
+                  View Projects
+                  <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 </a>
               </Button>
               
-              <Button variant="secondary" className="interactive-button" asChild>
-                <a href="/Rodwan_Bagdadi_Resume.pdf" target="_blank" rel="noopener noreferrer">
-                  <Download className="mr-2 h-4 w-4" />
-                  <span>Resume</span>
+              <Button variant="secondary" size="lg" className="group">
+                <a href="/Rodwan_Bagdadi_Resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+                  Resume
                 </a>
               </Button>
             </div>
             
-            <div className="flex space-x-6">
-              <a 
-                href="https://github.com/Rodwanbagdadi" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
-              >
-                <Github size={28} />
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/rodwanbaghdadi/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
-              >
-                <Linkedin size={28} />
-              </a>
-              <a 
-                href="mailto:rodwanbagdadi@gmail.com"
-                className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
-              >
-                <Mail size={28} />
-              </a>
+            {/* Social Links */}
+            <div className="flex gap-4">
+              {[
+                { href: "https://github.com/Rodwanbagdadi", icon: Github, label: "GitHub" },
+                { href: "https://www.linkedin.com/in/rodwanbaghdadi/", icon: Linkedin, label: "LinkedIn" },
+                { href: "mailto:rodwanbagdadi@gmail.com", icon: Mail, label: "Email" }
+              ].map(({ href, icon: Icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-secondary hover:bg-accent text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-md hover:shadow-lg"
+                  aria-label={label}
+                >
+                  <Icon className="w-5 h-5" />
+                </a>
+              ))}
             </div>
           </div>
           
-          <div className="md:w-1/2 flex justify-center md:justify-end fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <div className="relative group">
-              <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-border shadow-2xl transition-all duration-500 group-hover:scale-105 card-hover glow-effect">
-                <img 
-                  src="https://images.unsplash.com/photo-1745947662038-3c71fd254f2c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                  alt="Rodwan Baghdadi" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              
-              {/* Floating badge */}
-              <div className="absolute -bottom-4 -right-4 bg-card p-3 rounded-full shadow-lg border border-border floating-animation">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20">
-                  <span className="text-primary font-bold text-lg">RB</span>
+          {/* Right Column - Quick Info Cards */}
+          <div className="space-y-6">
+            {/* Profile Card */}
+            <Card className="bg-card/50 backdrop-blur-sm border-border hover:shadow-lg transition-all duration-300 group">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-6 mb-6">
+                  <div className="relative">
+                    <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
+                      <img 
+                        src="https://images.unsplash.com/photo-1745947662038-3c71fd254f2c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="Rodwan Bagdadi" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-background"></div>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-xl text-foreground">Rodwan Bagdadi</h3>
+                    <p className="text-muted-foreground text-lg">Mechatronics Engineer</p>
+                  </div>
                 </div>
-              </div>
-              
-              {/* Status indicator */}
-              <div className="absolute top-4 right-4 bg-green-500 w-4 h-4 rounded-full border-2 border-background animate-pulse"></div>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Core Skills</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {keySkills.slice(0, 4).map((skill) => (
+                        <Badge key={skill} variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* Stats Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {quickStats.map(({ icon: Icon, label, value }) => (
+                <Card key={label} className="bg-card/50 backdrop-blur-sm border-border hover:shadow-md transition-all duration-300 hover:scale-105">
+                  <CardContent className="p-4 text-center">
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <Icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="text-2xl font-bold text-foreground">{value}</div>
+                    <div className="text-xs text-muted-foreground">{label}</div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
         
-        {/* Scroll indicator */}
+        {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-6 h-6 text-muted-foreground" />
+          <button
+            onClick={() => {
+              const aboutSection = document.getElementById('about');
+              if (aboutSection) {
+                const headerOffset = 80; // Account for fixed header
+                const elementPosition = aboutSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
+              }
+            }}
+            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer group"
+          >
+            <span className="text-xs">Scroll to explore</span>
+            <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
+          </button>
         </div>
       </div>
     </section>
