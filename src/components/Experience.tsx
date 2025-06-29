@@ -8,19 +8,6 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      role: 'AI Specialist (freelancer)',
-      company: 'Outlier AI',
-      period: 'Dec 2024– Present',
-      location: 'Remote',
-      description: 'Optimizing AI models using RLHF to improve accuracy and factual consistency.',
-      achievements: [
-        ' Enhanced AI model accuracy by implementing Reinforcement Learning from Human Feedback (RLHF) techniques, reducing incorrect predictions by 20% across a dataset of 100+ entries',
-        ' Improved the accuracy and reliability of model outputs by identifying factual inconsistencies, fixing logical errors, and rewriting responses to better follow implicit and explicit instructions from the prompt'
-      ],
-      technologies: ['Python', 'RLHF', 'Prompt Engineering']
-    },
-    {
-      id: 2,
       role: 'Software Steering Intern',
       company: 'Bosch Engineering GmbH',
       period: 'Mar 2024 - Sep 2024',

@@ -13,6 +13,17 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: 'Sales Insights Data Analysis',
+      description: 'Advanced data analysis using Power BI and MySQL to transform raw sales data into meaningful business insights with interactive dashboards.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1170&auto=format&fit=crop',
+      technologies: ['Power BI', 'MySQL', 'DAX', 'Power Query', 'SQL'],
+      github: 'https://github.com/Rodwanbagdadi/Sales-Insights-Data-Analysis',
+      problem: 'Need for real-time visibility into sales performance, trends, and key metrics to drive data-driven decision making in business operations.',
+      solution: 'Developed comprehensive Power BI dashboards with MySQL backend, implementing currency normalization, time-based analysis, and geographic insights. Created interactive visualizations with drill-down capabilities and real-time analytics.',
+      outcome: 'Delivered actionable business insights including identification of top 20% customers contributing to 80% of revenue, seasonal trends with Q4 showing 35% higher sales, and 15% profit margin improvement opportunities.'
+    },
+    {
+      id: 2,
       title: 'Fake News Detection',
       description: 'Developed a fake news detection system using XGBoost and TF-IDF vectorization, achieving 99.79% accuracy.',
       image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1170&auto=format&fit=crop',
@@ -24,7 +35,7 @@ const Projects = () => {
       outcome: 'Achieved over 92% accuracy with precision and recall consistently above 90%. Successfully deployed an ensemble of models using Flask backend with an interactive HTML frontend for real-time fake news detection and user feedback.'
     },
     {
-      id: 2,
+      id: 3,
       title: 'Diabetes Classifier',
       description: 'Created a diabetes prediction model using SVM on a dataset of 70,692 cases derived from 253,680 survey responses.',
       image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1170&auto=format&fit=crop',
@@ -35,7 +46,7 @@ const Projects = () => {
       outcome: 'Achieved 74.92% accuracy, demonstrating SVM superior performance while highlighting overfitting issues in tree-based models.'
     },
     {
-      id: 3,
+      id: 4,
       title: 'Ensemble Learning for Survival Prediction',
       description: 'Built a predictive model using Ensemble Learning and Random Forests to forecast survival outcomes, achieving top 20% leaderboard placement.',
       image: 'https://images.unsplash.com/photo-1553484771-11998c592b9c?q=80&w=1170&auto=format&fit=crop',
