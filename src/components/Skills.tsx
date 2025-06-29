@@ -40,6 +40,8 @@ const Skills = () => {
         return <ResilientIcon fallbackName="jupyter" alt="Jupyter Notebook" />;
       case 'git':
         return <ResilientIcon fallbackName="git" alt="Git" />;
+      case 'power bi':
+        return <ResilientIcon fallbackName="power-bi" alt="Power BI" />;
       default:
         return <Cpu className="w-6 h-6" />;
     }
@@ -58,7 +60,8 @@ const Skills = () => {
     { name: 'VS Code', category: 'tools' },
     { name: 'Jupyter Notebook', category: 'tools' },
     { name: 'Flask', category: 'tools' },
-    { name: 'Git', category: 'tools' }
+    { name: 'Git', category: 'tools' },
+    { name: 'Power BI', category: 'tools' }
   ];
 
   const [activeCategory, setActiveCategory] = useState('all');
