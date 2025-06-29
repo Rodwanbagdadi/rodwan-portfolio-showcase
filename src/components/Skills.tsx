@@ -27,14 +27,17 @@ const Skills = () => {
     { id: 'ai-ml', name: 'AI & ML' },
     { id: 'tools', name: 'Development Tools' },
   ];  const getSkillIcon = (skillName: string) => {
-      switch(skillName.toLowerCase()) {
+    const normalizedName = skillName.toLowerCase().trim();
+    
+    switch(normalizedName) {
       case 'python':
         return <ResilientIcon src={pythonIcon} fallbackName="python" alt="Python" />;
       case 'pandas':
         return <ResilientIcon src={pandasIcon} fallbackName="pandas" alt="Pandas" />;
       case 'scikit-learn':
         return <ResilientIcon src={scikitLearnIcon} fallbackName="scikit-learn" alt="Scikit-learn" />;
-      case 'numpy':        return <ResilientIcon src={numpyIcon} fallbackName="numpy" alt="NumPy" />;
+      case 'numpy':
+        return <ResilientIcon src={numpyIcon} fallbackName="numpy" alt="NumPy" />;
       case 'pytorch':
         return <ResilientIcon src={pytorchIcon} fallbackName="pytorch" alt="PyTorch" />;
       case 'tensorflow':
@@ -61,7 +64,6 @@ const Skills = () => {
     { name: 'Python', category: 'languages' },
     { name: 'SQL', category: 'languages' },
 
-
     { name: 'pandas', category: 'ai-ml' },
     { name: 'Scikit-learn', category: 'ai-ml' },
     { name: 'NumPy', category: 'ai-ml' },
@@ -74,8 +76,6 @@ const Skills = () => {
     { name: 'Jupyter Notebook', category: 'tools' },
     { name: 'Flask', category: 'tools' },
     { name: 'Git', category: 'tools' }
-
-
   ];
 
   const [activeCategory, setActiveCategory] = useState('all');
