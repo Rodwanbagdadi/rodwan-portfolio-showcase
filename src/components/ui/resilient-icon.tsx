@@ -18,7 +18,7 @@ const ResilientIcon = ({ src, alt, fallbackName, className = "w-6 h-6" }: IconPr
   
   // Construct the public path for the icon
   const getPublicIconPath = (iconName: string) => {
-    return `/assets/icons/${iconName.toLowerCase().replace(/[\s-]/g, '')}.svg`;
+    return `/assets/icons/${iconName.toLowerCase().replace(/\s/g, '-')}.svg`;
   };
   
   // If we have a src and it hasn't failed, try it first
