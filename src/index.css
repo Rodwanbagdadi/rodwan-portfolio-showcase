@@ -13,19 +13,19 @@
     --card-foreground: 0 0% 95%;
     --popover: 240 10% 8%;
     --popover-foreground: 0 0% 95%;
-    --primary: 142 76% 36%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 5% 12%;
     --secondary-foreground: 0 0% 85%;
     --muted: 240 5% 18%;
     --muted-foreground: 0 0% 65%;
-    --accent: 142 76% 45%;
+    --accent: 217 91% 60%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5% 18%;
     --input: 240 5% 18%;
-    --ring: 142 76% 36%;
+    --ring: 217 91% 60%;
     --radius: 0.75rem;
   }
 
@@ -37,19 +37,19 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 142 76% 36%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 142 76% 45%;
+    --accent: 217 91% 60%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 142 76% 36%;
+    --ring: 217 91% 60%;
   }
 
   * {
@@ -59,6 +59,15 @@
 
   body {
     @apply bg-background text-foreground font-sans transition-colors duration-300;
+  }
+
+  /* Apply dark theme by default */
+  html {
+    color-scheme: dark;
+  }
+
+  html.light {
+    color-scheme: light;
   }
 
   /* Custom scrollbar */
@@ -96,11 +105,10 @@
   
   .card-hover {
     @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20;
-    transform-style: preserve-3d;
   }
   
   .card-hover:hover {
-    transform: translateY(-8px) rotateX(5deg);
+    transform: translateY(-8px);
   }
   
   .gradient-bg {

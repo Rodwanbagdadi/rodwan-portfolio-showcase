@@ -30,10 +30,11 @@ export const BackToTop = () => {
   return (
     <Button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 glow-effect"
-      size="icon"
+      className="fixed bottom-8 right-8 z-50 px-4 py-3 h-auto rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 hover:scale-110 group"
+      size="default"
     >
-      <ChevronUp className="h-5 w-5" />
+      <ChevronUp className="h-4 w-4 mr-2 group-hover:-translate-y-1 transition-transform" />
+      <span className="text-sm font-medium">Back to Top</span>
     </Button>
   );
 };

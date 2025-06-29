@@ -15,8 +15,14 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-16 md:py-24 bg-secondary/30 dark:bg-secondary/10">
-      <div className="section-container">
+    <section id="about" className="py-16 md:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/40 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/40 relative overflow-hidden">
+      {/* Background elements matching Hero */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-40 right-20 w-64 h-64 bg-gradient-to-br from-blue-400/5 to-indigo-400/10 rounded-full blur-3xl animate-float opacity-40"></div>
+        <div className="absolute bottom-40 left-20 w-48 h-48 bg-gradient-to-br from-teal-400/8 to-cyan-400/12 rounded-full blur-3xl animate-slow-spin opacity-30"></div>
+      </div>
+      
+      <div className="section-container relative z-10">
         <AnimatedCard>
           <h2 className="section-title">About Me</h2>
         </AnimatedCard>
@@ -29,35 +35,33 @@ const About = () => {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                I'm a <span className="text-primary font-semibold">Mechatronics Engineering graduate</span> who builds 
-                machine learning tools with Python and SQL, including fake news detection and predictive models. 
-                I've worked on real projects at <span className="text-primary font-semibold">Bosch</span> and 
-                enjoy turning data into useful, working solutions.
+              <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
+                I'm a <span className="text-blue-600 dark:text-blue-400 font-semibold">Mechatronics Engineering graduate</span> with hands-on 
+                experience building machine learning tools 
+                from fake news detection to predictive modeling.
               </p>
-              
-              <p className="text-muted-foreground leading-relaxed">
-                My passion lies in bridging the gap between theoretical knowledge and practical implementation, 
-                creating AI solutions that solve real-world problems. I thrive in collaborative environments 
-                and enjoy the challenge of working with diverse, international teams.
+              <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed"> 
+                Worked on real-world projects at <span className="text-blue-600 dark:text-blue-400 font-semibold">Bosch</span>, 
+                where I turned data into practical, intelligent solutions.
               </p>
+
             </div>
             
             <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-4 text-foreground">Languages</h3>
+              <h3 className="text-xl font-semibold mb-4 text-slate-800 dark:text-slate-100">Languages</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {languages.map((lang, index) => (
                   <div 
                     key={lang.name}
-                    className={`interactive-scale bg-card hover:bg-accent/50 border border-border px-4 py-3 rounded-lg transition-all duration-300 ${
+                    className={`interactive-scale bg-white/70 dark:bg-slate-800/70 hover:bg-blue-50 dark:hover:bg-slate-700/70 border border-slate-200/50 dark:border-slate-700/50 px-4 py-3 rounded-lg transition-all duration-300 ${
                       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                     }`}
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
                     <div className="flex items-center gap-3">
                       <div>
-                        <span className="font-medium text-foreground">{lang.name}</span>
-                        <span className="text-sm text-muted-foreground block">{lang.level}</span>
+                        <span className="font-medium text-slate-800 dark:text-slate-100">{lang.name}</span>
+                        <span className="text-sm text-slate-600 dark:text-slate-300 block">{lang.level}</span>
                       </div>
                     </div>
                   </div>
@@ -69,10 +73,10 @@ const About = () => {
               <Button 
                 asChild 
                 variant="outline" 
-                className="interactive-scale group border-primary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                className="interactive-scale group border-blue-300 hover:bg-blue-50 hover:border-blue-400 dark:border-blue-600 dark:hover:bg-blue-950/30 transition-all duration-300"
               >
-                <a href="/Rodwan_Bagdadi_Resume.pdf" target="_blank" rel="noopener noreferrer">
-                  <FileText className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
+                <a href="/Rodwan_Bagdadi_Resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-700 dark:text-blue-300">
+                  <FileText className="h-4 w-4 group-hover:scale-110 transition-transform" />
                   View Resume
                 </a>
               </Button>

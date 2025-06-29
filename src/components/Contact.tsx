@@ -1,115 +1,84 @@
 
-import { Mail, MessageCircle, ArrowUpRight } from 'lucide-react';
-import ContactInfo from './ContactInfo';
-import SocialLinks from './SocialLinks';
+import { Mail, Github, Linkedin, MapPin } from 'lucide-react';
 import { AnimatedCard } from './AnimatedCard';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 
 const Contact = () => {
-  const contactMethods = [
+  const contactLinks = [
     {
       icon: Mail,
-      title: 'Email Me',
-      description: 'Get in touch via email',
-      action: 'Send Email',
-      link: 'mailto:rodwan.bagdadi@gmail.com'
+      label: 'Email',
+      value: 'rodwanbagdadi@gmail.com',
+      href: 'mailto:rodwanbagdadi@gmail.com',
+      color: 'text-green-600 dark:text-green-400'
     },
     {
-      icon: MessageCircle,
-      title: 'Let\'s Connect',
-      description: 'Connect on professional networks',
-      action: 'View Profile',
-      link: '#social'
+      icon: Linkedin,
+      label: 'LinkedIn',
+      value: 'linkedin.com/in/rodwanbaghdadi',
+      href: 'https://www.linkedin.com/in/rodwanbaghdadi/',
+      color: 'text-blue-600 dark:text-blue-400'
+    },
+    {
+      icon: Github,
+      label: 'GitHub',
+      value: 'github.com/Rodwanbagdadi',
+      href: 'https://github.com/Rodwanbagdadi',
+      color: 'text-slate-600 dark:text-slate-400'
     }
   ];
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-secondary/10">
-      <div className="section-container">
+    <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-100/30 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/30 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-32 right-16 w-56 h-56 bg-gradient-to-br from-blue-400/6 to-indigo-400/10 rounded-full blur-3xl animate-float opacity-40"></div>
+        <div className="absolute bottom-24 left-24 w-64 h-64 bg-gradient-to-br from-teal-400/8 to-cyan-400/12 rounded-full blur-3xl animate-slow-spin opacity-30"></div>
+      </div>
+      
+      <div className="section-container relative z-10">
         <AnimatedCard>
-          <div className="text-center mb-16">
-            <h2 className="section-title">Get in Touch</h2>
-            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
-              Have a question or want to work together? I'd love to hear from you. 
-              Let's create something amazing together!
+          <div className="text-center mb-12">
+            <h2 className="section-title text-slate-800 dark:text-slate-100">Contact</h2>
+            <p className="text-slate-600 dark:text-slate-300 mt-4 max-w-2xl mx-auto text-lg">
+              Let's connect! Feel free to reach out through any of these channels.
             </p>
           </div>
         </AnimatedCard>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           <AnimatedCard>
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-foreground mb-6">Let's Start a Conversation</h3>
-              
-              <div className="space-y-4">
-                {contactMethods.map((method, index) => {
-                  const Icon = method.icon;
-                  return (
-                    <Card 
-                      key={method.title}
-                      className="group interactive-scale border-border hover:border-primary/50 bg-card hover:shadow-lg transition-all duration-300"
-                    >
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-4">
-                          <div className="bg-primary/10 group-hover:bg-primary/20 p-3 rounded-xl transition-all duration-300">
-                            <Icon className="h-6 w-6 text-primary" />
-                          </div>
-                          <div className="flex-1">
-                            <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                              {method.title}
-                            </h4>
-                            <p className="text-muted-foreground text-sm">
-                              {method.description}
-                            </p>
-                          </div>
-                          <Button 
-                            variant="ghost" 
-                            size="sm"
-                            asChild
-                            className="group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
-                          >
-                            <a href={method.link}>
-                              <ArrowUpRight className="h-4 w-4" />
-                            </a>
-                          </Button>
+            <Card className="border-slate-200/50 dark:border-slate-700/50 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm">
+              <CardContent className="p-8">
+                {/* Contact Links */}
+                <div className="space-y-6">
+                  {contactLinks.map((contact) => {
+                    const Icon = contact.icon;
+                    return (
+                      <a
+                        key={contact.label}
+                        href={contact.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-4 p-4 rounded-lg border border-slate-200/50 dark:border-slate-700/50 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-lg transition-all duration-300 interactive-scale"
+                      >
+                        <div className={`p-3 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:scale-110 transition-transform duration-300`}>
+                          <Icon className={`h-6 w-6 ${contact.color}`} />
                         </div>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
-              </div>
-
-              <div className="pt-8">
-                <h4 className="font-semibold text-foreground mb-4">Quick Contact</h4>
-                <ContactInfo />
-              </div>
-            </div>
-          </AnimatedCard>
-          
-          <AnimatedCard>
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-foreground mb-6">Connect With Me</h3>
-              
-              <Card className="border-border bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-8 text-center">
-                  <div className="mb-6">
-                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <MessageCircle className="h-10 w-10 text-primary" />
-                    </div>
-                    <h4 className="text-xl font-semibold text-foreground mb-2">
-                      Ready to Collaborate?
-                    </h4>
-                    <p className="text-muted-foreground">
-                      I'm always open to discussing new opportunities, 
-                      innovative projects, and ways we can work together.
-                    </p>
-                  </div>
-                  
-                  <SocialLinks />
-                </CardContent>
-              </Card>
-            </div>
+                        <div className="flex-1 text-left">
+                          <p className="font-semibold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            {contact.label}
+                          </p>
+                          <p className="text-slate-600 dark:text-slate-300 text-sm">
+                            {contact.value}
+                          </p>
+                        </div>
+                      </a>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
           </AnimatedCard>
         </div>
       </div>
