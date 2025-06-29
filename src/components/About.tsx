@@ -1,73 +1,142 @@
 
-import React from 'react';
-import { FileText, Award, BookOpen } from 'lucide-react';
+import { FileText, BookOpen, Award, Users, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { AnimatedCard } from './AnimatedCard';
+import { useIntersectionObserver } from '@/hooks/useInteractions';
 
 const About = () => {
+  const [elementRef, isVisible] = useIntersectionObserver();
+
+  const languages = [
+    { name: 'Arabic', level: 'Native', flag: '🇸🇦' },
+    { name: 'English', level: 'Fluent', flag: '🇺🇸' },
+    { name: 'German', level: 'Intermediate', flag: '🇩🇪' }
+  ];
+
+  const highlights = [
+    { icon: Award, title: 'Experience', description: 'Bosch Engineering Intern' },
+    { icon: Users, title: 'Collaboration', description: 'International Team Player' },
+    { icon: MapPin, title: 'Location', description: 'Jordan / Germany' }
+  ];
+
   return (
-    <section id="about" className="py-16 md:py-24">
+    <section id="about" className="py-16 md:py-24 bg-secondary/30 dark:bg-secondary/10">
       <div className="section-container">
-        <h2 className="section-title">About Me</h2>
+        <AnimatedCard>
+          <h2 className="section-title">About Me</h2>
+        </AnimatedCard>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="md:col-span-2 space-y-6">
-            <p className="text-neutral-300">
-              I'm a Mechatronics graduate who builds machine learning tools with Python and SQL, 
-              including fake news detection and predictive models. I've worked on real projects
-              at Bosch and enjoy turning data into useful, working solutions.
-            </p>
-            
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-3">Languages</h3>
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-full">
-                  <span className="font-medium">Arabic</span>
-                  <span className="text-sm text-neutral-400">(Native)</span>
-                </div>
-                <div className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-full">
-                  <span className="font-medium">English</span>
-                  <span className="text-sm text-neutral-400">(Fluent)</span>
-                </div>
-                <div className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-full">
-                  <span className="font-medium">German</span>
-                  <span className="text-sm text-neutral-400">(Intermediate)</span>
-                </div>
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
+          <AnimatedCard className="lg:col-span-2 space-y-6">
+            <div 
+              ref={elementRef as any}
+              className={`prose dark:prose-invert max-w-none transition-all duration-1000 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                I'm a <span className="text-primary font-semibold">Mechatronics graduate</span> who builds 
+                machine learning tools with Python and SQL, including fake news detection and predictive models. 
+                I've worked on real projects at <span className="text-primary font-semibold">Bosch</span> and 
+                enjoy turning data into useful, working solutions.
+              </p>
+              
+              <p className="text-muted-foreground leading-relaxed">
+                My passion lies in bridging the gap between theoretical knowledge and practical implementation, 
+                creating AI solutions that solve real-world problems. I thrive in collaborative environments 
+                and enjoy the challenge of working with diverse, international teams.
+              </p>
             </div>
             
-            <div className="mt-6">
-              <Button asChild variant="outline" className="flex items-center gap-2 border-neutral-600 hover:bg-accent">
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold mb-4 text-foreground">Languages</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {languages.map((lang, index) => (
+                  <div 
+                    key={lang.name}
+                    className={`interactive-scale bg-card hover:bg-accent/50 border border-border px-4 py-3 rounded-lg transition-all duration-300 ${
+                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                    }`}
+                    style={{ transitionDelay: `${index * 100}ms` }}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">{lang.flag}</span>
+                      <div>
+                        <span className="font-medium text-foreground">{lang.name}</span>
+                        <span className="text-sm text-muted-foreground block">{lang.level}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+              {highlights.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <Card 
+                    key={item.title}
+                    className={`interactive-scale border-border hover:border-primary/50 transition-all duration-300 ${
+                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                    }`}
+                    style={{ transitionDelay: `${(index + 3) * 100}ms` }}
+                  >
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-3">
+                        <div className="bg-primary/10 p-2 rounded-full">
+                          <Icon className="h-5 w-5 text-primary" />
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-foreground">{item.title}</h4>
+                          <p className="text-sm text-muted-foreground">{item.description}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+            
+            <div className="mt-8">
+              <Button 
+                asChild 
+                variant="outline" 
+                className="interactive-scale group border-primary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
                 <a href="/Rodwan_Bagdadi_Resume.pdf" target="_blank" rel="noopener noreferrer">
-                  <FileText size={18} />
+                  <FileText className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
                   View Resume
                 </a>
               </Button>
             </div>
-          </div>
+          </AnimatedCard>
           
-          <div className="space-y-6">
-            <Card className="card-hover border-neutral-700 bg-card">
+          <AnimatedCard className="space-y-6">
+            <Card className="border-border hover:border-primary/50 bg-card hover:shadow-lg transition-all duration-300 group">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="bg-accent p-3 rounded-full">
-                    <BookOpen className="h-6 w-6 text-foreground" />
+                  <div className="bg-primary/10 p-3 rounded-full group-hover:bg-primary/20 transition-colors">
+                    <BookOpen className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-lg">Education</h3>
+                  <h3 className="font-semibold text-lg text-foreground">Education</h3>
                 </div>
-                <div className="space-y-3">
-                  <div>
-                    <p className="font-medium">Bachelor's in Mechatronics Engineering</p>
-                    <p className="text-sm text-neutral-400">German Jordanian University (GJU), 2018-2025</p>
+                <div className="space-y-4">
+                  <div className="p-3 rounded-lg bg-secondary/50 hover:bg-secondary/70 transition-colors">
+                    <p className="font-medium text-foreground">Bachelor's in Mechatronics Engineering</p>
+                    <p className="text-sm text-muted-foreground">German Jordanian University (GJU)</p>
+                    <p className="text-xs text-muted-foreground mt-1">2018-2025</p>
                   </div>
-                  <div>
-                    <p className="font-medium">Exchange Semester in Mechatronics</p>
-                    <p className="text-sm text-neutral-400">Bochum University of Applied Sciences, 2023-2024</p>
+                  <div className="p-3 rounded-lg bg-secondary/50 hover:bg-secondary/70 transition-colors">
+                    <p className="font-medium text-foreground">Exchange Semester in Mechatronics</p>
+                    <p className="text-sm text-muted-foreground">Bochum University of Applied Sciences</p>
+                    <p className="text-xs text-muted-foreground mt-1">2023-2024</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
-          </div>
+          </AnimatedCard>
         </div>
       </div>
     </section>
