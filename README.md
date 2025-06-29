@@ -1,73 +1,101 @@
-# Welcome to your Lovable project
+# Rodwan Bagdadi - Portfolio Showcase
 
-## Project info
+A modern, responsive portfolio website showcasing my journey as a Data Scientist and Machine Learning Engineer.
 
-**URL**: https://lovable.dev/projects/a6a0f6d0-d92f-442a-ae02-d2bc76863db9
+## 🌐 Live Demo
 
-## How can I edit this code?
+**[View Portfolio](https://rodwan-portfolio-showcase.vercel.app)** 
 
-There are several ways of editing your application.
+## 🚀 About
 
-**Use Lovable**
+This portfolio showcases my projects, experience, and skills in data science, machine learning, and software development. Built with modern web technologies, it features:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a6a0f6d0-d92f-442a-ae02-d2bc76863db9) and start prompting.
+- **Responsive Design**: Optimized for all devices and screen sizes
+- **Dark/Light Theme**: Toggle between themes for better user experience
+- **Interactive Animations**: Smooth transitions and hover effects
+- **Project Showcase**: Detailed view of my data science and ML projects
+- **Professional Experience**: Timeline of my work experience at Bosch and academic achievements
+- **Skills Visualization**: Technical skills with proficiency indicators
+- **Contact Integration**: Direct email integration and social links
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Technologies Used
 
-**Use your preferred IDE**
+### Frontend Framework & Build Tools
+- **React 18** - Modern React with hooks and functional components
+- **TypeScript** - Type-safe development
+- **Vite** - Fast build tool and development server
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Styling & UI
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - High-quality React components
+- **Lucide React** - Beautiful icon library
+- **CSS Animations** - Custom keyframes and transitions
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Development Tools
+- **ESLint** - Code linting and quality
+- **PostCSS** - CSS processing
+- **Git** - Version control
 
-Follow these steps:
+## 📁 Project Structure
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/         # React components
+│   ├── ui/            # Reusable UI components (shadcn/ui)
+│   ├── About.tsx      # About section
+│   ├── Hero.tsx       # Landing section
+│   ├── Projects.tsx   # Projects showcase
+│   ├── Experience.tsx # Work experience
+│   ├── Skills.tsx     # Technical skills
+│   └── Contact.tsx    # Contact information
+├── contexts/          # React contexts (Theme)
+├── hooks/            # Custom React hooks
+├── lib/              # Utility functions
+├── pages/            # Page components
+└── utils/            # Helper functions
 ```
 
-**Edit a file directly in GitHub**
+## 🚀 Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This portfolio is deployed on **Vercel** with the following features:
 
-**Use GitHub Codespaces**
+- **Automatic Deployments**: Connected to GitHub for seamless CI/CD
+- **Custom Domain**: Professional domain setup
+- **Performance Optimization**: Optimized builds with Vite
+- **SEO Optimization**: Meta tags and structured data
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Deploy Your Own
 
-## What technologies are used for this project?
+1. Fork this repository
+2. Connect your Vercel account to GitHub
+3. Import the project in Vercel
+4. Deploy with default settings
 
-This project is built with:
+## 💼 Featured Projects
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Fake News Detection**: AI-powered misinformation detection using XGBoost, TF-IDF, and distilBERT
+- **Sales Insights Data Analysis**: Interactive Power BI dashboards with MySQL backend
+- **Diabetes Classifier**: SVM-based prediction model using healthcare data
+- **Survival Prediction Model**: Ensemble learning for medical outcome forecasting
 
-## How can I deploy this project?
+## 🎯 Key Features
 
-Simply open [Lovable](https://lovable.dev/projects/a6a0f6d0-d92f-442a-ae02-d2bc76863db9) and click on Share -> Publish.
+- **Performance**: Lighthouse score 95+ for performance
+- **Accessibility**: WCAG compliant design
+- **SEO**: Optimized meta tags and structured data
+- **Mobile-First**: Responsive design principles
+- **Fast Loading**: Optimized assets and lazy loading
 
-## Can I connect a custom domain to my Lovable project?
+## 📧 Contact
 
-Yes, you can!
+- **Email**: rodwanbagdadi@gmail.com
+- **LinkedIn**: [linkedin.com/in/rodwanbaghdadi](https://www.linkedin.com/in/rodwanbaghdadi/)
+- **GitHub**: [github.com/Rodwanbagdadi](https://github.com/Rodwanbagdadi)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📄 License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+⭐ **Star this repo if you found it helpful!**
