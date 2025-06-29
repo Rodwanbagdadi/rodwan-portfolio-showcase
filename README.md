@@ -18,7 +18,17 @@ This portfolio showcases my projects, experience, and skills in data science, ma
 - **Skills Visualization**: Technical skills with proficiency indicators
 - **Contact Integration**: Direct email integration and social links
 
-## 🛠️ Technologies Used
+## � About This Portfolio
+
+This portfolio was built to showcase my work as a Mechatronics and AI enthusiast — but more importantly, it's designed to be reusable.
+
+I created this project to help others easily build and customize their own portfolios without starting from scratch. Whether you're a student, developer, or engineer, feel free to clone, tweak, and deploy it as your own.
+
+It's simple, lightweight, and easy to modify. I hope it saves you time and helps you present your work professionally.
+
+⭐ Star the repo if you find it helpful. Contributions and feedback are always welcome!
+
+## �🛠️ Technologies Used
 
 ### Frontend Framework & Build Tools
 - **React 18** - Modern React with hooks and functional components
