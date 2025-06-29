@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Cpu } from 'lucide-react';
-import { getFallbackIcon } from '@/utils/fallbackIcons';
 import ResilientIcon from '@/components/ui/resilient-icon';
 
 // Import SVG icons directly
@@ -26,7 +25,9 @@ const Skills = () => {
     { id: 'languages', name: 'Languages' },
     { id: 'ai-ml', name: 'AI & ML' },
     { id: 'tools', name: 'Development Tools' },
-  ];  const getSkillIcon = (skillName: string) => {
+  ];
+
+  const getSkillIcon = (skillName: string) => {
     const normalizedName = skillName.toLowerCase().trim();
     
     switch(normalizedName) {
