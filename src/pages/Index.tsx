@@ -8,10 +8,12 @@ import Skills from '@/components/Skills';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import { BackToTop } from '@/components/BackToTop';
+import BackgroundElements from '@/components/BackgroundElements';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <BackgroundElements />
       <Navbar />
       <Hero />
       <About />

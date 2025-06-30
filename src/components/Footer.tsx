@@ -49,11 +49,7 @@ const Footer = () => {
             <div className="mb-4">
               <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">Rodwan Bagdadi</h3>
               <p className="text-slate-600 dark:text-slate-400 text-lg">
-                Mechatronics Engineer & AI Specialist
-              </p>
-              <p className="text-slate-600 dark:text-slate-400 mt-2 max-w-md">
-                Passionate about bridging the gap between engineering and artificial intelligence, 
-                creating innovative solutions for tomorrow's challenges.
+                Data Scientist & Machine Learning Engineer
               </p>
             </div>
             

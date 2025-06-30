@@ -141,41 +141,33 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Right Column - Quick Info Cards */}
+          {/* Right Column - Profile Section */}
           <div className="space-y-6">
-            {/* Profile Card */}
-            <Card className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border-slate-200/50 dark:border-slate-700/50 hover:shadow-lg transition-all duration-300 group">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-6 mb-6">
-                  <div className="relative">
-                    <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-200/50 dark:border-blue-600/30 shadow-lg">
-                      <img 
-                        src="https://images.unsplash.com/photo-1745947662038-3c71fd254f2c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                        alt="Rodwan Bagdadi" 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-xl text-slate-800 dark:text-slate-100">Rodwan Bagdadi</h3>
-                    <p className="text-slate-600 dark:text-slate-300 text-lg">Mechatronics Engineer</p>
-                  </div>
+            {/* Profile Picture and Skills */}
+            <div className="flex flex-col items-center text-center space-y-6">
+              {/* Profile Picture */}
+              <div className="relative">
+                <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-blue-200/50 dark:border-blue-600/30 shadow-lg group">
+                  <img 
+                    src="https://images.unsplash.com/photo-1745947662038-3c71fd254f2c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    alt="Rodwan Bagdadi" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                 </div>
-                
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-slate-800 dark:text-slate-100 mb-2">Core Skills</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {keySkills.slice(0, 4).map((skill) => (
-                        <Badge key={skill} variant="secondary" className="bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300 dark:border-blue-700/50">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
+              </div>
+              
+              {/* Core Skills */}
+              <div>
+                <h4 className="font-semibold text-slate-800 dark:text-slate-100 mb-3">Core Skills</h4>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  {keySkills.slice(0, 4).map((skill) => (
+                    <Badge key={skill} variant="secondary" className="bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300 dark:border-blue-700/50">
+                      {skill}
+                    </Badge>
+                  ))}
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
             
             {/* Stats Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
