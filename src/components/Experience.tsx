@@ -113,8 +113,7 @@ const Experience = () => {
                       <p className="text-slate-600 dark:text-slate-300 mb-6 text-lg leading-relaxed">{exp.description}</p>
                       
                       <div className="mb-6">
-                        <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full" />
+                        <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">
                           Key Achievements
                         </h4>
                         <ul className="space-y-3">
@@ -134,8 +133,7 @@ const Experience = () => {
                       </div>
                       
                       <div>
-                        <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full" />
+                        <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">
                           Technologies Used
                         </h4>
                         <div className="flex flex-wrap gap-2">

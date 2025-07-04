@@ -53,20 +53,20 @@ const Skills = () => {
   };
 
   const skills = [
-    { name: 'Python', category: 'languages', level: 'Advanced', description: 'Primary programming language' },
-    { name: 'SQL', category: 'languages', level: 'Intermediate', description: 'Database querying and management' },
-    { name: 'pandas', category: 'ai-ml', level: 'Advanced', description: 'Data manipulation and analysis' },
-    { name: 'Scikit-learn', category: 'ai-ml', level: 'Advanced', description: 'Machine learning algorithms' },
-    { name: 'NumPy', category: 'ai-ml', level: 'Intermediate', description: 'Numerical computing' },
-    { name: 'PyTorch', category: 'ai-ml', level: 'Intermediate', description: 'Deep learning framework' },
-    { name: 'TensorFlow', category: 'ai-ml', level: 'Intermediate', description: 'Machine learning platform' },
-    { name: 'Matplotlib', category: 'ai-ml', level: 'Advanced', description: 'Data visualization' },
-    { name: 'seaborn', category: 'ai-ml', level: 'Advanced', description: 'Statistical data visualization' },
-    { name: 'VS Code', category: 'tools', level: 'Advanced', description: 'Code editor and IDE' },
-    { name: 'Jupyter Notebook', category: 'tools', level: 'Advanced', description: 'Interactive development' },
-    { name: 'Flask', category: 'tools', level: 'Intermediate', description: 'Web framework' },
-    { name: 'Git', category: 'tools', level: 'Intermediate', description: 'Version control' },
-    { name: 'Power BI', category: 'tools', level: 'Intermediate', description: 'Business intelligence' }
+    { name: 'Python', category: 'languages', level: 'Intermediate', description: 'Primary programming language' },
+    { name: 'SQL', category: 'languages', level: 'Beginner', description: 'Database querying and management' },
+    { name: 'pandas', category: 'ai-ml', level: 'Intermediate', description: 'Data manipulation and analysis' },
+    { name: 'Scikit-learn', category: 'ai-ml', level: 'Intermediate', description: 'Machine learning algorithms' },
+    { name: 'NumPy', category: 'ai-ml', level: 'Beginner', description: 'Numerical computing' },
+    { name: 'PyTorch', category: 'ai-ml', level: 'Beginner', description: 'Deep learning framework' },
+    { name: 'TensorFlow', category: 'ai-ml', level: 'Beginner', description: 'Machine learning platform' },
+    { name: 'Matplotlib', category: 'ai-ml', level: 'Intermediate', description: 'Data visualization' },
+    { name: 'seaborn', category: 'ai-ml', level: 'Intermediate', description: 'Statistical data visualization' },
+    { name: 'VS Code', category: 'tools', level: 'Intermediate', description: 'Code editor and IDE' },
+    { name: 'Jupyter Notebook', category: 'tools', level: 'Intermediate', description: 'Interactive development' },
+    { name: 'Flask', category: 'tools', level: 'Beginner', description: 'Web framework' },
+    { name: 'Git', category: 'tools', level: 'Beginner', description: 'Version control' },
+    { name: 'Power BI', category: 'tools', level: 'Beginner', description: 'Business intelligence' }
   ];
 
   const filteredSkills = activeCategory === 'all' 
@@ -75,9 +75,9 @@ const Skills = () => {
 
   const getLevelColor = (level: string) => {
     switch(level) {
-      case 'Advanced': return 'text-green-500 bg-green-500/10 border-green-500/20';
       case 'Intermediate': return 'text-blue-500 bg-blue-500/10 border-blue-500/20';
-      default: return 'text-yellow-500 bg-yellow-500/10 border-yellow-500/20';
+      case 'Beginner': return 'text-yellow-500 bg-yellow-500/10 border-yellow-500/20';
+      default: return 'text-green-500 bg-green-500/10 border-green-500/20';
     }
   };
 

@@ -12,7 +12,7 @@ const Hero = () => {
   const keySkills = ['Python', 'Machine Learning', 'Pandas', 'SQL'];
 
   return (
-    <section id="home" className="min-h-screen flex items-center relative overflow-hidden bg-background">
+    <section id="home" className="min-h-screen flex items-center relative overflow-hidden bg-background pt-20 md:pt-24">
       {/* Moving geometric background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/40 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/40"></div>
@@ -67,20 +67,20 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-12rem)] lg:min-h-[calc(100vh-8rem)]">
           {/* Left Column - Main Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 lg:space-y-8">
             {/* Main Heading */}
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight">
+            <div className="space-y-3 lg:space-y-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight">
                 Hi, I'm{' '}
                 <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
                   Rodwan
                 </span>
               </h1>
               
-              <div className="text-2xl lg:text-3xl text-muted-foreground">
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground">
                 <span className="font-medium">Data Scientist & Machine Learning Engineer</span>
               </div>
             </div>
@@ -142,12 +142,12 @@ const Hero = () => {
           </div>
           
           {/* Right Column - Profile Section */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {/* Profile Picture and Skills */}
-            <div className="flex flex-col items-center text-center space-y-6">
+            <div className="flex flex-col items-center text-center space-y-4 sm:space-y-6">
               {/* Profile Picture */}
               <div className="relative">
-                <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-blue-200/50 dark:border-blue-600/30 shadow-lg group">
+                <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden border-4 border-blue-200/50 dark:border-blue-600/30 shadow-lg group">
                   <img 
                     src="https://images.unsplash.com/photo-1745947662038-3c71fd254f2c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                     alt="Rodwan Bagdadi" 
@@ -170,14 +170,14 @@ const Hero = () => {
             </div>
             
             {/* Stats Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {quickStats.map(({ icon: Icon, label, value }) => (
                 <Card key={label} className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border-slate-200/50 dark:border-slate-700/50 hover:shadow-md transition-all duration-300 hover:scale-105">
-                  <CardContent className="p-4 text-center">
-                    <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <Icon className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <CardContent className="p-3 sm:p-4 text-center">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400" />
                     </div>
-                    <div className="text-2xl font-bold text-slate-800 dark:text-slate-100">{value}</div>
+                    <div className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-slate-100">{value}</div>
                     <div className="text-xs text-slate-600 dark:text-slate-300">{label}</div>
                   </CardContent>
                 </Card>
@@ -187,7 +187,7 @@ const Hero = () => {
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="flex justify-center mt-8 lg:mt-12">
           <button
             onClick={() => {
               const aboutSection = document.getElementById('about');
@@ -202,7 +202,7 @@ const Hero = () => {
                 });
               }
             }}
-            className="flex flex-col items-center gap-2 text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors cursor-pointer group"
+            className="flex flex-col items-center gap-2 text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors cursor-pointer group animate-bounce"
           >
             <span className="text-xs">Scroll to explore</span>
             <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
