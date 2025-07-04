@@ -20,7 +20,7 @@ This portfolio showcases my projects, experience, and skills in data science, ma
 - **Contact Integration**: Direct email integration and professional social links
 - **Performance Optimized**: Fast loading with optimized assets and efficient animations
 
-## � About This Portfolio
+## About This Portfolio
 
 This portfolio was built to showcase my work as a Mechatronics and AI enthusiast — but more importantly, it's designed to be reusable.
 
@@ -30,7 +30,7 @@ It's simple, lightweight, and easy to modify. I hope it saves you time and helps
 
 ⭐ Star the repo if you find it helpful. Contributions and feedback are always welcome!
 
-## �🛠️ Technologies Used
+## 🛠️ Technologies Used
 
 ### Frontend Framework & Build Tools
 - **React 18** - Modern React with hooks and functional components
