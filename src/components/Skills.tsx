@@ -82,7 +82,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-16 md:py-24 bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-100/30 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/30 relative overflow-hidden">
+    <section id="skills" className="py-12 md:py-16 bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-100/30 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/30 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-24 left-16 w-64 h-64 bg-gradient-to-br from-blue-400/6 to-indigo-400/10 rounded-full blur-3xl animate-float opacity-40"></div>
@@ -111,7 +111,7 @@ const Skills = () => {
                   className={`interactive-scale rounded-full transition-all duration-300 ${
                     activeCategory === category.id 
                       ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg scale-105" 
-                      : "border-blue-300 hover:border-blue-400 hover:bg-blue-50 dark:border-blue-600 dark:hover:bg-blue-950/30 text-blue-700 dark:text-blue-300"
+                      : "border-blue-300/60 hover:border-blue-400 hover:bg-blue-50 dark:border-blue-600/50 dark:hover:bg-blue-950/20 bg-white/80 dark:bg-slate-700/40 backdrop-blur-sm text-blue-700 dark:text-blue-300"
                   }`}
                   onClick={() => setActiveCategory(category.id)}
                 >
@@ -130,21 +130,21 @@ const Skills = () => {
           {filteredSkills.map((skill, index) => (
             <Card 
               key={skill.name} 
-              className={`group interactive-scale border-slate-200/50 dark:border-slate-700/50 hover:border-blue-300 dark:hover:border-blue-600 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm hover:shadow-lg transition-all duration-500 ${
+              className={`border-slate-200/50 dark:border-slate-700/50 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm ${
                 isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="bg-blue-100 dark:bg-blue-900/30 group-hover:bg-blue-200 dark:group-hover:bg-blue-800/40 p-3 rounded-xl transition-all duration-300 group-hover:scale-110">
+                  <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-xl">
                     <div className="w-8 h-8 flex items-center justify-center text-blue-600 dark:text-blue-400">
                       {getSkillIcon(skill.name)}
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-semibold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      <h3 className="font-semibold text-slate-800 dark:text-slate-100">
                         {skill.name}
                       </h3>
                       <span className={`text-xs px-2 py-1 rounded-full border ${getLevelColor(skill.level)}`}>

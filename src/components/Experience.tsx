@@ -27,7 +27,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="relative py-16 md:py-24 overflow-hidden">
+    <section id="experience" className="relative py-12 md:py-16 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-blue-950 dark:to-indigo-950">
         {/* Animated gradient orbs */}
@@ -62,21 +62,18 @@ const Experience = () => {
             <AnimatedCard key={exp.id}>
               <Card 
                 ref={elementRef as any}
-                className={`group relative overflow-hidden border border-slate-200/50 dark:border-slate-700/50 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm hover:shadow-xl hover:shadow-blue-500/20 dark:hover:shadow-blue-400/20 transition-all duration-500 ${
+                className={`relative overflow-hidden border border-slate-200/50 dark:border-slate-700/50 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm ${
                   isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
-                {/* Animated background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
                 <CardContent className="relative p-0">
                   <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
                     {/* Left column - Company info */}
-                    <div className="p-6 lg:border-r border-slate-200/50 dark:border-slate-700/50 bg-slate-50/50 dark:bg-slate-800/50 group-hover:bg-blue-50/50 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
+                    <div className="p-6 lg:border-r border-slate-200/50 dark:border-slate-700/50 bg-slate-50/50 dark:bg-slate-800/50">
                       <div className="space-y-4">
                         <div className="flex items-start gap-3">
-                          <div className="bg-blue-100 dark:bg-blue-900/50 p-2 rounded-full group-hover:bg-blue-200 dark:group-hover:bg-blue-800/70 transition-colors">
+                          <div className="bg-blue-100 dark:bg-blue-900/50 p-2 rounded-full">
                             <Zap className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                           </div>
                           <div>

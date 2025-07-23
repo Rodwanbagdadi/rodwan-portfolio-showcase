@@ -75,7 +75,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation Menu */}
         {mobileMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg shadow-blue-500/10 dark:shadow-blue-400/10 md:hidden animate-in slide-in-from-top-2 duration-300 border-t border-slate-200/50 dark:border-slate-700/50">
+          <div className="absolute top-full left-0 w-full bg-white/95 dark:bg-slate-800/95 backdrop-blur-md shadow-lg shadow-blue-500/10 dark:shadow-blue-400/10 md:hidden animate-in slide-in-from-top-2 duration-300 border-t border-slate-200/50 dark:border-slate-600/50">
             <div className="flex flex-col py-4">
               {navItems.map((item) => (
                 <a 

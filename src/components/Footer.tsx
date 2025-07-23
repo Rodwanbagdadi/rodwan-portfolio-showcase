@@ -40,7 +40,7 @@ const Footer = () => {
   ];
   
   return (
-    <footer className="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700">
+    <footer className="bg-slate-50 dark:bg-slate-800/90 border-t border-slate-200 dark:border-slate-600/50 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-12">
         {/* Main footer content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -63,7 +63,7 @@ const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-blue-100 dark:hover:bg-blue-900/50 text-slate-600 dark:text-slate-400 ${social.hoverColor} transition-all duration-300 hover:scale-110`}
+                    className={`p-2 rounded-full bg-slate-100 dark:bg-slate-700/60 hover:bg-blue-100 dark:hover:bg-blue-900/40 text-slate-600 dark:text-slate-300 ${social.hoverColor} transition-all duration-300 hover:scale-110 backdrop-blur-sm`}
                     aria-label={social.label}
                   >
                     <Icon className="h-5 w-5" />

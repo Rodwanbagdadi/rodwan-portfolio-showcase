@@ -171,7 +171,7 @@ The model provides healthcare professionals with reliable survival probability e
   };
 
   return (
-    <section id="projects" className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-100/30 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/30">
+    <section id="projects" className="py-12 md:py-16 relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-100/30 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/30">
       {/* Background decoration matching the theme */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-blue-400/8 to-indigo-400/12 rounded-full blur-3xl animate-float opacity-50"></div>
@@ -232,12 +232,12 @@ The model provides healthcare professionals with reliable survival probability e
                   </div>
                 </CardContent>
                 
-                <CardFooter className="bg-white/50 dark:bg-slate-700/50 p-4 border-t border-slate-200/50 dark:border-slate-600/50">
+                <CardFooter className="bg-slate-50/50 dark:bg-slate-700/30 p-4 border-t border-slate-200/30 dark:border-slate-600/30 backdrop-blur-sm">
                   <div className="flex gap-3 w-full justify-center">
                     <Button 
                       variant="outline" 
                       size="sm" 
-                      className="interactive-button flex-1 border-blue-300 hover:bg-blue-50 hover:border-blue-400 dark:border-blue-600 dark:hover:bg-blue-950/30" 
+                      className="interactive-button flex-1 border-blue-300/60 hover:bg-blue-50 hover:border-blue-400 dark:border-blue-600/50 dark:hover:bg-blue-950/20 bg-white/80 dark:bg-slate-800/40 text-blue-700 dark:text-blue-300 backdrop-blur-sm" 
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open(project.github, '_blank', 'noopener,noreferrer');
@@ -271,7 +271,7 @@ The model provides healthcare professionals with reliable survival probability e
 
       {/* Project Details Modal */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 shadow-2xl">
           {selectedProject && (
             <div className="space-y-6">
               <DialogHeader>

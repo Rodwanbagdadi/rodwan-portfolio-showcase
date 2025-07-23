@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, MapPin, Download, ChevronDown, ExternalLink, Code2, Brain, Database } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Download, ExternalLink, Code2, Brain, Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -12,7 +12,7 @@ const Hero = () => {
   const keySkills = ['Python', 'Machine Learning', 'Pandas', 'SQL'];
 
   return (
-    <section id="home" className="min-h-screen flex items-center relative overflow-hidden bg-background pt-20 md:pt-24">
+    <section id="home" className="min-h-[85vh] flex items-center relative overflow-hidden bg-background pt-16 md:pt-20">
       {/* Moving geometric background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/40 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/40"></div>
@@ -105,15 +105,15 @@ const Hero = () => {
                 </a>
               </Button>
               
-              <Button variant="outline" size="lg" className="border-blue-300 hover:bg-blue-50 hover:border-blue-400 dark:border-blue-600 dark:hover:bg-blue-950/30 group">
+              <Button variant="outline" size="lg" className="border-blue-300/60 hover:bg-blue-50 hover:border-blue-400 dark:border-blue-600/50 dark:hover:bg-blue-950/20 bg-white/80 dark:bg-slate-700/40 backdrop-blur-sm group">
                 <a href="#projects" className="flex items-center gap-2 text-blue-700 dark:text-blue-300">
                   View Projects
                   <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 </a>
               </Button>
               
-              <Button variant="secondary" size="lg" className="bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 group">
-                <a href="/Rodwan_Bagdadi_Resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+              <Button variant="secondary" size="lg" className="bg-slate-50 hover:bg-slate-100 dark:bg-slate-700/50 dark:hover:bg-slate-600/50 backdrop-blur-sm border border-slate-200/50 dark:border-slate-600/50 group">
+                <a href="/Rodwan_Bagdadi_Resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
                   <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
                   Resume
                 </a>
@@ -132,7 +132,7 @@ const Hero = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white/80 hover:bg-white dark:bg-slate-800/80 dark:hover:bg-slate-800 text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-md hover:shadow-lg border border-slate-200/50 dark:border-slate-700/50"
+                  className="p-3 rounded-full bg-white/90 hover:bg-white dark:bg-slate-700/60 dark:hover:bg-slate-600/70 text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-md hover:shadow-lg border border-slate-200/50 dark:border-slate-600/50 backdrop-blur-sm"
                   aria-label={label}
                 >
                   <Icon className="w-5 h-5" />
@@ -142,16 +142,16 @@ const Hero = () => {
           </div>
           
           {/* Right Column - Profile Section */}
-          <div className="space-y-4 sm:space-y-6">
+          <div className="space-y-6 sm:space-y-8">
             {/* Profile Picture and Skills */}
-            <div className="flex flex-col items-center text-center space-y-4 sm:space-y-6">
+            <div className="flex flex-col items-center text-center space-y-6 sm:space-y-8">
               {/* Profile Picture */}
               <div className="relative">
-                <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden border-4 border-blue-200/50 dark:border-blue-600/30 shadow-lg group">
+                <div className="w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-4 border-blue-200/50 dark:border-blue-600/30 shadow-lg">
                   <img 
                     src="https://images.unsplash.com/photo-1745947662038-3c71fd254f2c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                     alt="Rodwan Bagdadi" 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -170,43 +170,20 @@ const Hero = () => {
             </div>
             
             {/* Stats Cards */}
-            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {quickStats.map(({ icon: Icon, label, value }) => (
-                <Card key={label} className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border-slate-200/50 dark:border-slate-700/50 hover:shadow-md transition-all duration-300 hover:scale-105">
-                  <CardContent className="p-3 sm:p-4 text-center">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400" />
+                <Card key={label} className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border-slate-200/50 dark:border-slate-700/50">
+                  <CardContent className="p-4 sm:p-6 text-center">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-400" />
                     </div>
-                    <div className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-slate-100">{value}</div>
-                    <div className="text-xs text-slate-600 dark:text-slate-300">{label}</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-slate-100">{value}</div>
+                    <div className="text-sm text-slate-600 dark:text-slate-300">{label}</div>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </div>
-        </div>
-        
-        {/* Scroll Indicator */}
-        <div className="flex justify-center mt-8 lg:mt-12">
-          <button
-            onClick={() => {
-              const aboutSection = document.getElementById('about');
-              if (aboutSection) {
-                const headerOffset = 80; // Account for fixed header
-                const elementPosition = aboutSection.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: 'smooth'
-                });
-              }
-            }}
-            className="flex flex-col items-center gap-2 text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors cursor-pointer group animate-bounce"
-          >
-            <span className="text-xs">Scroll to explore</span>
-            <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
-          </button>
         </div>
       </div>
     </section>
