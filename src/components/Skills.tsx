@@ -5,6 +5,7 @@ import { Cpu, TrendingUp, Star, Wrench, Code2 } from 'lucide-react';
 import ResilientIcon from '@/components/ui/resilient-icon';
 import { AnimatedCard } from './AnimatedCard';
 import { useIntersectionObserver } from '@/hooks/useInteractions';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -130,28 +131,28 @@ const Skills = () => {
           {filteredSkills.map((skill, index) => (
             <Card 
               key={skill.name} 
-              className={`border-slate-200/50 dark:border-slate-700/50 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm ${
+              className={`border-slate-200/50 dark:border-slate-700/50 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm card-hover transition-all duration-500 ${
                 isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
-              }`}
+              } group hover:border-blue-300 dark:hover:border-blue-600`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-xl">
-                    <div className="w-8 h-8 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                  <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-xl transition-all duration-300 group-hover:bg-blue-200 dark:group-hover:bg-blue-800/50 group-hover:scale-110">
+                    <div className="w-8 h-8 flex items-center justify-center text-blue-600 dark:text-blue-400 transition-transform duration-300 group-hover:scale-110">
                       {getSkillIcon(skill.name)}
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-semibold text-slate-800 dark:text-slate-100">
+                      <h3 className="font-semibold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                         {skill.name}
                       </h3>
-                      <span className={`text-xs px-2 py-1 rounded-full border ${getLevelColor(skill.level)}`}>
+                      <span className={`text-xs px-2 py-1 rounded-full border transition-all duration-300 ${getLevelColor(skill.level)}`}>
                         {skill.level}
                       </span>
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed transition-colors duration-300 group-hover:text-slate-600 dark:group-hover:text-slate-200">
                       {skill.description}
                     </p>
                   </div>

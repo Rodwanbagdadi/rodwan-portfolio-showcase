@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { AnimatedCard } from '@/components/AnimatedCard';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
@@ -210,6 +211,15 @@ The model provides healthcare professionals with reliable survival probability e
                     className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <Button 
+                      variant="secondary" 
+                      size="sm"
+                      className="bg-white/90 text-slate-700 hover:bg-white transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                    >
+                      View Details
+                    </Button>
+                  </div>
                 </div>
                 
                 <CardContent className="p-6 flex-1">

@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { AnimatedCard } from './AnimatedCard';
 import { useIntersectionObserver } from '@/hooks/useInteractions';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const About = () => {
   const [elementRef, isVisible] = useIntersectionObserver();
