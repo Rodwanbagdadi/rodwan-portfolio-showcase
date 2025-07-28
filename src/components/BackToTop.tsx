@@ -1,18 +1,19 @@
 import { useState, useEffect } from 'react';
 import { ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { throttle } from 'lodash';
 
 export const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () => {
+    const toggleVisibility = throttle(() => {
       if (window.pageYOffset > 300) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
-    };
+    }, 200); // Throttle to run every 200ms
 
     window.addEventListener('scroll', toggleVisibility);
     return () => window.removeEventListener('scroll', toggleVisibility);
