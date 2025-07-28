@@ -28,17 +28,17 @@ const ParticleBackground = () => {
     window.addEventListener('resize', updateCanvasSize);
 
     const particles: Particle[] = [];
-    const particleCount = 80;
+    const particleCount = 40; // Reduced from 80 to 40
 
     // Initialize particles
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        radius: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.3 + 0.1,
+        vx: (Math.random() - 0.5) * 0.3, // Reduced velocity
+        vy: (Math.random() - 0.5) * 0.3, // Reduced velocity
+        radius: Math.random() * 1.5 + 0.5, // Smaller particles
+        opacity: Math.random() * 0.2 + 0.1, // Lower opacity
       });
     }
 

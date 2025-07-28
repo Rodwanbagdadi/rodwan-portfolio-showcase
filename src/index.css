@@ -9,10 +9,27 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Performance optimizations */
+.animate-float {
+  will-change: transform;
+}
+
+.card-hover {
+  will-change: transform, box-shadow;
+}
+
+.animate-on-scroll {
+  will-change: opacity, transform;
+}
+
 /* Animation keyframes */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%, 100% { 
+    transform: translateY(0px);
+  }
+  50% { 
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes fadeInUp {

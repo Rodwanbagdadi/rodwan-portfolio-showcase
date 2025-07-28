@@ -1,7 +1,26 @@
 import { useState, useEffect } from 'react';
 import { ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { throttle } from 'lodash';
+
+// Simple throttle utility
+const throttle = (func: Function, delay: number) => {
+  let timeoutId: NodeJS.Timeout;
+  let lastExecTime = 0;
+  return function (...args: any[]) {
+    const currentTime = Date.now();
+    
+    if (currentTime - lastExecTime > delay) {
+      func(...args);
+      lastExecTime = currentTime;
+    } else {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func(...args);
+        lastExecTime = Date.now();
+      }, delay - (currentTime - lastExecTime));
+    }
+  };
+};
 
 export const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
