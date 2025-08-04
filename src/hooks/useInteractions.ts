@@ -29,16 +29,24 @@ export const useIntersectionObserver = (threshold = 0.1) => {
   return [ref, isVisible] as const;
 };
 
-// Hook for smooth parallax scrolling
+// Hook for smooth parallax scrolling with throttling
 export const useParallax = (speed = 0.5) => {
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      setOffset(window.pageYOffset * speed);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setOffset(window.pageYOffset * speed);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [speed]);
 
@@ -80,21 +88,29 @@ export const useTypewriter = (text: string, speed = 50) => {
   return displayText;
 };
 
-// Hook for scroll direction
+// Hook for scroll direction with throttling
 export const useScrollDirection = () => {
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('down');
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      const currentScrollY = window.pageYOffset;
-      const direction = currentScrollY > lastScrollY ? 'down' : 'up';
-      
-      if (direction !== scrollDirection && Math.abs(currentScrollY - lastScrollY) > 10) {
-        setScrollDirection(direction);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const currentScrollY = window.pageYOffset;
+          const direction = currentScrollY > lastScrollY ? 'down' : 'up';
+          
+          if (direction !== scrollDirection && Math.abs(currentScrollY - lastScrollY) > 10) {
+            setScrollDirection(direction);
+          }
+          
+          setLastScrollY(currentScrollY);
+          ticking = false;
+        });
+        ticking = true;
       }
-      
-      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
