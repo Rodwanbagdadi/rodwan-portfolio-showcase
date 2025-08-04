@@ -41,7 +41,7 @@ const Hero = () => {
               </h1>
               
               <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground">
-                <span className="font-medium">Data Scientist & Machine Learning Engineer</span>
+                <span className="font-medium">Mechatronics & AI Engineer</span>
               </div>
             </div>
             
