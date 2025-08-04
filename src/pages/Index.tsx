@@ -13,7 +13,7 @@ import BackgroundElements from '@/components/BackgroundElements';
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
-      <BackgroundElements />
+      {/* <BackgroundElements /> */}
       <Navbar />
       <Hero />
       <About />

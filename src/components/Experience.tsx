@@ -26,14 +26,8 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="relative py-12 md:py-16 overflow-hidden">
-      {/* Simplified background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-blue-950 dark:to-indigo-950">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300/20 dark:bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-300/20 dark:bg-indigo-500/10 rounded-full blur-3xl animate-float-delayed"></div>
-      </div>
-
-      <div className="relative section-container">
+    <section id="experience" className="py-12 md:py-16 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-blue-950 dark:to-indigo-950">
+      <div className="section-container">
         <AnimatedCard>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-900 via-blue-800 to-indigo-900 dark:from-slate-100 dark:via-blue-200 dark:to-indigo-100 bg-clip-text text-transparent">

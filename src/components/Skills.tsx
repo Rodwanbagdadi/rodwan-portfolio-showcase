@@ -83,15 +83,8 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-12 md:py-16 bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-100/30 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/30 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-24 left-16 w-64 h-64 bg-gradient-to-br from-blue-400/6 to-indigo-400/10 rounded-full blur-3xl animate-float opacity-40"></div>
-        <div className="absolute bottom-32 right-20 w-56 h-56 bg-gradient-to-br from-teal-400/8 to-cyan-400/12 rounded-full blur-3xl animate-slow-spin opacity-30"></div>
-        <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-gradient-to-br from-purple-400/6 to-pink-400/10 rounded-full blur-3xl animate-float-reverse opacity-35"></div>
-      </div>
-      
-      <div className="section-container relative z-10">
+    <section id="skills" className="py-12 md:py-16 bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-100/30 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/30">
+      <div className="section-container">
         <AnimatedCard>
           <div className="text-center mb-16">
             <h2 className="section-title text-slate-800 dark:text-slate-100">Skills & Tools</h2>

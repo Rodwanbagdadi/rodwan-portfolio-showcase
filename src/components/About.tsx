@@ -16,14 +16,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-12 md:py-16 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/40 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/40 relative overflow-hidden">
-      {/* Background elements matching Hero */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-40 right-20 w-64 h-64 bg-gradient-to-br from-blue-400/5 to-indigo-400/10 rounded-full blur-3xl animate-float opacity-40"></div>
-        <div className="absolute bottom-40 left-20 w-48 h-48 bg-gradient-to-br from-teal-400/8 to-cyan-400/12 rounded-full blur-3xl animate-slow-spin opacity-30"></div>
-      </div>
-      
-      <div className="section-container relative z-10">
+    <section id="about" className="py-12 md:py-16 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/40 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/40">
+      <div className="section-container">
         <AnimatedCard>
           <h2 className="section-title">About Me</h2>
         </AnimatedCard>

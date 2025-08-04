@@ -22,58 +22,9 @@ const Hero = () => {
     <section id="home" className="min-h-[75vh] flex items-center relative overflow-hidden bg-background pt-12 md:pt-16">
       {/* Particle Background */}
       <ParticleBackground />
-      {/* Moving geometric background */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Static background */}
+      <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/40 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/40"></div>
-        
-        {/* Enhanced animated geometric shapes */}
-        <div className="absolute top-20 left-10 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-indigo-400/20 rounded-full blur-3xl animate-float opacity-60"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-purple-400/10 to-pink-400/15 rounded-full blur-3xl animate-float-reverse opacity-60"></div>
-        <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-gradient-to-br from-teal-400/15 to-cyan-400/20 rounded-full blur-3xl animate-slow-spin opacity-50"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-gradient-to-br from-emerald-400/10 to-green-400/15 rounded-full blur-3xl animate-float opacity-40"></div>
-        
-        {/* Floating particles with varied sizes */}
-        <div className="absolute inset-0">
-          {Array.from({ length: 50 }).map((_, i) => (
-            <div
-              key={i}
-              className={`absolute rounded-full animate-float ${
-                i % 3 === 0 ? 'w-2 h-2 bg-blue-400/20' : 
-                i % 3 === 1 ? 'w-1 h-1 bg-indigo-400/30' : 
-                'w-1.5 h-1.5 bg-purple-400/25'
-              }`}
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 8}s`,
-                animationDuration: `${6 + Math.random() * 6}s`
-              }}
-            />
-          ))}
-        </div>
-        
-        {/* Subtle moving waves */}
-        <div className="absolute inset-0">
-          <svg className="absolute bottom-0 left-0 w-full h-32 opacity-20" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,60 C200,80 400,40 600,60 C800,80 1000,40 1200,60 L1200,120 L0,120 Z" 
-                  fill="url(#wave-gradient)" className="animate-pulse">
-              <animateTransform
-                attributeName="transform"
-                type="translate"
-                values="0 0; 200 0; 0 0"
-                dur="20s"
-                repeatCount="indefinite"
-              />
-            </path>
-            <defs>
-              <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="rgb(59 130 246)" stopOpacity="0.1"/>
-                <stop offset="50%" stopColor="rgb(99 102 241)" stopOpacity="0.2"/>
-                <stop offset="100%" stopColor="rgb(139 92 246)" stopOpacity="0.1"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 relative z-10">

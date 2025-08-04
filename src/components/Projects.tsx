@@ -15,6 +15,155 @@ const Projects = () => {
   const projects = useMemo(() => [
     {
       id: 1,
+      title: 'Slack AI Assistant Bot',
+      subtitle: 'Intelligent workflow automation with LangChain',
+      description: 'AI-powered Slack bot with email drafting capabilities using OpenAI GPT-3.5 and LangChain framework.',
+      fullDescription: `An intelligent Slack bot that integrates seamlessly with team workflows to provide AI-powered assistance and automation capabilities.
+
+Core Architecture:
+• Slack SDK integration for real-time messaging
+• OpenAI GPT-3.5-turbo for natural language understanding
+• LangChain framework for prompt engineering and chains
+• Flask web framework for webhook handling
+• ngrok for secure local development and testing
+
+Key Features:
+• Automated email drafting with customizable templates
+• Context-aware responses based on conversation history
+• Real-time processing of @mentions and direct messages
+• Secure webhook endpoint for Slack events
+• Environment-based configuration for different deployments
+
+The bot uses advanced prompt engineering techniques through LangChain to generate contextually appropriate email drafts. It analyzes incoming messages, understands the intent, and produces professional email responses that match the tone and style of the original communication.
+
+Technical Implementation:
+• Event-driven architecture using Slack's Events API
+• Asynchronous message processing for optimal performance
+• Secure token-based authentication with Slack workspace
+• Modular function design for easy feature extension
+• Error handling and logging for production reliability
+
+Integration Capabilities:
+• Seamless workspace integration without disrupting existing workflows
+• Channel and direct message support
+• Multi-user functionality with personalized responses
+• Scalable architecture supporting multiple team deployments
+
+The assistant significantly improves team productivity by automating routine communication tasks while maintaining professional standards and personal touch in generated content.`,
+      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=1170&auto=format&fit=crop',
+      technologies: ['Python', 'LangChain', 'OpenAI API', 'Slack SDK', 'Flask'],
+      github: 'https://github.com/Rodwanbagdadi/Slack_AI_Bot',
+      achievements: [
+        'Integrated GPT-3.5 with Slack for seamless team communication',
+        'Implemented intelligent email drafting with tone matching',
+        'Created scalable webhook architecture for real-time processing',
+        'Developed modular function system for easy feature extension'
+      ]
+    },
+    {
+      id: 2,
+      title: 'LLM Chatbot Interface',
+      subtitle: 'Modern conversational AI with Streamlit',
+      description: 'Intuitive chat interface powered by OpenAI GPT with persistent conversation history and real-time streaming.',
+      fullDescription: `A sophisticated chatbot interface built with Streamlit that provides a seamless conversational experience with advanced AI capabilities and user-friendly design.
+
+Core Features:
+• Real-time streaming responses from OpenAI GPT models
+• Persistent chat history using local storage (Shelve)
+• Intuitive user interface with distinct user and bot avatars
+• Session management with conversation continuity
+• Responsive design optimized for various screen sizes
+
+Technical Architecture:
+• Streamlit framework for rapid web application development
+• OpenAI API integration with configurable model selection
+• Environment-based configuration for secure API key management
+• Local data persistence using Python's Shelve module
+• Streaming response handling for enhanced user experience
+
+User Experience Features:
+• Distinctive avatars (👤 for users, 🤖 for assistant)
+• Real-time typing indicators during response generation
+• Sidebar controls for chat history management
+• One-click chat history deletion for privacy
+• Responsive chat input with placeholder guidance
+
+Advanced Functionality:
+• Support for multiple OpenAI models (GPT-3.5-turbo, GPT-4)
+• Conversation context preservation across sessions
+• Efficient token management for cost optimization
+• Error handling and graceful degradation
+• Cross-platform compatibility
+
+Development & Deployment:
+• Virtual environment setup for dependency isolation
+• Simple installation process with requirements.txt
+• Local development server with hot reload
+• Easy configuration through environment variables
+• Scalable architecture for multi-user deployments
+
+The interface demonstrates modern web application development principles while providing a practical tool for AI-assisted conversations, making advanced language models accessible through an intuitive web interface.`,
+      image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1170&auto=format&fit=crop',
+      technologies: ['Python', 'Streamlit', 'OpenAI API', 'Shelve', 'Environment Variables'],
+      github: 'https://github.com/Rodwanbagdadi/LLM_Chatbot_Interface',
+      achievements: [
+        'Built responsive chat interface with real-time streaming',
+        'Implemented persistent conversation history storage',
+        'Integrated OpenAI GPT models with configurable selection',
+        'Created user-friendly design with intuitive navigation'
+      ]
+    },
+    {
+      id: 3,
+      title: 'Twitter Sentiment Analysis',
+      subtitle: 'Multi-approach sentiment classification system',
+      description: 'Comprehensive sentiment analysis using TextBlob and machine learning with 76% accuracy on tweet classification.',
+      fullDescription: `A comprehensive sentiment analysis system that employs multiple approaches to analyze and classify tweet sentiments with high accuracy and interpretability.
+
+Dual Analysis Framework:
+• TextBlob rule-based sentiment analysis for baseline classification
+• Machine Learning approach using Naive Bayes for improved accuracy
+• Comparative analysis between rule-based and ML methodologies
+• NLTK Twitter corpus integration for training and validation
+
+Technical Implementation:
+• Pre-processed Twitter dataset from NLTK (10,000 labeled tweets)
+• TF-IDF vectorization for feature extraction from text data
+• Multinomial Naive Bayes classifier for sentiment prediction
+• Scikit-learn pipeline for streamlined data processing
+• Comprehensive evaluation with confusion matrices and classification reports
+
+Data Processing Pipeline:
+• Text preprocessing including tokenization and normalization
+• Stop word removal and feature selection optimization
+• Bag-of-words model creation with 5,000 most frequent features
+• Train-test split with stratified sampling for balanced evaluation
+
+Visualization & Analysis:
+• Matplotlib visualizations for sentiment distribution analysis
+• Polarity and subjectivity scoring for detailed sentiment insights
+• Interactive sentiment analyzer for custom text input
+• Comparative performance metrics between different approaches
+
+Model Performance:
+• 76% overall accuracy on test dataset
+• Precision: 78% for positive sentiment detection
+• Recall: 72% for positive sentiment classification
+• F1-Score: 75% demonstrating balanced performance
+
+The system provides both quick rule-based analysis for real-time applications and more accurate ML-based classification for detailed sentiment mining projects.`,
+      image: '/assets/icons/twitter.svg',
+      technologies: ['Python', 'NLTK', 'TextBlob', 'Scikit-learn', 'Matplotlib'],
+      github: 'https://github.com/Rodwanbagdadi/Twitter_sentiment_analysis',
+      achievements: [
+        'Achieved 76% accuracy using Naive Bayes classification',
+        'Analyzed 10,000+ labeled tweets for model training',
+        'Implemented dual approach combining rule-based and ML methods',
+        'Created interactive sentiment analyzer for custom text input'
+      ]
+    },
+    {
+      id: 4,
       title: 'Sales Insights Data Analysis',
       subtitle: 'Advanced data analysis using Power BI and MySQL',
       description: 'Transform raw sales data into meaningful business insights with interactive dashboards.',
@@ -42,7 +191,7 @@ Technical implementation includes optimized SQL queries, calculated columns, mea
       ]
     },
     {
-      id: 2,
+      id: 5,
       title: 'Fake News Detection',
       subtitle: 'AI-powered misinformation detection system',
       description: 'XGBoost and TF-IDF vectorization system achieving 99.79% accuracy in detecting fake news.',
@@ -75,46 +224,7 @@ The Flask application provides an intuitive interface where users can input news
       ]
     },
     {
-      id: 3,
-      title: 'Diabetes Classifier',
-      subtitle: 'Machine learning for healthcare prediction',
-      description: 'SVM-based diabetes prediction model using 70,692 cases from comprehensive survey data.',
-      fullDescription: `A comprehensive machine learning solution for diabetes risk assessment using extensive healthcare survey data and multiple classification algorithms.
-
-Dataset & Methodology:
-• 70,692 patient records from CDC health surveys
-• 21 health-related features including BMI, age, lifestyle factors
-• Comprehensive data preprocessing and feature engineering
-• Multiple algorithm comparison and ensemble methods
-
-Machine Learning Pipeline:
-• Support Vector Machine (SVM) as primary classifier
-• K-Nearest Neighbors (KNN) for local pattern recognition
-• Random Forests for feature importance analysis
-• Decision Trees for interpretable rule extraction
-• Cross-validation and hyperparameter optimization
-
-The project addresses the critical healthcare challenge of early diabetes detection by leveraging lifestyle and demographic factors. The SVM model was selected for its superior performance on this dataset, providing healthcare professionals with a reliable tool for risk assessment.
-
-Clinical Impact:
-• Early detection capabilities for at-risk populations
-• Non-invasive screening using routine health data
-• Interpretable predictions for clinical decision support
-• Scalable solution for population health management
-
-The model identifies key risk factors and provides probability scores, enabling healthcare providers to prioritize interventions and recommend lifestyle modifications for high-risk individuals.`,
-      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1170&auto=format&fit=crop',
-      technologies: ['SVM', 'KNN', 'Random Forests', 'Decision Trees'],
-      github: 'https://github.com/Rodwanbagdadi/Diabetes-Classifier',
-      achievements: [
-        'Analyzed 70,692+ patient health records',
-        'Achieved 85%+ accuracy in diabetes prediction',
-        'Identified top 10 risk factors through feature analysis',
-        'Developed clinical decision support framework'
-      ]
-    },
-    {
-      id: 4,
+      id: 6,
       title: 'Survival Prediction Model',
       subtitle: 'Ensemble learning for medical outcomes',
       description: 'Random Forests and ensemble learning to forecast survival outcomes with top 20% leaderboard placement.',
@@ -159,6 +269,45 @@ The model provides healthcare professionals with reliable survival probability e
         'Developed explainable AI for clinical decisions'
       ]
     },
+    {
+      id: 7,
+      title: 'Diabetes Classifier',
+      subtitle: 'Machine learning for healthcare prediction',
+      description: 'SVM-based diabetes prediction model using 70,692 cases from comprehensive survey data.',
+      fullDescription: `A comprehensive machine learning solution for diabetes risk assessment using extensive healthcare survey data and multiple classification algorithms.
+
+Dataset & Methodology:
+• 70,692 patient records from CDC health surveys
+• 21 health-related features including BMI, age, lifestyle factors
+• Comprehensive data preprocessing and feature engineering
+• Multiple algorithm comparison and ensemble methods
+
+Machine Learning Pipeline:
+• Support Vector Machine (SVM) as primary classifier
+• K-Nearest Neighbors (KNN) for local pattern recognition
+• Random Forests for feature importance analysis
+• Decision Trees for interpretable rule extraction
+• Cross-validation and hyperparameter optimization
+
+The project addresses the critical healthcare challenge of early diabetes detection by leveraging lifestyle and demographic factors. The SVM model was selected for its superior performance on this dataset, providing healthcare professionals with a reliable tool for risk assessment.
+
+Clinical Impact:
+• Early detection capabilities for at-risk populations
+• Non-invasive screening using routine health data
+• Interpretable predictions for clinical decision support
+• Scalable solution for population health management
+
+The model identifies key risk factors and provides probability scores, enabling healthcare providers to prioritize interventions and recommend lifestyle modifications for high-risk individuals.`,
+      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1170&auto=format&fit=crop',
+      technologies: ['SVM', 'KNN', 'Random Forests', 'Decision Trees'],
+      github: 'https://github.com/Rodwanbagdadi/Diabetes-Classifier',
+      achievements: [
+        'Analyzed 70,692+ patient health records',
+        'Achieved 85%+ accuracy in diabetes prediction',
+        'Identified top 10 risk factors through feature analysis',
+        'Developed clinical decision support framework'
+      ]
+    },
   ], []);
 
   const openModal = (project: typeof projects[0]) => {
@@ -172,29 +321,18 @@ The model provides healthcare professionals with reliable survival probability e
   };
 
   return (
-    <section id="projects" className="py-12 md:py-16 relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-100/30 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/30">
-      {/* Simplified background decoration */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-blue-400/8 to-indigo-400/12 rounded-full blur-3xl animate-float opacity-50"></div>
-        <div className="absolute bottom-32 right-32 w-64 h-64 bg-gradient-to-br from-purple-400/6 to-pink-400/10 rounded-full blur-3xl animate-float-reverse opacity-40"></div>
-      </div>
-
-      <div className="section-container relative z-10">
-        <AnimatedCard variant="fade" className="text-center mb-12">
+    <section id="projects" className="bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-100/30 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/30">
+      <div className="section-container">
+        <div className="text-center mb-12">
           <h2 className="section-title text-slate-800 dark:text-slate-100">Featured Projects</h2>
           <p className="text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
             Here are some of my most significant projects showcasing my technical skills and problem-solving abilities in data science and machine learning.
           </p>
-        </AnimatedCard>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <AnimatedCard
-              key={project.id}
-              variant="slide"
-              delay={index * 50}
-              className="h-full"
-            >
+            <div key={project.id} className="h-full">
               <Card 
                 className={`overflow-hidden card-hover border-slate-200/50 dark:border-slate-700/50 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm h-full transition-all duration-300 group cursor-pointer ${
                   hoveredProject === project.id ? 'shadow-2xl -translate-y-2 border-blue-300 dark:border-blue-600' : ''
@@ -270,7 +408,7 @@ The model provides healthcare professionals with reliable survival probability e
                   </Button>
                 </CardFooter>
               </Card>
-            </AnimatedCard>
+            </div>
           ))}
         </div>
 
