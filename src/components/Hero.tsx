@@ -16,7 +16,7 @@ const Hero = () => {
     { icon: Brain, label: 'ML Models', value: '5+' }
   ];
 
-  const keySkills = ['Python', 'Machine Learning', 'Pandas', 'SQL'];
+  const keySkills = ['Python', 'SQL', 'AI'];
 
   return (
     <section id="home" className="min-h-[75vh] flex items-center relative overflow-hidden bg-background pt-12 md:pt-16">
@@ -41,14 +41,9 @@ const Hero = () => {
               </h1>
               
               <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground">
-                <span className="font-medium">Mechatronics & AI Engineer</span>
+                <span className="font-medium">Data Analyst and AI Engineer</span>
               </div>
             </div>
-            
-            {/* Description */}
-            <p className="text-base lg:text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed">
-              I turn complex data into actionable insights using cutting-edge machine learning solutions.
-            </p>
             
             {/* Location */}
             <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">

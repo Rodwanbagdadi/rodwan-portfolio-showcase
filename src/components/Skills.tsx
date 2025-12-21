@@ -55,7 +55,7 @@ const Skills = () => {
 
   const skills = [
     { name: 'Python', category: 'languages', level: 'Intermediate', description: 'Primary programming language' },
-    { name: 'SQL', category: 'languages', level: 'Beginner', description: 'Database querying and management' },
+    { name: 'SQL', category: 'languages', level: 'Intermediate', description: 'Database querying and management' },
     { name: 'pandas', category: 'ai-ml', level: 'Intermediate', description: 'Data manipulation and analysis' },
     { name: 'Scikit-learn', category: 'ai-ml', level: 'Intermediate', description: 'Machine learning algorithms' },
     { name: 'NumPy', category: 'ai-ml', level: 'Beginner', description: 'Numerical computing' },
@@ -66,8 +66,8 @@ const Skills = () => {
     { name: 'VS Code', category: 'tools', level: 'Intermediate', description: 'Code editor and IDE' },
     { name: 'Jupyter Notebook', category: 'tools', level: 'Intermediate', description: 'Interactive development' },
     { name: 'Flask', category: 'tools', level: 'Beginner', description: 'Web framework' },
-    { name: 'Git', category: 'tools', level: 'Beginner', description: 'Version control' },
-    { name: 'Power BI', category: 'tools', level: 'Beginner', description: 'Business intelligence' }
+    { name: 'Git', category: 'tools', level: 'Intermediate', description: 'Version control' },
+    { name: 'Power BI', category: 'tools', level: 'Intermediate', description: 'Business intelligence' }
   ];
 
   const filteredSkills = activeCategory === 'all' 

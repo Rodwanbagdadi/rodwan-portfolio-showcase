@@ -10,6 +10,20 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
+      role: 'Junior Software Developer',
+      company: 'MAKE WORK FLOW',
+      period: 'Sep 2025 - Present',
+      location: 'Amman, Jordan',
+      description: 'Full-time position developing customer-facing solutions and AI-powered tools.',
+      achievements: [
+        'Develop and maintain customer dashboards, collaborating with stakeholders to define KPIs, validate data pipelines, and ensure clarity, accuracy, and usability across different user profiles',
+        'Build an AI-powered customer support chatbot using Python to handle inquiries related to dashboards and reporting logic, improving response efficiency and user experience'
+      ],
+      technologies: ['Python (Programming Language)', 'Artificial Intelligence (AI)', 'SQL', 'MetaBase'],
+      companyColor: 'from-purple-500 to-purple-600'
+    },
+    {
+      id: 2,
       role: 'Software Steering Intern',
       company: 'Bosch Engineering GmbH',
       period: 'Mar 2024 - Sep 2024',
@@ -77,12 +91,14 @@ const Experience = () => {
                           </div>
                         </div>
                         
-                        <div className="pt-4">
-                          <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-                            <ArrowUpRight className="h-3 w-3" />
-                            Current Role
+                        {index === 0 && (
+                          <div className="pt-4">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
+                              <ArrowUpRight className="h-3 w-3" />
+                              Current Role
+                            </div>
                           </div>
-                        </div>
+                        )}
                       </div>
                     </div>
                     

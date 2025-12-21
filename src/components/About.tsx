@@ -31,13 +31,12 @@ const About = () => {
               }`}
             >
               <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
-                I'm a <span className="text-blue-600 dark:text-blue-400 font-semibold">Mechatronics Engineering graduate</span> with hands-on 
-                experience building machine learning tools 
-                from fake news detection to predictive modeling.
+                I'm a <span className="text-blue-600 dark:text-blue-400 font-semibold">Data Analyst and AI Engineer</span> currently working at MAKE WORK FLOW, 
+                where I develop customer dashboards and build AI-powered solutions to improve user experience and operational efficiency.
               </p>
               <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed"> 
-                Worked on real-world projects at <span className="text-blue-600 dark:text-blue-400 font-semibold">Bosch</span>, 
-                where I turned data into practical, intelligent solutions.
+                Previously interned at <span className="text-blue-600 dark:text-blue-400 font-semibold">Bosch Engineering</span>, 
+                where I gained hands-on experience in machine learning, state estimation systems, and predictive modeling.
               </p>
 
             </div>
