@@ -19,7 +19,7 @@ const Experience = () => {
         'Develop and maintain customer dashboards, collaborating with stakeholders to define KPIs, validate data pipelines, and ensure clarity, accuracy, and usability across different user profiles',
         'Build an AI-powered customer support chatbot using Python to handle inquiries related to dashboards and reporting logic, improving response efficiency and user experience'
       ],
-      technologies: ['Python (Programming Language)', 'Artificial Intelligence (AI)', 'SQL', 'MetaBase'],
+      technologies: ['Python (Programming Language)', 'Artificial Intelligence (AI)', 'SQL', 'Metabase'],
       companyColor: 'from-white to-white'
     },
     {
