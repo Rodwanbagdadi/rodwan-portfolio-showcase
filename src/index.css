@@ -141,49 +141,49 @@ html {
 @layer base {
   :root {
     /* Dark theme (default) - Updated for better portfolio alignment */
-    --background: 240 10% 4%;
-    --foreground: 0 0% 95%;
-    --card: 240 10% 15%;
-    --card-foreground: 0 0% 95%;
-    --popover: 240 10% 15%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 5% 18%;
-    --secondary-foreground: 0 0% 85%;
-    --muted: 240 5% 22%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5% 25%;
-    --input: 240 5% 25%;
-    --ring: 217 91% 60%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 6%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 92%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 68%;
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 6%;
+    --destructive: 0 0% 35%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 22%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
     --radius: 0.75rem;
   }
 
   .light {
     /* Light theme */
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 0 0% 6%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 0 0% 6%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 217 91% 60%;
+    --popover-foreground: 0 0% 6%;
+    --primary: 0 0% 8%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 15%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 8%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 0% 20%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 86%;
+    --input: 0 0% 86%;
+    --ring: 0 0% 8%;
   }
 
   * {
@@ -687,7 +687,7 @@ html {
 .moving-shape-1 {
   width: 100px;
   height: 100px;
-  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  background: linear-gradient(45deg, #171717, #3f3f46);
   border-radius: 30%;
   animation: flowRightWave 30s linear infinite, morphing 8s ease-in-out infinite;
 }
@@ -695,7 +695,7 @@ html {
 .moving-shape-2 {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  background: linear-gradient(135deg, #52525b, #171717);
   border-radius: 50%;
   animation: flowRight 25s linear infinite, slowSpin 20s linear infinite;
 }
@@ -703,7 +703,7 @@ html {
 .moving-shape-3 {
   width: 60px;
   height: 120px;
-  background: linear-gradient(90deg, #8b5cf6, #d946ef);
+  background: linear-gradient(90deg, #3f3f46, #71717a);
   border-radius: 40%;
   animation: flowRightDiagonal 28s linear infinite;
 }
@@ -711,7 +711,7 @@ html {
 .moving-shape-4 {
   width: 90px;
   height: 90px;
-  background: linear-gradient(180deg, #10b981, #06b6d4);
+  background: linear-gradient(180deg, #a1a1aa, #52525b);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   animation: flowRightFloat 32s linear infinite;
 }
@@ -719,7 +719,7 @@ html {
 .moving-shape-5 {
   width: 70px;
   height: 70px;
-  background: linear-gradient(225deg, #f59e0b, #ef4444);
+  background: linear-gradient(225deg, #737373, #262626);
   border-radius: 20%;
   animation: flowRightSlow 35s linear infinite;
 }

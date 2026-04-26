@@ -5,7 +5,7 @@ const SocialLinks = () => {
   return (
     <div>
       <h3 className="text-xl font-semibold mb-4">Connect with me</h3>
-      <p className="text-neutral-400 mb-4">
+      <p className="text-black mb-4">
         Follow me on social media or check out my work on GitHub.
       </p>
       <div className="flex space-x-4">

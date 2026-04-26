@@ -321,11 +321,11 @@ The model identifies key risk factors and provides probability scores, enabling 
   };
 
   return (
-    <section id="projects" className="bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-100/30 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/30">
+    <section id="projects" className="bg-gradient-to-br from-white via-white/20 to-white/30 dark:from-black dark:via-black dark:to-black/30">
       <div className="section-container">
         <div className="text-center mb-12">
-          <h2 className="section-title text-slate-800 dark:text-slate-100">Featured Projects</h2>
-          <p className="text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <h2 className="section-title text-black dark:text-white">Featured Projects</h2>
+          <p className="text-black dark:text-white mb-8 max-w-2xl mx-auto leading-relaxed">
             Here are some of my most significant projects showcasing my technical skills and problem-solving abilities in data science and machine learning.
           </p>
         </div>
@@ -334,8 +334,8 @@ The model identifies key risk factors and provides probability scores, enabling 
           {projects.map((project, index) => (
             <div key={project.id} className="h-full">
               <Card 
-                className={`overflow-hidden card-hover border-slate-200/50 dark:border-slate-700/50 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm h-full transition-all duration-300 group cursor-pointer ${
-                  hoveredProject === project.id ? 'shadow-2xl -translate-y-2 border-blue-300 dark:border-blue-600' : ''
+                className={`overflow-hidden card-hover border-black/50 dark:border-white/50 bg-white/70 dark:bg-black/70 backdrop-blur-sm h-full transition-all duration-300 group cursor-pointer ${
+                  hoveredProject === project.id ? 'shadow-2xl -translate-y-2 border-black dark:border-white' : ''
                 }`}
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
@@ -347,20 +347,20 @@ The model identifies key risk factors and provides probability scores, enabling 
                     alt={project.title}
                     className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Badge variant="secondary" className="bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300">
+                    <Badge variant="secondary" className="bg-white dark:bg-black/50 text-black dark:text-white">
                       Click to expand
                     </Badge>
                   </div>
                 </div>
                 
                 <CardContent className="p-6 flex-grow">
-                  <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-blue-600 dark:text-blue-400 font-medium mb-3">{project.subtitle}</p>
-                  <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                  <p className="text-black dark:text-white font-medium mb-3">{project.subtitle}</p>
+                  <p className="text-black dark:text-white leading-relaxed mb-4">
                     {project.description}
                   </p>
                   
@@ -369,13 +369,13 @@ The model identifies key risk factors and provides probability scores, enabling 
                       <Badge 
                         key={index}
                         variant="outline" 
-                        className="text-xs bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-600"
+                        className="text-xs bg-white dark:bg-black text-black dark:text-white border-black dark:border-white"
                       >
                         {tech}
                       </Badge>
                     ))}
                     {project.technologies.length > 3 && (
-                      <Badge variant="outline" className="text-xs bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
+                      <Badge variant="outline" className="text-xs bg-white dark:bg-black text-black dark:text-white">
                         +{project.technologies.length - 3} more
                       </Badge>
                     )}
@@ -390,7 +390,7 @@ The model identifies key risk factors and provides probability scores, enabling 
                       e.stopPropagation();
                       window.open(project.github, '_blank');
                     }}
-                    className="flex items-center gap-2 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:border-blue-300 dark:hover:border-blue-600"
+                    className="flex items-center gap-2 hover:bg-white dark:hover:bg-black/20 hover:border-black dark:hover:border-white"
                   >
                     <Github className="h-4 w-4" />
                     Code
@@ -401,7 +401,7 @@ The model identifies key risk factors and provides probability scores, enabling 
                       e.stopPropagation();
                       openModal(project);
                     }}
-                    className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white"
+                    className="flex items-center gap-2 bg-black hover:bg-black text-white dark:bg-white dark:hover:bg-white dark:text-black"
                   >
                     <ExternalLink className="h-4 w-4" />
                     Details
@@ -414,16 +414,16 @@ The model identifies key risk factors and provides probability scores, enabling 
 
         {/* Project Modal */}
         <Dialog open={isModalOpen} onOpenChange={closeModal}>
-          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700">
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white dark:bg-black border-black dark:border-white">
             <DialogHeader>
-              <DialogTitle className="text-2xl font-bold text-slate-800 dark:text-slate-100 pr-8">
+              <DialogTitle className="text-2xl font-bold text-black dark:text-white pr-8">
                 {selectedProject?.title}
               </DialogTitle>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={closeModal}
-                className="absolute top-4 right-4 p-2 hover:bg-slate-100 dark:hover:bg-slate-800"
+                className="absolute top-4 right-4 p-2 hover:bg-white dark:hover:bg-black"
               >
                 <X className="h-4 w-4" />
               </Button>
@@ -437,37 +437,37 @@ The model identifies key risk factors and provides probability scores, enabling 
                     alt={selectedProject.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 </div>
                 
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-3">
+                    <h3 className="text-lg font-semibold text-black dark:text-white mb-3">
                       Project Overview
                     </h3>
                     <div className="prose prose-slate dark:prose-invert max-w-none">
-                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed whitespace-pre-line">
+                      <p className="text-black dark:text-white leading-relaxed whitespace-pre-line">
                         {selectedProject.fullDescription}
                       </p>
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-3">
+                    <h3 className="text-lg font-semibold text-black dark:text-white mb-3">
                       Key Achievements
                     </h3>
                     <ul className="space-y-2">
                       {selectedProject.achievements?.map((achievement, index) => (
                         <li key={index} className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-slate-600 dark:text-slate-300">{achievement}</span>
+                          <div className="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-black dark:text-white">{achievement}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-3">
+                    <h3 className="text-lg font-semibold text-black dark:text-white mb-3">
                       Technologies Used
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -475,7 +475,7 @@ The model identifies key risk factors and provides probability scores, enabling 
                         <Badge 
                           key={index}
                           variant="secondary" 
-                          className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700/50"
+                          className="bg-white dark:bg-black/30 text-black dark:text-white border-black dark:border-white/50"
                         >
                           {tech}
                         </Badge>
@@ -486,7 +486,7 @@ The model identifies key risk factors and provides probability scores, enabling 
                   <div className="flex gap-4 pt-4">
                     <Button
                       onClick={() => window.open(selectedProject.github, '_blank')}
-                      className="flex items-center gap-2 bg-slate-800 hover:bg-slate-900 text-white"
+                      className="flex items-center gap-2 bg-black hover:bg-black text-white dark:bg-white dark:hover:bg-white dark:text-black"
                     >
                       <Github className="h-4 w-4" />
                       View Source Code

@@ -5,11 +5,11 @@ const BackgroundElements = () => {
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-10">
       {/* Reduced large flowing orbs */}
       <div
-        className="absolute top-1/4 left-0 w-64 h-64 bg-gradient-to-br from-blue-400/6 to-indigo-400/10 rounded-full blur-3xl animate-flow-right-slow opacity-50"
+        className="absolute top-1/4 left-0 w-64 h-64 bg-gradient-to-br from-white/6 to-white/10 rounded-full blur-3xl animate-flow-right-slow opacity-50"
         style={{ animationDelay: '0s' }}
       ></div>
       <div
-        className="absolute bottom-1/3 left-0 w-48 h-48 bg-gradient-to-br from-purple-400/8 to-pink-400/12 rounded-full blur-3xl animate-flow-right opacity-40"
+        className="absolute bottom-1/3 left-0 w-48 h-48 bg-gradient-to-br from-white/8 to-white/12 rounded-full blur-3xl animate-flow-right opacity-40"
         style={{ animationDelay: '12s' }}
       ></div>
 
@@ -24,8 +24,8 @@ const BackgroundElements = () => {
             key={i}
             className={`absolute rounded-full ${
               i % 2 === 0
-                ? 'w-2 h-2 bg-blue-400/12 animate-flow-right'
-                : 'w-1.5 h-1.5 bg-indigo-400/15 animate-flow-right-wave'
+                ? 'w-2 h-2 bg-white/12 animate-flow-right'
+                : 'w-1.5 h-1.5 bg-white/15 animate-flow-right-wave'
             }`}
             style={{
               left: '-30px',

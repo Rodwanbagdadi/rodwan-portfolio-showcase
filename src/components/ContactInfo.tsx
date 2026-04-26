@@ -12,7 +12,7 @@ const ContactInfo = () => {
           </div>
           <div>
             <p className="font-medium">Email</p>
-            <a href="mailto:rodwanbagdadi@gmail.com" className="text-neutral-400 hover:text-neutral-200">
+            <a href="mailto:rodwanbagdadi@gmail.com" className="text-black hover:text-black">
               rodwanbagdadi@gmail.com
             </a>
           </div>
@@ -24,7 +24,7 @@ const ContactInfo = () => {
           </div>
           <div>
             <p className="font-medium">Location</p>
-            <p className="text-neutral-400">Amman, Jordan</p>
+            <p className="text-black">Amman, Jordan</p>
           </div>
         </div>
       </div>

@@ -24,16 +24,19 @@ const throttle = (func: Function, delay: number) => {
 
 export const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isNearFooter, setIsNearFooter] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = throttle(() => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      const shouldShow = window.pageYOffset > 300;
+      const distanceFromBottom = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+      const nearFooter = distanceFromBottom < 220;
+
+      setIsVisible(shouldShow);
+      setIsNearFooter(nearFooter);
     }, 200); // Throttle to run every 200ms
 
+    toggleVisibility();
     window.addEventListener('scroll', toggleVisibility);
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
@@ -45,12 +48,12 @@ export const BackToTop = () => {
     });
   };
 
-  if (!isVisible) return null;
+  if (!isVisible || isNearFooter) return null;
 
   return (
     <Button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 z-50 px-4 py-3 h-auto rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 hover:scale-110 group"
+      className="fixed bottom-24 md:bottom-8 right-8 z-50 px-4 py-3 h-auto rounded-full bg-black hover:bg-black text-white hover:text-white dark:bg-white dark:hover:bg-white dark:text-black dark:hover:text-black shadow-lg hover:shadow-xl hover:shadow-black/25 transition-all duration-300 hover:scale-110 group"
       size="default"
     >
       <ChevronUp className="h-4 w-4 mr-2 group-hover:-translate-y-1 transition-transform" />

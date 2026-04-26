@@ -39,10 +39,10 @@ const TypingEffect = ({ texts, speed = 150, pauseDuration = 2000 }: TypingEffect
 
   return (
     <span className="inline-block">
-      <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-bold">
+      <span className="text-black dark:text-white font-bold">
         {currentText}
       </span>
-      <span className="animate-pulse text-blue-600 ml-1">|</span>
+      <span className="animate-pulse text-black dark:text-white ml-1">|</span>
     </span>
   );
 };

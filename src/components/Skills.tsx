@@ -76,19 +76,19 @@ const Skills = () => {
 
   const getLevelColor = (level: string) => {
     switch(level) {
-      case 'Intermediate': return 'text-blue-500 bg-blue-500/10 border-blue-500/20';
-      case 'Beginner': return 'text-yellow-500 bg-yellow-500/10 border-yellow-500/20';
-      default: return 'text-green-500 bg-green-500/10 border-green-500/20';
+      case 'Intermediate': return 'text-black dark:text-white bg-white/10 dark:bg-black/20 border-black/20 dark:border-white/30';
+      case 'Beginner': return 'text-black dark:text-white bg-white/10 dark:bg-black/20 border-black/20 dark:border-white/30';
+      default: return 'text-black bg-white/10 border-black/20 dark:text-white dark:bg-black/10 dark:border-white/20';
     }
   };
 
   return (
-    <section id="skills" className="py-12 md:py-16 bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-100/30 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/30">
+    <section id="skills" className="py-12 md:py-16 bg-gradient-to-br from-white via-white/20 to-white/30 dark:from-black dark:via-black dark:to-black/30">
       <div className="section-container">
         <AnimatedCard>
           <div className="text-center mb-16">
-            <h2 className="section-title text-slate-800 dark:text-slate-100">Skills & Tools</h2>
-            <p className="text-slate-600 dark:text-slate-300 mt-4 max-w-2xl mx-auto text-lg">
+            <h2 className="section-title text-black dark:text-white">Skills & Tools</h2>
+            <p className="text-black dark:text-white mt-4 max-w-2xl mx-auto text-lg">
               My technical toolkit, honed through years of professional experience and continuous learning.
             </p>
           </div>
@@ -104,8 +104,8 @@ const Skills = () => {
                   variant={activeCategory === category.id ? 'default' : 'outline'}
                   className={`interactive-scale rounded-full transition-all duration-300 ${
                     activeCategory === category.id 
-                      ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg scale-105" 
-                      : "border-blue-300/60 hover:border-blue-400 hover:bg-blue-50 dark:border-blue-600/50 dark:hover:bg-blue-950/20 bg-white/80 dark:bg-slate-700/40 backdrop-blur-sm text-blue-700 dark:text-blue-300"
+                      ? "bg-white text-black border border-black shadow-lg scale-105 dark:bg-white dark:text-black dark:border-white" 
+                      : "border-black/60 hover:border-black hover:bg-white dark:border-white/50 dark:hover:bg-black/20 bg-white/80 dark:bg-black/40 backdrop-blur-sm text-black dark:text-white"
                   }`}
                   onClick={() => setActiveCategory(category.id)}
                 >
@@ -124,28 +124,28 @@ const Skills = () => {
           {filteredSkills.map((skill, index) => (
             <Card 
               key={skill.name} 
-              className={`border-slate-200/50 dark:border-slate-700/50 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm card-hover transition-all duration-500 ${
+              className={`border-black/50 dark:border-white/50 bg-white/70 dark:bg-black/70 backdrop-blur-sm card-hover transition-all duration-500 ${
                 isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
-              } group hover:border-blue-300 dark:hover:border-blue-600`}
+              } group hover:border-black dark:hover:border-white`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-xl transition-all duration-300 group-hover:bg-blue-200 dark:group-hover:bg-blue-800/50 group-hover:scale-110">
-                    <div className="w-8 h-8 flex items-center justify-center text-blue-600 dark:text-blue-400 transition-transform duration-300 group-hover:scale-110">
+                  <div className="bg-white dark:bg-black/30 p-3 rounded-xl transition-all duration-300 group-hover:bg-white dark:group-hover:bg-black/50 group-hover:scale-110">
+                    <div className="w-8 h-8 flex items-center justify-center text-black dark:text-white transition-transform duration-300 group-hover:scale-110">
                       {getSkillIcon(skill.name)}
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-semibold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                      <h3 className="font-semibold text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors duration-300">
                         {skill.name}
                       </h3>
                       <span className={`text-xs px-2 py-1 rounded-full border transition-all duration-300 ${getLevelColor(skill.level)}`}>
                         {skill.level}
                       </span>
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed transition-colors duration-300 group-hover:text-slate-600 dark:group-hover:text-slate-200">
+                    <p className="text-sm text-muted-foreground leading-relaxed transition-colors duration-300 group-hover:text-black dark:group-hover:text-white">
                       {skill.description}
                     </p>
                   </div>

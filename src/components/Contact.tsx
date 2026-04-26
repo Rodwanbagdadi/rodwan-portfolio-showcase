@@ -10,31 +10,31 @@ const Contact = () => {
       label: 'Email',
       value: 'rodwanbagdadi@gmail.com',
       href: 'mailto:rodwanbagdadi@gmail.com',
-      color: 'text-green-600 dark:text-green-400'
+      color: 'text-black dark:text-white'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
       value: 'linkedin.com/in/rodwanbaghdadi',
       href: 'https://www.linkedin.com/in/rodwanbaghdadi/',
-      color: 'text-blue-600 dark:text-blue-400'
+      color: 'text-black dark:text-white'
     },
     {
       icon: Github,
       label: 'GitHub',
       value: 'github.com/Rodwanbagdadi',
       href: 'https://github.com/Rodwanbagdadi',
-      color: 'text-slate-600 dark:text-slate-400'
+      color: 'text-black dark:text-white'
     }
   ];
 
   return (
-    <section id="contact" className="py-12 md:py-16 bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-100/30 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/30">
+    <section id="contact" className="py-12 md:py-16 bg-gradient-to-br from-white via-white/20 to-white/30 dark:from-black dark:via-black dark:to-black/30">
       <div className="section-container">
         <AnimatedCard>
           <div className="text-center mb-12">
-            <h2 className="section-title text-slate-800 dark:text-slate-100">Contact</h2>
-            <p className="text-slate-600 dark:text-slate-300 mt-4 max-w-2xl mx-auto text-lg">
+            <h2 className="section-title text-black dark:text-white">Contact</h2>
+            <p className="text-black dark:text-white mt-4 max-w-2xl mx-auto text-lg">
               Let's connect! Feel free to reach out through any of these channels.
             </p>
           </div>
@@ -42,7 +42,7 @@ const Contact = () => {
         
         <div className="max-w-2xl mx-auto">
           <AnimatedCard>
-            <Card className="border-slate-200/50 dark:border-slate-700/50 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm">
+            <Card className="border-black/50 dark:border-white/50 bg-white/70 dark:bg-black/70 backdrop-blur-sm">
               <CardContent className="p-8">
                 {/* Contact Links */}
                 <div className="space-y-6">
@@ -54,16 +54,16 @@ const Contact = () => {
                         href={contact.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex items-center gap-4 p-4 rounded-lg border border-slate-200/50 dark:border-slate-700/50 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-lg transition-all duration-300 interactive-scale"
+                        className="group flex items-center gap-4 p-4 rounded-lg border border-black/50 dark:border-white/50 hover:border-black dark:hover:border-white hover:shadow-lg transition-all duration-300 interactive-scale"
                       >
-                        <div className={`p-3 rounded-xl bg-slate-100 dark:bg-slate-700 group-hover:scale-110 transition-transform duration-300`}>
+                        <div className={`p-3 rounded-xl bg-white dark:bg-black group-hover:scale-110 transition-transform duration-300`}>
                           <Icon className={`h-6 w-6 ${contact.color}`} />
                         </div>
                         <div className="flex-1 text-left">
-                          <p className="font-semibold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                          <p className="font-semibold text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">
                             {contact.label}
                           </p>
-                          <p className="text-slate-600 dark:text-slate-300 text-sm">
+                          <p className="text-black dark:text-white text-sm">
                             {contact.value}
                           </p>
                         </div>

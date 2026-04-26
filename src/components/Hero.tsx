@@ -24,7 +24,7 @@ const Hero = () => {
       <ParticleBackground />
       {/* Static background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/40 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-white/30 to-white/40 dark:from-black dark:via-black dark:to-black/40"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 relative z-10">
@@ -35,7 +35,7 @@ const Hero = () => {
             <div className="space-y-2 lg:space-y-3">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight float-animation">
                 Hi, I'm{' '}
-                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="text-black dark:text-white">
                   Rodwan
                 </span>
               </h1>
@@ -46,29 +46,29 @@ const Hero = () => {
             </div>
             
             {/* Location */}
-            <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
-              <MapPin className="w-5 h-5 text-blue-600" />
+            <div className="flex items-center gap-2 text-black dark:text-white">
+              <MapPin className="w-5 h-5 text-black dark:text-white" />
               <span className="font-medium">Amman, Jordan</span>
             </div>
             
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group card-hover">
+              <Button size="lg" className="bg-black hover:bg-black text-white dark:bg-white dark:hover:bg-white dark:text-black shadow-lg hover:shadow-xl transition-all duration-300 group card-hover">
                 <a href="mailto:rodwanbagdadi@gmail.com" className="flex items-center gap-2">
                   Get in Touch
                   <Mail className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
               
-              <Button variant="outline" size="lg" className="border-blue-300/60 hover:bg-blue-50 hover:border-blue-400 dark:border-blue-600/50 dark:hover:bg-blue-950/20 bg-white/80 dark:bg-slate-700/40 backdrop-blur-sm group card-hover">
-                <a href="#projects" className="flex items-center gap-2 text-blue-700 dark:text-blue-300">
+              <Button variant="outline" size="lg" className="border-black/60 hover:bg-white hover:border-black dark:border-white/50 dark:hover:bg-black/20 bg-white/80 dark:bg-black/40 backdrop-blur-sm group card-hover">
+                <a href="#projects" className="flex items-center gap-2 text-black dark:text-white">
                   View Projects
                   <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 </a>
               </Button>
               
-              <Button variant="secondary" size="lg" className="bg-slate-50 hover:bg-slate-100 dark:bg-slate-700/50 dark:hover:bg-slate-600/50 backdrop-blur-sm border border-slate-200/50 dark:border-slate-600/50 group card-hover">
-                <a href="/Rodwan_Bagdadi_Resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+              <Button variant="secondary" size="lg" className="bg-white hover:bg-white dark:bg-black/50 dark:hover:bg-black/50 backdrop-blur-sm border border-black/50 dark:border-white/50 group card-hover">
+                <a href="/Rodwan_Bagdadi_Resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black dark:text-white">
                   <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
                   Resume
                 </a>
@@ -87,7 +87,7 @@ const Hero = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white/90 hover:bg-white dark:bg-slate-700/60 dark:hover:bg-slate-600/70 text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-md hover:shadow-lg border border-slate-200/50 dark:border-slate-600/50 backdrop-blur-sm card-hover"
+                  className="p-3 rounded-full bg-white/90 hover:bg-white dark:bg-black/60 dark:hover:bg-black/70 text-black hover:text-black dark:text-white dark:hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-md hover:shadow-lg border border-black/50 dark:border-white/50 backdrop-blur-sm card-hover"
                   aria-label={label}
                 >
                   <Icon className="w-5 h-5" />
@@ -102,7 +102,7 @@ const Hero = () => {
             <div className="flex flex-col items-center text-center space-y-5 sm:space-y-6">
               {/* Profile Picture */}
               <div className="relative">
-                <div className="w-48 h-56 sm:w-56 sm:h-64 lg:w-64 lg:h-72 rounded-xl overflow-hidden border-4 border-blue-200/50 dark:border-blue-600/30 shadow-lg">
+                <div className="w-48 h-56 sm:w-56 sm:h-64 lg:w-64 lg:h-72 rounded-xl overflow-hidden border-4 border-black/50 dark:border-white/30 shadow-lg">
                   <img 
                     src="https://images.unsplash.com/photo-1745947662038-3c71fd254f2c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                     alt="Rodwan Bagdadi" 
@@ -113,10 +113,10 @@ const Hero = () => {
               
               {/* Core Skills */}
               <div>
-                <h4 className="font-semibold text-slate-800 dark:text-slate-100 mb-3 text-lg">Core Skills</h4>
+                <h4 className="font-semibold text-black dark:text-white mb-3 text-lg">Core Skills</h4>
                 <div className="flex flex-wrap gap-2 justify-center">
                   {keySkills.slice(0, 4).map((skill) => (
-                    <Badge key={skill} variant="secondary" className="bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300 dark:border-blue-700/50 text-sm px-3 py-1">
+                    <Badge key={skill} variant="secondary" className="bg-white text-black border-black dark:bg-black/30 dark:text-white dark:border-white/50 text-sm px-3 py-1">
                       {skill}
                     </Badge>
                   ))}
@@ -127,13 +127,13 @@ const Hero = () => {
             {/* Stats Cards */}
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {quickStats.map(({ icon: Icon, label, value }, index) => (
-                <Card key={label} className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border-slate-200/50 dark:border-slate-700/50 card-hover animate-on-scroll" style={{ animationDelay: `${(index + 1) * 0.2}s` }}>
+                <Card key={label} className="bg-white/70 dark:bg-black/70 backdrop-blur-sm border-black/50 dark:border-white/50 card-hover animate-on-scroll" style={{ animationDelay: `${(index + 1) * 0.2}s` }}>
                   <CardContent className="p-4 sm:p-6 text-center">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-400" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white dark:bg-black/30 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-black dark:text-white" />
                     </div>
-                    <div className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-slate-100">{value}</div>
-                    <div className="text-sm text-slate-600 dark:text-slate-300">{label}</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-black dark:text-white">{value}</div>
+                    <div className="text-sm text-black dark:text-white">{label}</div>
                   </CardContent>
                 </Card>
               ))}
